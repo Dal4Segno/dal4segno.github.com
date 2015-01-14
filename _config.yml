@@ -9,3 +9,7 @@ github_username:  dal4segno
 
 # Build settings
 markdown: redcarpet
+comments:
+  provider: disqus
+  disqus:
+    short_name: dal4segno

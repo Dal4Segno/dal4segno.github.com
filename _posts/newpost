@@ -1,0 +1,10 @@
+#!/bin/bash
+
+filename=`date +%Y-%m-%d`-$1.md
+touch $filename
+echo --- >> $filename
+echo layout: default >> $filename
+echo title: >> $filename
+echo date: `date "+%Y/%m/%D %H:%M:%S"` >> $filename
+echo tag: >> $filename
+echo --- >> $filename

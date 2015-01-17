@@ -1,6 +1,6 @@
 #!/bin/bash
 
-filename=`date +%Y-%m-%d`-$1.md
+filename=`date +%Y-%m-%d`-$1.markdown
 touch $filename
 echo --- >> $filename
 echo layout: default >> $filename

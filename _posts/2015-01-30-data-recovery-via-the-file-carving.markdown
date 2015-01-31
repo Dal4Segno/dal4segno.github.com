@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: post 
 title: 파일 카빙을 통한 데이터 복구
-2015-01-30 22:25:42
+date: 2015-01-30 22:25:42
 tag: digitalforensics filecarving datarecovery
 ---
 ##파일(File)##

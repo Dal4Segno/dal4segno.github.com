@@ -46,7 +46,7 @@ categories: digitalforensics
 
 조각화를 극복하고 파일을 카빙해내려는 다양한 시도가 있으나, 아직은 완벽한 방법이 없는 것으로 보인다.
 
-![Fragmented File]({{site.url}}/image/fragmentation.png "조각난 파일")
+![Fragmented File]({{site.url}}/image/fragmentaion.png "조각난 파일")
 ##도구##
 파일 카빙은 분석가가 직접 하나하나 하기엔 번거로운 작업이므로, 도와주는 도구가 여럿 있다.
 
@@ -60,4 +60,6 @@ categories: digitalforensics
 - [Forensic Wiki. File Carving](http://www.forensicswiki.org/wiki/File_Carving#File_Carving_challenges_and_test_images)
 
 ##발표 자료##
-[20150125 Security One 2nd, 파일 카빙을 통한 데이터 복구](https://onedrive.live.com/redir?resid=BF1489D51F814C5C!8241&authkey=!AOz4HcY8XlN_kmg&ithint=file%2cpptx)
+[20150125 Security One 2nd, 파일 카빙을 통한 데이터 복구](https://onedrive.live.com/redir?resid=BF1489D51F814C5C!8265&authkey=!AP1vDhsDXxIg5HE&ithint=file%2cpptx)
+
+발표 자료 대부분이 설명이 없는 그림입니다. 본 포스트와 함께 봐주세요. 

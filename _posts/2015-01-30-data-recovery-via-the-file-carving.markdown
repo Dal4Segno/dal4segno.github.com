@@ -1,8 +1,9 @@
 ---
 layout: post 
-title: 파일 카빙을 통한 데이터 복구
+title: "파일 카빙을 통한 데이터 복구"
 date: 2015-01-30 22:25:42
 tag: digitalforensics filecarving datarecovery
+categories: digitalforensics
 ---
 ##파일(File)##
 파일은 각종 컴퓨터 프로그램 등에서 사용하기 위한 데이터로서, 저장장치에 기록되어 사용된다. 종이 문서로 이루어진 '파일'과 같은 비슷한 역할이다.
@@ -27,5 +28,36 @@ tag: digitalforensics filecarving datarecovery
 파일의 구분 뿐만 아니라, 파일의 처리를 위해서 데이터를 여러 영역으로 구분하여 기록하는 경우도 있는데, 이런 경우에는 영역마다 시그니처가 붙어있는 경우도 있다.
 
 ![JPEG File Header]({{site.url}}/image/jpeg_header.png "JPEG 파일의 시그니처")
+##비할당 영역(Unallocated Area)
+특정 파일을 카빙해내기 위해서는 단순히 저장장치의 모든 영역에 대해서 해당 파일의 시그니처를 탐색해내면 된다. 그러면, 그 파일과 같은 형식의 파일을 전부 찾을 수 있고, 찾아낸 파일 중에서 원하는 파일을 찾으면 된다. 
+
+하지만, 저장장치의 전 영역을 살펴보는 것은 용량에 따라 매우 긴 시간이 필요한 작업이 될 수도 있고, 저렇게 찾아낸 파일은 **복구가 필요하지 않은**, 지워지지 않은 파일일 수도 있다. 따라서, 검색 대상을 **지워진** 파일로 한정할 필요가 있다.
+
+위에서, 파일이 파일 시스템으로 부터 공간을 할당받는다고 했는데, 이렇게 파일에게 할당되지 않은 공간을 **비할당 영역**이라 한다. 이 비할당 영역은 파일에 할당되지 않은 공간과, 파일이 삭제됨에 따라 할당이 해제된 영역을 포함한다. 파일 시스템은 저장장치의 할당 상태를 기록하고 있으므로, 파일 시스템이 손상되지 않았다면 쉽게 비할당 영역을 추려낼 수 있다.
+
+따라서, 비할당 영역을 대상으로 시그니처 탐색을 수행하면 조금 더 빠르게 원하는 파일을 찾아낼 수 있다.
+##조각화(Fragmentation)
+데이터가 덮어씌어져 복구가 불가능한 것 외에도, 파일 카빙 작업에 있어 큰 문제점이 있다. 파일이 생성되고 삭제되고 하는 과정을 반복하면 저장장치의 공간을 완벽하게 채워서 사용하지 못하고, 중간 중간에 크고 작은 빈 영역이 생기게 된다. 이러한 빈 영역들을 사용하다 보면, 파일의 데이터를 한 번에 다 기록하지 못하고 여러 영역에 나누어 기록하게 되는 경우가 있는데, 이를 **조각화(Fragmentation)**라 한다.
+
+메타 데이터를 이용할 경우에는, 파일이 어느 영역을, 얼마나 할당 받았는지에 대한 기록이 있기 때문에 파일이 조각나도 문제없이 사용할 수 있지만, 메타 데이터의 도움을 받지 않는 파일 카빙 과정에서는 여러 문제점이 발생하는데, 특히
+
+1. 파일 헤더부터 푸터까지 복구하는 경우, 중간에 다른 파일의 데이터가 포함되는지 알 수 없다.
+2. 파일 헤더를 분석하여 파일 크기만큼 복구하는 경우, 파일의 일부분이 복구되지 않는다.
+
+조각화를 극복하고 파일을 카빙해내려는 다양한 시도가 있으나, 아직은 완벽한 방법이 없는 것으로 보인다.
+
+![Fragmented File]({{site.url}}/image/fragmentation.png "조각난 파일")
+##도구##
+파일 카빙은 분석가가 직접 하나하나 하기엔 번거로운 작업이므로, 도와주는 도구가 여럿 있다.
+
+[Forensic Wiki, Tools:Data_Recovery#Carving](http://www.forensicswiki.org/wiki/Tools:Data_Recovery#Carving)
+##활용##
+실수로 삭제한 파일을 복구 해낼 때도 사용할 수 있겠지만, 파일 카빙 기법은 침해 사고 대응 및 디지털 포렌식 분야에서 빛을 발한다.
+
+현실의 범죄자들이 자신의 흔적을 지우려고, 남기지 않으려고 노력하듯이 해커, 악성코드, 바이러스등도 최대한 자신의 흔적을 남기지 않으려고 노력한다. 이 과정에서 자신들이 남긴 흔적(파일이나 각종 기록)들을 지우는 경우가 많은데, 이런 흔적들을 복구해내는 것이 큰 도움이 된다.
 ##참고 자료##
-[Wikipedia, English. Computer file](http://en.wikipedia.org/wiki/Computer_file)
+- [Wikipedia, English. Computer file](http://en.wikipedia.org/wiki/Computer_file)
+- [Forensic Wiki. File Carving](http://www.forensicswiki.org/wiki/File_Carving#File_Carving_challenges_and_test_images)
+
+##발표 자료##
+[20150125 Security One 2nd, 파일 카빙을 통한 데이터 복구](https://onedrive.live.com/redir?resid=BF1489D51F814C5C!8241&authkey=!AOz4HcY8XlN_kmg&ithint=file%2cpptx)

@@ -9,6 +9,6 @@ permalink: /about/
 - 학부내 정보보안동아리 KEEPER
 - Securityplus Union Academy
 - Securiy One 포럼 운영중
-- facebook : https://www.facebook.com/dongseob.lee.52
+- [Facebook](https://www.facebook.com/dongseob.lee.52)
 
 

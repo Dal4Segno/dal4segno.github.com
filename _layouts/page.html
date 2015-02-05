@@ -5,10 +5,6 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -18,6 +14,11 @@ layout: default
       ga('create', 'UA-45713206-2', 'auto');
       ga('send', 'pageview');
     </script>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+
   </article>
 
 </div>

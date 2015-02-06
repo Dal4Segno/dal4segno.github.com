@@ -14,3 +14,7 @@ comments:
   provider: disqus
   disqus:
     short_name: dal4segno
+
+assests:
+  sources:
+    - _assets/fonts

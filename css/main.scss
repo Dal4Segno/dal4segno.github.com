@@ -3,11 +3,16 @@
 ---
 @charset "utf-8";
 
-
+@font-face
+{
+  font-family: 'SeoulNamsanB';
+  src: url('../_assets/fonts/SeoulNamsanB.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Our variables
-$font-path: "../_assets/fonts";
-$base-font-family: "../_assets/fonts/SeoulNamsanB";
+$base-font-family: SeoulNamsanB;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;

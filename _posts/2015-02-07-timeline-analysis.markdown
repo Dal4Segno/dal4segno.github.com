@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "타임라인, 타임스탬프"
 date: 2015-02-07 22:42:58
 tag: digitalforensics timeline supertimeline timestamp log2timeline 

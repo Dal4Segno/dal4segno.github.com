@@ -2,7 +2,7 @@
 layout: default
 title: "타임라인, 타임스탬프"
 date: 2015-02-07 22:42:58
-tag: digitalforensics timeline log2timeline
+tag: digitalforensics timeline supertimeline timestamp log2timeline 
 ---
 
 Facebook 메인의 그것과 같이, 어떤 것을 시간 순서에 따라 나열한 것을 **타임라인(Timeline)**이라 한다. Facebook의 경우에는 친구들의 작성 글이 작성 시간 순서에 따라 나타나고, 흔히 볼 수 있는 연대기나, 연표도 일종의 타임라인이다.

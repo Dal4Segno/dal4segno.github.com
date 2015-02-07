@@ -8,13 +8,12 @@ dl, dd, ol, ul, figure {
     padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
 body {
-    font-family: $base-font-family;
+    font-family: "SeoulNamsanB";
+    src: url('../_assets/fonts/SeoulNamsanB.ttf') format('truetype');
     font-size: $base-font-size;
     line-height: $base-line-height;
     font-weight: 300;

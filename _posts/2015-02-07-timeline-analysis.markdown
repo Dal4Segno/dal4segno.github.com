@@ -22,6 +22,9 @@ Facebook 메인의 그것과 같이, 어떤 것을 시간 순서에 따라 나�
 해당 도구의 사용법은 
 **[SANS Digital Forensics and Incident Response Blog
  . Digital Forensic SIFTing: SUPER Timeline Creation using log2timeline](http://digital-forensics.sans.org/blog/2011/12/07/digital-forensic-sifting-super-timeline-analysis-and-creation#)** 에 튜토리얼과 함께 친절하게 설명되어 있으므로, 도구를 사용해보고 싶다면 천천히 따라해보는 것이 좋을 듯하다.
+> 해당 글 사이사이에 많은 참조 링크가 있으니, 막히는 부분에서 참조하도록 한다.
+> 또한, 이미지 파일의 다운로드 링크가 바뀌었으나 해당 사이트에서 쉽게 찾을 수 있다.
+
 
 ##한계점##
 log2timeline 등의 도구를 이용하면 타임라인은 쉽게 얻어낼 수 있다. 하지만, 각각의 행동을 조립하여 하나의 사건으로 묶어내는 것은 오롯이 조사자의 역량에 달려있다.

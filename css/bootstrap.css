@@ -4380,7 +4380,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 @media (max-width: 768px) {
-  .navbar-text {
+  .navbar-default {
     max-width: calc(768px - (30px);
     padding-right: 15px;
     padding-left: 15px;

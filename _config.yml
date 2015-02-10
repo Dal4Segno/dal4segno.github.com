@@ -19,5 +19,5 @@ assests:
   sources:
     - _assets/fonts
 
-paginate: 2
+paginate: 10
 paginate_path: "blog/page:num"

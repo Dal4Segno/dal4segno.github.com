@@ -41,13 +41,12 @@ $on-laptop:        800px;
     }
 }
 
-
+body { padding-top: 70px; }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
         "syntax-highlighting",
-        "font-seoulnamsan",
-        "/_include/mybootstrap.css"
+        "font-seoulnamsan"
 ;

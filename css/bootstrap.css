@@ -4228,9 +4228,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li > a {
+  clear: both;
   padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
+  padding-bottom: 5px;
 }
 
 @media (max-width: 767px) {

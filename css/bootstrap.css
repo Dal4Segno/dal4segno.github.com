@@ -4372,11 +4372,19 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default {
   background-color: #FEFEFE;
-  max-width: calc(800px - (30px * 2));
+  max-width: calc(768px - (30px * 2));
   margin-left: auto;
   margin-right: auto;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .navbar-text {
+    max-width: calc(768px - (30px);
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
 .navbar-default .navbar-brand {

@@ -55,7 +55,7 @@ Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대�
 ##Fragmentation / Reassembly##
 각 네트워크에는 **MTU, Maximum Transmission Unit**, 최대로 전송 가능한 용량이 정해져 있기 때문에 이 크기보다 큰 데이터를 보내기 위해서는 **MTU 단위로 나누어서(Fragmentation)** 전송해야 한다. 또한, 재조립을 위해서 Fragmentation 되었다는 사실과, 순서 정보를 포함해야 한다.
 
-#참조 문서, Reference#
+##참고 자료, Reference##
  - [pldworld.com. 인터네트워킹의 개념적 이해](http://www1.pldworld.com/@xilinx/html/link/network/inter.htm)
  - [텀즈. 인터네트워킹](http://www.terms.co.kr/internetworking.htm)
 

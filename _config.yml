@@ -21,10 +21,3 @@ assests:
 
 paginate: 3
 paginate_path: "blog/page:num"
-
-gems:
-  - jekyll-sitemap
-
-pages_list:
-  About: '/about.md'
-  Feed: '/feed.xml'

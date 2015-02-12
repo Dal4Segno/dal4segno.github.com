@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dal4Segno&#39;s Whatnot.</title>
+    <description>Computer, Digital Forensics, etc...
+</description>
+    <link>http://dal4segno.github.io/</link>
+    <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 13 Feb 2015 00:09:09 +0900</pubDate>
+    <lastBuildDate>Fri, 13 Feb 2015 00:09:09 +0900</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Internetworking, 인터네트워킹</title>
+        <description>&lt;p&gt;문자 그대로, 네트워크 간의 교류(통신)하는 개념 혹은 기술 전반을 이르는 단어이다. 여기서의 네트워크는 물리적으로 직접 연결되지 않은 네트워크와 심지어 구성이 다른 것들을 모두 포함한다. 마치 우리가 일반적으로 인터넷을 사용할 때 네트워크 구성 및 구조를 고려하지 않는 것처럼 말이다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;연결된 각 네트워크는 다른 구성일 수 있으므로 다양한 구성에 대응할 수 있는 &lt;strong&gt;Heterogeneity(이질성)&lt;/strong&gt;와&lt;/li&gt;
+&lt;li&gt;수 많은 네트워크에 대응할 수 있는 &lt;strong&gt;Scalability(확장성)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;가 매우 중요하다. &lt;/p&gt;
+
+&lt;p&gt;여러 네트워크가 서로 다른 통신 규약(&lt;strong&gt;Protocol, 프로토콜&lt;/strong&gt;)을 사용한다면, 통신이 불가능하기 때문에 표준을 정하여 모두가 같은 프로토콜을 사용함으로서 이질성을 확보하였다. 현재의 표준은 &lt;strong&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95&quot;&gt;OSI 참조 모델(OSI Reference Model)&lt;/a&gt;&lt;/strong&gt;이다. 본 포스트는 해당 모델에 대한 지식이 있다는 것을 전제로 작성된다.&lt;/p&gt;
+
+&lt;h2&gt;IP Service Model&lt;/h2&gt;
+
+&lt;p&gt;인터넷을 사용 중이라면, 많이 들어보았을 법 한 이름이다. &lt;strong&gt;IP(Internet Protocol)&lt;/strong&gt;는 OSI 참조 모델에서 3 계층, 네트워크 계층의 역할을 맡는다.&lt;/p&gt;
+
+&lt;p&gt;통신 시, 데이터는 송신자와 수신자 외에도 그 사이에 있는 많은 네트워크를 거치게 되는데, IP는 각종 세부 사항의 처리는 &lt;strong&gt;End Point(말단)&lt;/strong&gt;, 송신자와 수신자&lt;strong&gt;(상위 계층)&lt;/strong&gt;에게 맡기고, 최대한 단순한 구성을 통해 확장성을 높인 프로토콜이다. &lt;/p&gt;
+
+&lt;p&gt;데이터 전송은 의미 단위(파일 등)가 아닌 &lt;strong&gt;용량, 덩어리(Datagram, Packet)&lt;/strong&gt; 단위로 이루어진다.&lt;/p&gt;
+
+&lt;p&gt;또한, IP는 &lt;strong&gt;Best-Effort Delivery&lt;/strong&gt;의 특성을 갖는데, 이는 통신에 대해 보장하지 않는다는(Unreliable) 의미이다. 즉, 손실, 순서 바뀜, 중복, 지연 등의 문제가 발생 가능하며, 이는  IP에서 해결하지 않는다.&lt;/p&gt;
+
+&lt;h3&gt;IP Address&lt;/h3&gt;
+
+&lt;p&gt;v4 기준으로 32bit의 주소를 사용한다. 네트워크의 크기에 따라 &lt;a href=&quot;http://ko.wikipedia.org/wiki/IPv4&quot;&gt;Class를 나누어 Hierachical한 구조를 형성한다&lt;/a&gt;. 하위 네트워크들은 모두 상위 네트워크 주소가 같기 때문에, 여러 호스트들을 네트워크 단위로 관리할 수 있는 장점이 있다.&lt;/p&gt;
+
+&lt;p&gt;특수 목적용으로 일반적인 호스트에 할당할 수 없는 주소도 있다.&lt;/p&gt;
+
+&lt;h3&gt;ARP, Address Resolution Protocol&lt;/h3&gt;
+
+&lt;p&gt;통신 시, IP 주소를 사용한다고 해도 직접적인 통신은 하위 계층인 물리 계층을 통해 이루어지므로, IP 주소를 MAC 주소로 변환하는 과정이 필요하다.&lt;/p&gt;
+
+&lt;p&gt;이 과정은 수신자의 IP에 대한(혹은 상위 네트워크) MAC 주소를 알고 있는 호스트를 &lt;strong&gt;Broadcasting(브로드캐스팅)&lt;/strong&gt; 을 통해서 찾는다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;브로드캐스팅이란, 같은 네트워크에 있는 모든 호스트에게 데이터를 전송하는 것이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ARP를 통해 알아낸 MAC 주소는 별도로 저장하여 사용한다. &lt;/p&gt;
+
+&lt;h4&gt;Vulnerability, 취약점&lt;/h4&gt;
+
+&lt;p&gt;ARP 과정에는 별도의 인증 과정이 없기 때문에, 요청과 응답(Request, Response)이 모두 위조될 수 있다. 이와 관련된 공격 기법은 &lt;strong&gt;ARP Spoofing, Poisoning&lt;/strong&gt;이라 하며, 이 후 별도의 포스트에서 다뤄보도록 한다.&lt;/p&gt;
+
+&lt;p&gt;또한, &lt;a href=&quot;&quot;&gt;&lt;strong&gt;Stateless(무상태)&lt;/strong&gt;&lt;/a&gt; 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.&lt;/p&gt;
+
+&lt;h2&gt;Fowarding / Routing&lt;/h2&gt;
+
+&lt;p&gt;위에서도 언급했듯이, 매 송신마다 ARP를 통해 MAC 주소를 알아내는 것이 아니라, 한 번 알아낸 주소는 별도의 Table에 저장하여 사용한다. 이 때,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Table을 만드는 작업을 &lt;strong&gt;Routing(라우팅)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Table을 이용하여 데이터를 적절하게 송신하는 것을 &lt;strong&gt;Fowarding(포워딩)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이라 한다. &lt;/p&gt;
+
+&lt;h3&gt;Fowarding Algorithm&lt;/h3&gt;
+
+&lt;p&gt;Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대상의 주소들과 Masking 한 후, &lt;strong&gt;앞 부분이 가장 길게 일치하는(Longest Prefix Matched)&lt;/strong&gt; 대상으로 전송한다.&lt;/p&gt;
+
+&lt;h2&gt;Fragmentation / Reassembly&lt;/h2&gt;
+
+&lt;p&gt;각 네트워크에는 &lt;strong&gt;MTU, Maximum Transmission Unit&lt;/strong&gt;, 최대로 전송 가능한 용량이 정해져 있기 때문에 이 크기보다 큰 데이터를 보내기 위해서는 &lt;strong&gt;MTU 단위로 나누어서(Fragmentation)&lt;/strong&gt; 전송해야 한다. 또한, 재조립을 위해서 Fragmentation 되었다는 사실과, 순서 정보를 포함해야 한다.&lt;/p&gt;
+
+&lt;h2&gt;참고 자료, Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www1.pldworld.com/@xilinx/html/link/network/inter.htm&quot;&gt;pldworld.com. 인터네트워킹의 개념적 이해&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.terms.co.kr/internetworking.htm&quot;&gt;텀즈. 인터네트워킹&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 12 Feb 2015 09:26:44 +0900</pubDate>
+        <link>http://dal4segno.github.io/network/2015/02/12/internetworking.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/02/12/internetworking.html</guid>
+        
+        <category>network internetworking ip arp fowarding routing</category>
+        
+        
+        <category>network</category>
+        
+      </item>
+    
+      <item>
+        <title>타임라인, 타임스탬프</title>
+        <description>&lt;p&gt;Facebook 메인의 그것과 같이, 어떤 것을 시간 순서에 따라 나열한 것을 &lt;strong&gt;타임라인(Timeline)&lt;/strong&gt;이라 한다. Facebook의 경우에는 친구들의 작성 글이 작성 시간 순서에 따라 나타나고, 흔히 볼 수 있는 연대기나, 연표도 일종의 타임라인이다.&lt;/p&gt;
+
+&lt;p&gt;타임라인은 디지털 포렌식 분야에서도 많이 사용되는 단어인데, 그 뜻은 크게 다르지 않다. 특정 환경, 보통 사건이 일어난 환경에 남아 있는 기록들을 시간 순에 따라 정리한 것을 의미한다. &lt;/p&gt;
+
+&lt;h2&gt;타임 스탬프, Timestamp&lt;/h2&gt;
+
+&lt;p&gt;기록을 시간 순으로 정리하기 위해서는 당연히, 기록 외에도 추가적인 시간 정보가 필요하다. 대부분의 시스템은 다양한 이유로 행동/작업 등에 시간 기록을 추가로 남겨두는데 이를 &lt;strong&gt;타임 스탬프(Timestamp)&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;p&gt;각 운영체제와 파일 시스템마다, 시간 정보를 기록해두는 요소가 다르므로 분석할 환경에서 어떤 시간 정보가 남는지 숙지하고 있으면 좋을 듯하다.&lt;/p&gt;
+
+&lt;h2&gt;Super Timeline&lt;/h2&gt;
+
+&lt;p&gt;타임라인 중에서도, 전체 시스템을 대상으로 구축된 타임라인을 &lt;strong&gt;수퍼 타임라인(Super Timeline)&lt;/strong&gt;이라 한다.&lt;/p&gt;
+
+&lt;p&gt;타임 스탬프를 하나하나 조사하여 타임라인을 구축하는 것이 불가능하지는 않겠지만, 각 환경에 따라 조사 대상이 다르고, 매우 많은 양의 정보를 수집 및 분석해야 하기 때문에 오랜 시간이 걸리는 작업이 될 것이다. 그렇기 때문에 수퍼 타임라인을 구축해주는 도구들이 몇 있는데, 그 중 대표적인 것이 &lt;strong&gt;log2timeline&lt;/strong&gt;이란 도구이다.&lt;/p&gt;
+
+&lt;p&gt;해당 도구의 사용법은 
+&lt;strong&gt;&lt;a href=&quot;http://digital-forensics.sans.org/blog/2011/12/07/digital-forensic-sifting-super-timeline-analysis-and-creation#&quot;&gt;SANS Digital Forensics and Incident Response Blog
+ . Digital Forensic SIFTing: SUPER Timeline Creation using log2timeline&lt;/a&gt;&lt;/strong&gt; 에 튜토리얼과 함께 친절하게 설명되어 있으므로, 도구를 사용해보고 싶다면 천천히 따라해보는 것이 좋을 듯하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;해당 글 사이사이에 많은 참조 링크가 있으니, 막히는 부분에서 참조하도록 한다.
+또한, 이미지 파일의 다운로드 링크가 바뀌었으나 해당 사이트에서 쉽게 찾을 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;한계점&lt;/h2&gt;
+
+&lt;p&gt;log2timeline 등의 도구를 이용하면 타임라인은 쉽게 얻어낼 수 있다. 하지만, 각각의 행동을 조립하여 하나의 사건으로 묶어내는 것은 오롯이 조사자의 역량에 달려있다.
+또한, 타임 스탬프는 조작이 어렵지 않기 때문에, 생성된 타임라인이 온전하지 않을 수 있다.&lt;/p&gt;
+
+&lt;h2&gt;참고 자료, Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Timestamp&quot;&gt;Wikipedia, English. TimeStamp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/3779&quot;&gt;Forensic-Proof. 타임라인 분석&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/2323&quot;&gt;Forensic-Proof. 타임라인 통합 분석&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.champlain.edu/Documents/LCDI/archive/SuperTimelineReport.pdf&quot;&gt;The Senator Patrick Leahy Center for Digital Investigation
+Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 08 Feb 2015 07:42:58 +0900</pubDate>
+        <link>http://dal4segno.github.io/digitalforensics/2015/02/08/timeline-analysis.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/02/08/timeline-analysis.html</guid>
+        
+        <category>digitalforensics timeline supertimeline timestamp log2timeline</category>
+        
+        
+        <category>digitalforensics</category>
+        
+      </item>
+    
+      <item>
+        <title>파일 카빙을 통한 데이터 복구</title>
+        <description>&lt;h2&gt;파일(File)&lt;/h2&gt;
+
+&lt;p&gt;파일은 각종 컴퓨터 프로그램 등에서 사용하기 위한 데이터로서, 저장장치에 기록되어 사용된다. 종이 문서로 이루어진 &amp;#39;파일&amp;#39;과 같은 비슷한 역할이다.&lt;/p&gt;
+
+&lt;h2&gt;파일 시스템(File System)&lt;/h2&gt;
+
+&lt;p&gt;파일이 저장장치에 기록되어 있어도, 저장장치의 어느 위치에 저장되어 있는지 모른다면 해당 파일을 사용할 수 없을 것이다. 이런 일을 막기 위하여 각 저장장치에는 저장장치 내의 모든 파일들을 관리하는 &lt;strong&gt;파일 시스템&lt;/strong&gt;이라는 것을 둔다.&lt;/p&gt;
+
+&lt;p&gt;파일 시스템은 각 파일들이 어디에 저장되어 있는지 기록하여, 운영체제나 여러 프로그램들이 저장장치에 기록되어 있는 파일들을 원활하게 사용할 수 있게 한다. 또한, 생성/수정/접근 시간 등의 다양한 정보를 기록한다. 이렇게 파일을 위한 정보들은 &lt;strong&gt;메타 데이터(Meta Data)&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;h2&gt;할당(Allocation)&lt;/h2&gt;
+
+&lt;p&gt;파일 시스템이 각 파일이 어디에 저장되어 있는지 기록한다고 했는데, 이는 정확하게 말하면 파일 시스템이 해당 파일에게 저장 장치의 일정 영역을 &lt;strong&gt;할당&lt;/strong&gt;하는 것이다. 이렇게 파일에게 할당된 영역은, 다른 파일들이 사용할 수 없다.&lt;/p&gt;
+
+&lt;h2&gt;파일 삭제&lt;/h2&gt;
+
+&lt;p&gt;파일을 삭제한다고 하면 파일의 데이터를 모두 제거한다고 생각하지만, 대부분의 파일 시스템에서는 그렇지 않다. 보통 파일에 할당된 영역을 할당 해제하여 다른 파일들이 사용할 수 있는 상태로 만들고, 해당 파일의 메타 데이터를 사용하지 않는 것으로 파일을 삭제한다.&lt;/p&gt;
+
+&lt;p&gt;모든 데이터를 삭제하지 않는 이유는 컴퓨터 내의 여러 장치에서 저장장치가 가장 느리기 때문에, 저장장치의 사용을 최대한 줄여야 컴퓨터의 전반적인 처리 속도를 높일 수 있다.&lt;/p&gt;
+
+&lt;h2&gt;파일 복구(Recover)&lt;/h2&gt;
+
+&lt;p&gt;위에서 설명한 대로 파일이 삭제되어도 데이터와 메타 데이터는 남아있기 때문에, 데이터가 다른 파일로 덮여쓰여지지 않았다면, 메타 데이터에 기록되어 있는 할당 영역을 살펴보면 어렵지 않게 파일을 복구해낼 수 있다.&lt;/p&gt;
+
+&lt;h2&gt;파일 카빙(Carving)&lt;/h2&gt;
+
+&lt;p&gt;하지만 메타 데이터 또한 다른 메타 데이터에 의해 덮여씌어질 수 있고, 모종의 이유로 손상/변조될 수 있다. 이런 경우에는 메타 데이터의 도움을 받지 못하기 때문에 분석가가 직접 저장장치에서 원하는 파일을 찾아내야 한다.&lt;/p&gt;
+
+&lt;h2&gt;파일 구조&lt;/h2&gt;
+
+&lt;h3&gt;시그니처(Signiture)&lt;/h3&gt;
+
+&lt;p&gt;여러 프로그램 등에서, 파일을 쉽게 구분하기 위해서 대부분의 파일은 데이터의 여러 위치에 &lt;strong&gt;시그니처&lt;/strong&gt;를 새겨 놓는다. 일반적으로 데이터의 가장 앞에 있는 시그니처를 &lt;strong&gt;헤더(Header)&lt;/strong&gt;, 마지막에 있는 시그니처를 &lt;strong&gt;푸터(Footer) 혹은 트레일러(Trailer) 시그니처&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;p&gt;파일의 구분 뿐만 아니라, 파일의 처리를 위해서 데이터를 여러 영역으로 구분하여 기록하는 경우도 있는데, 이런 경우에는 영역마다 시그니처가 붙어있는 경우도 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/jpeg_header.png&quot; alt=&quot;JPEG File Header&quot; title=&quot;JPEG 파일의 시그니처&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;비할당 영역(Unallocated Area)&lt;/h2&gt;
+
+&lt;p&gt;특정 파일을 카빙해내기 위해서는 단순히 저장장치의 모든 영역에 대해서 해당 파일의 시그니처를 탐색해내면 된다. 그러면, 그 파일과 같은 형식의 파일을 전부 찾을 수 있고, 찾아낸 파일 중에서 원하는 파일을 찾으면 된다. &lt;/p&gt;
+
+&lt;p&gt;하지만, 저장장치의 전 영역을 살펴보는 것은 용량에 따라 매우 긴 시간이 필요한 작업이 될 수도 있고, 저렇게 찾아낸 파일은 &lt;strong&gt;복구가 필요하지 않은&lt;/strong&gt;, 지워지지 않은 파일일 수도 있다. 따라서, 검색 대상을 &lt;strong&gt;지워진&lt;/strong&gt; 파일로 한정할 필요가 있다.&lt;/p&gt;
+
+&lt;p&gt;위에서, 파일이 파일 시스템으로 부터 공간을 할당받는다고 했는데, 이렇게 파일에게 할당되지 않은 공간을 &lt;strong&gt;비할당 영역&lt;/strong&gt;이라 한다. 이 비할당 영역은 파일에 할당되지 않은 공간과, 파일이 삭제됨에 따라 할당이 해제된 영역을 포함한다. 파일 시스템은 저장장치의 할당 상태를 기록하고 있으므로, 파일 시스템이 손상되지 않았다면 쉽게 비할당 영역을 추려낼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;따라서, 비할당 영역을 대상으로 시그니처 탐색을 수행하면 조금 더 빠르게 원하는 파일을 찾아낼 수 있다.&lt;/p&gt;
+
+&lt;h2&gt;조각화(Fragmentation)&lt;/h2&gt;
+
+&lt;p&gt;데이터가 덮어씌어져 복구가 불가능한 것 외에도, 파일 카빙 작업에 있어 큰 문제점이 있다. 파일이 생성되고 삭제되고 하는 과정을 반복하면 저장장치의 공간을 완벽하게 채워서 사용하지 못하고, 중간 중간에 크고 작은 빈 영역이 생기게 된다. 이러한 빈 영역들을 사용하다 보면, 파일의 데이터를 한 번에 다 기록하지 못하고 여러 영역에 나누어 기록하게 되는 경우가 있는데, 이를 &lt;strong&gt;조각화(Fragmentation)&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;p&gt;메타 데이터를 이용할 경우에는, 파일이 어느 영역을, 얼마나 할당 받았는지에 대한 기록이 있기 때문에 파일이 조각나도 문제없이 사용할 수 있지만, 메타 데이터의 도움을 받지 않는 파일 카빙 과정에서는 여러 문제점이 발생하는데, 특히&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;파일 헤더부터 푸터까지 복구하는 경우, 중간에 다른 파일의 데이터가 포함되는지 알 수 없다.&lt;/li&gt;
+&lt;li&gt;파일 헤더를 분석하여 파일 크기만큼 복구하는 경우, 파일의 일부분이 복구되지 않는다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;조각화를 극복하고 파일을 카빙해내려는 다양한 시도가 있으나, 아직은 완벽한 방법이 없는 것으로 보인다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/fragmentaion.png&quot; alt=&quot;Fragmented File&quot; title=&quot;조각난 파일&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;도구&lt;/h2&gt;
+
+&lt;p&gt;파일 카빙은 분석가가 직접 하나하나 하기엔 번거로운 작업이므로, 도와주는 도구가 여럿 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.forensicswiki.org/wiki/Tools:Data_Recovery#Carving&quot;&gt;Forensic Wiki, Tools:Data_Recovery#Carving&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;활용&lt;/h2&gt;
+
+&lt;p&gt;실수로 삭제한 파일을 복구 해낼 때도 사용할 수 있겠지만, 파일 카빙 기법은 침해 사고 대응 및 디지털 포렌식 분야에서 빛을 발한다.&lt;/p&gt;
+
+&lt;p&gt;현실의 범죄자들이 자신의 흔적을 지우려고, 남기지 않으려고 노력하듯이 해커, 악성코드, 바이러스등도 최대한 자신의 흔적을 남기지 않으려고 노력한다. 이 과정에서 자신들이 남긴 흔적(파일이나 각종 기록)들을 지우는 경우가 많은데, 이런 흔적들을 복구해내는 것이 큰 도움이 된다.&lt;/p&gt;
+
+&lt;h2&gt;참고 자료&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Computer_file&quot;&gt;Wikipedia, English. Computer file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.forensicswiki.org/wiki/File_Carving#File_Carving_challenges_and_test_images&quot;&gt;Forensic Wiki. File Carving&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;발표 자료&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://onedrive.live.com/redir?resid=BF1489D51F814C5C!8265&amp;amp;authkey=!AP1vDhsDXxIg5HE&amp;amp;ithint=file%2cpptx&quot;&gt;20150125 Security One 2nd, 파일 카빙을 통한 데이터 복구&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;발표 자료 대부분이 설명이 없는 그림입니다. 본 포스트와 함께 봐주세요. &lt;/p&gt;
+</description>
+        <pubDate>Sat, 31 Jan 2015 07:25:42 +0900</pubDate>
+        <link>http://dal4segno.github.io/digitalforensics/2015/01/31/data-recovery-via-the-file-carving.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/01/31/data-recovery-via-the-file-carving.html</guid>
+        
+        <category>digitalforensics filecarving datarecovery</category>
+        
+        
+        <category>digitalforensics</category>
+        
+      </item>
+    
+      <item>
+        <title>What is Digital Forensics?</title>
+        <description>&lt;p&gt;기존에는 Digital Device 내의 증거를 토대로 범죄의 사실관계를 규명하는 작업을 일컬었지만, 현재는 범죄 수사 외에도 여러 분야에서 보편적으로 쓰이는 용어가 됨에 따라 Digital Device 내의 자료를 증거로서 이용하여 특정행위의 사실관계를 규명하는 것으로 정의할 수 있을 듯 하다.&lt;/p&gt;
+
+&lt;h3&gt;증거, Evidence&lt;/h3&gt;
+
+&lt;p&gt;사실관계를 확실하게 하기 위해 사용되는 자료&lt;/p&gt;
+
+&lt;h2&gt;Application&lt;/h2&gt;
+
+&lt;p&gt;침해 사고 대응시 피해와 공격자 등을 밝혀낼 때 사용될 수 있으며, 기업의 감사 및 회계 시 무결성을 입증하는 데에도 사용될 수 있다. 최근에는 디지털 데이터의 저작권과 관련된 작업 및 전자 증거 개시 제도(E-Discovery)에도 사용되고 있다.&lt;/p&gt;
+
+&lt;h2&gt;Reference Documents&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%A6%9D%EA%B1%B0&quot;&gt;Wikipedia, Korean. 증거&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%94%94%EC%8A%A4%EC%BB%A4%EB%B2%84%EB%A6%AC_%28%EB%B2%95%29&quot;&gt;Wikipedia, Korean. 디스커버리 (법)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Digital_forensics&quot;&gt;Wikipedia, English. Digital Forensics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forensicswiki.org/wiki/Computer_forensics&quot;&gt;Forensics Wiki. Computer Forensics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/4466&quot;&gt;Forensic-Proof. 전자증거개시제도의 준비&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/3357&quot;&gt;Forensic-Proof. 디지털포렌식 용어와 절차&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/6350&quot;&gt;Forensic-Proof. 포렌식이 먼가요?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 18 Jan 2015 06:35:27 +0900</pubDate>
+        <link>http://dal4segno.github.io/digitalforensics/2015/01/18/what-is-digital-forensics.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/01/18/what-is-digital-forensics.html</guid>
+        
+        <category>digitalforensics evidence</category>
+        
+        
+        <category>digitalforensics</category>
+        
+      </item>
+    
+  </channel>
+</rss>

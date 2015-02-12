@@ -14,11 +14,6 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          {% for page in site.pages %}
-            {% if page.title %}
-              <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-            {% endif %}
-          {% endfor %}
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -27,6 +22,11 @@
               {% endfor %}
             </ul>
           </li>
+          {% for page in site.pages %}
+            {% if page.title %}
+              <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+            {% endif %}
+          {% endfor %}
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>

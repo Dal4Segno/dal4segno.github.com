@@ -18,7 +18,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
             <ul class="dropdown-menu">
               {% for category in site.categories %}
-                <li><a href="{{ category[0] | prepend: site.baseurl | replace: '//', '/' }}">{{ category[0] }}</a></li>
+                <li><a href="/{{ category[0] | replace: '//', '/' }}">{{ category[0] }}</a></li>
               {% endfor %}
             </ul>
           </li>

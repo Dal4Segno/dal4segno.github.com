@@ -1,47 +1,34 @@
-require 'date'
-require 'active_support'
-require 'jekyll'
+require 'rubygems'
+    require 'rake'
+    require 'rdoc'
+    require 'date'
+    require 'yaml'
+    require 'tmpdir'
+    require 'jekyll'
 
-desc "Given a category and title as an argument, create a new post file"
-task :post do
+    desc "Generate blog files"
+    task :generate do
+      Jekyll::Site.new(Jekyll.configuration({
+        "source"      => ".",
+        "destination" => "_site"
+      })).process
+    end
 
-  print 'Enter the category (blog, recipes, travel, or tech): '
-  category = $stdin.gets.chomp.strip
-  
-  today = DateTime::now().strftime('%Y-%m-%d')
 
-  print 'Enter the post title: '
-  title = $stdin.gets.chomp.strip
+    desc "Generate and publish blog to gh-pages"
+    task :publish => [:generate] do
+      Dir.mktmpdir do |tmp|
+        system "mv _site/* #{tmp}"
+        system "git checkout -B gh-pages"
+        system "rm -rf *"
+        system "mv #{tmp}/* ."
+        message = "Site updated at #{Time.now.utc}"
+        system "git add ."
+        system "git commit -am #{message.shellescape}"
+        system "git push origin gh-pages --force"
+        system "git checkout master"
+        system "echo yolo"
+      end
+    end
 
-  slug = title.downcase
-  slug = slug.gsub(/[^-\w\s]/, '')
-  slug = slug.gsub(/^\s+|\s+$/, '')
-  slug = slug.gsub(/[-\s]+/, '-')
-
-  filename = "#{today}-#{slug}.md"
-  path = File.join("#{category}/_posts", filename)
-  if File.exist? path; raise RuntimeError.new("Won't clobber #{path}"); end
-  File.open(path, 'w') do |file|
-    file.write <<-EOS
----
-layout: post
-title: #{title}
-tags: 
-- tag
-description: Enter description here
----
-Content goes here
-EOS
-  end
-end
-
-task :commit do
-
-  print 'Enter git commit message: '
-  message = $stdin.gets.chomp.strip
-
-  sh 'git add . -A'
-  sh "git commit --all --message \"#{message}\""
-  sh 'git push origin master'
-
-end
+task :default => :publish

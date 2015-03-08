@@ -11,9 +11,13 @@
 
   <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/jquery-ui.min.css">
   <link rel="canonical" href="http://dal4segno.github.io/network/2015/02/12/internetworking.html">
   <link rel="alternate" type="application/rss+xml" title="Dal4Segno's Whatnot." href="http://dal4segno.github.io/feed.xml" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="/css/jquery.tocify.css" />
+  <script type="text/javascript" src="/js/jquery.tocify.min.js "></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-ui.min.js "></script>
   <script type="text/javascript" src="/js/bootstrap.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -80,8 +84,9 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="post">
+        <div id="toc" class="tocify" ></div>
 
+<div class="post">
   <header class="jumbotron">
     <h1>Internetworking, 인터네트워킹</h1>
     <div class="lead">
@@ -134,7 +139,7 @@
 
 <p>ARP 과정에는 별도의 인증 과정이 없기 때문에, 요청과 응답(Request, Response)이 모두 위조될 수 있다. 이와 관련된 공격 기법은 <strong>ARP Spoofing, Poisoning</strong>이라 하며, 이 후 별도의 포스트에서 다뤄보도록 한다.</p>
 
-<p>또한, <a href=""><strong>Stateless(무상태)</strong></a> 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.</p>
+<p>또한, <a href="http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%83%81%ED%83%9C_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C"><strong>Stateless(무상태)</strong></a> 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.</p>
 
 <h2>Fowarding / Routing</h2>
 
@@ -179,7 +184,8 @@
       })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
+  <script type="text/javascript">
+  </script>
 </div>
 
       </div>

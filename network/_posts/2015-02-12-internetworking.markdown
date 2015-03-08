@@ -40,7 +40,7 @@ ARP를 통해 알아낸 MAC 주소는 별도로 저장하여 사용한다.
 ####Vulnerability, 취약점####
 ARP 과정에는 별도의 인증 과정이 없기 때문에, 요청과 응답(Request, Response)이 모두 위조될 수 있다. 이와 관련된 공격 기법은 **ARP Spoofing, Poisoning**이라 하며, 이 후 별도의 포스트에서 다뤄보도록 한다.
 
-또한, [**Stateless(무상태)**]() 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.
+또한, [**Stateless(무상태)**](http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%83%81%ED%83%9C_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C) 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.
 
 ##Fowarding / Routing##
 위에서도 언급했듯이, 매 송신마다 ARP를 통해 MAC 주소를 알아내는 것이 아니라, 한 번 알아낸 주소는 별도의 Table에 저장하여 사용한다. 이 때,

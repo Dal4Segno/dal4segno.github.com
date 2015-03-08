@@ -32,7 +32,7 @@ DHCP 작업은 **UDP(User Datagram Protocol)**을 이용한다. 이는 추후에
 
 Class 기반의 주소 할당으로도 계층 구조를 나타낼 수 있지만, Class를 나타내는 데에 필요한 주소 길이가 고정적인 특성으로 인해 유연한 주소 할당이 불가하며 낭비되는 주소가 많다는 문제점이 있다. 이를 해결하기 위해 도입된 방법이 CIDR이다.
 
-![Subnetwork]({{site.url}}/image/subnetworking.png "Subnetwork 주소 구조")
+![Subnetwork]({{site.url}}/image/subnetting.png "Subnetwork 주소 구조")
 
 상위 네트워크의 Network ID를 사용하여, 하위 네트워크임을 명시하고 뒤에 **Subnet ID**를 이용하여 내부 네트워크들을 구분한다. Class가 아닌, 주소의 접두(Prefix), Network ID와 Subnet ID의 연속을 통해 계층을 나타내는 것이 가능하다. 해당 접두 부분의 길이를 Masking으로 나타내는 것을 **Subnet Mask**라 한다.
 

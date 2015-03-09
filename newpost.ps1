@@ -7,5 +7,5 @@ echo layout:' 'post >> $filename
 echo title: >> $filename
 echo date: $date' '$time >> $filename
 echo tag: >> $filename
-echo categories: 
+echo categories: >> $filename
 echo --- >> $filename

@@ -6,13 +6,84 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 08 Mar 2015 13:57:09 +0900</pubDate>
-    <lastBuildDate>Sun, 08 Mar 2015 13:57:09 +0900</lastBuildDate>
+    <pubDate>Mon, 09 Mar 2015 11:31:14 +0900</pubDate>
+    <lastBuildDate>Mon, 09 Mar 2015 11:31:14 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>NAT</title>
+        <description>&lt;h2 id=&quot;private-ip&quot;&gt;Private IP&lt;/h2&gt;
+
+&lt;p&gt;CIDR을 도입하여 IP 주소의 낭비를 줄여도 32 bit 공간의 한계를 극복할 수는 없었기 때문에, 사설 네트워크를 위한 IP 대역을 따로 규정하여 사용한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Class A : 10.0.0.0/8&lt;/li&gt;
+&lt;li&gt;Class B : 172.16.0.0/12&lt;/li&gt;
+&lt;li&gt;Class C : 192.168.0.0/16&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이렇게 사설 IP를 사용하면, 내부 네트워크 내에서는 사설 IP를 통해 통신이 가능하다. 하지만 사설 IP로는 외부 네트워크와 통신할 수 없기 때문에 이를 공인 IP로 변환하는 작업이 필요하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;사설 IP를 Class C부터 A까지 따라올라가도 결국 사설 네트워크이기 때문에 외부와 통신이 불가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;nat(network-address-translation)&quot;&gt;NAT(Network Address Translation)&lt;/h2&gt;
+
+&lt;p&gt;내부 네트워크에서 나가는 패킷의 출발지에 공인 IP를 부여하고, 외부 네트워크에서 들어오는 패킷의 도착지에 사설 IP를 부여함으로서 적은 공인 IP를 사용하여 통신이 가능하며, 이러한 방법을 &lt;strong&gt;NAT&lt;/strong&gt;라 한다. NAT에는 몇 가지 종류가 있는데, 이는 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Static NAT : 사설 IP와 공인 IP의 1:1 Mapping을 유지한다.&lt;/li&gt;
+&lt;li&gt;Dynamic NAT : 사용 가능한 공인 IP 중에 하나를 사설 IP에 동적으로 할당한다. 외부에서는 사설 네트워크에 어떤 공인 IP가 할당되어있는 지 알 수 없으므로 접근할 수 없다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PAT(Port Address Translation)&lt;/strong&gt; : 일반적으로 사용되는 방식이며, 여러 사설 IP를 하나의 공인 IP로 변환한다. 이 때, 각 사설 IP들은 Port 번호로 구분된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pat&quot;&gt;PAT&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Port는 전송 계층에서 사용되는 가상의 논리적 통신 연결단으로, 보통 클라이언트가 특정 서버 프로그램을 지정하는 방법으로 사용된다. 길이는 16 bit이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;인터넷이 호스트들은 외부 요청에 대한 응답 시, 요청 시와 동일한 Port 번호로 응답하기 때문에, 외부에서 사설 네트워크로 들어오는 패킷들도 구별이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/pat.png&quot; alt=&quot;PAT&quot; title=&quot;PAT 과정&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;라우터에서 목적지로 패킷을 보낼 때 출발지 IP와 Port 번호가 바뀌는 것을 볼 수 있는데, 이는 NAT 변환 테이블에 의해 변환된 것이다. 만약 테이블에 해당 IP와 Port번호에 대한 정보가 없다면 이 과정에서 추가된다.&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;사설 IP : Port&lt;/th&gt;
+&lt;th&gt;공인 IP : Port&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;192.168.0.1:1000&lt;/td&gt;
+&lt;td&gt;111.222.111.222:4000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h2 id=&quot;참고자료,-reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/TCP_%EB%B0%8F_UDP_%ED%8F%AC%ED%8A%B8&quot;&gt;Wikipedia, Korean. TCP 및 UDP 포트&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Port_(computer_networking)&quot;&gt;Wikipedia, English. Port(Computer Networking)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.terms.co.kr/port.htm&quot;&gt;텀즈. port&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 09 Mar 2015 19:15:53 +0900</pubDate>
+        <link>http://dal4segno.github.io/network/2015/03/09/nat.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/03/09/nat.html</guid>
+        
+        <category>privateip nat pat</category>
+        
+        
+        <category>network</category>
+        
+      </item>
+    
+      <item>
         <title>IP Configuration</title>
-        <description>&lt;h2&gt;IP Address Allocation&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;ip-address-allocation&quot;&gt;IP Address Allocation&lt;/h2&gt;
 
 &lt;p&gt;어느 프로토콜이나, 통신 대상을 특정하기 위해서는 &lt;strong&gt;Address(주소)&lt;/strong&gt;등의 정보를 지정, 할당하는 작업이 필요하다. &lt;/p&gt;
 
@@ -22,13 +93,13 @@
 &lt;p&gt;기본 게이트웨이는 두 말단이 직접 통신이 불가능 한 경우 우선적으로 패킷을 전송하는 대상이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3&gt;DHCP&lt;/h3&gt;
+&lt;h3 id=&quot;dhcp&quot;&gt;DHCP&lt;/h3&gt;
 
 &lt;p&gt;IP를 사용하는 네트워크에서 사용되며, IP 주소, 기본 게이트웨이, DNS 서버등을 중앙에서 관리하고 설정하기 위한 프로토콜이다. 설정을 요청하는 Client와 해당 요청에 응답하는 DHCP Server가 있는 Client-Server 모델을 이용한다.&lt;/p&gt;
 
 &lt;p&gt;DHCP에서 IP 주소는 &lt;strong&gt;Lease(임대)&lt;/strong&gt;되는 것 이기때문에, 정책에 따라 부여받은 IP 주소가 회수되거나 재할당되는 경우가 있을 수 있다.&lt;/p&gt;
 
-&lt;h4&gt;DORA Operation&lt;/h4&gt;
+&lt;h4 id=&quot;dora-operation&quot;&gt;DORA Operation&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/dhcp_dora.png&quot; alt=&quot;DHCP DORA Operation&quot; title=&quot;DHCP의 과정(DORA)&quot;&gt;&lt;/p&gt;
 
@@ -41,7 +112,7 @@
 &lt;li&gt;&lt;strong&gt;Acknowledge&lt;/strong&gt; - 임대 절차가 완료된 IP의 주소, 기간 등의 정보를 전송한다.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2&gt;CIDR(Classless Inter-Domain Routing)&lt;/h2&gt;
+&lt;h2 id=&quot;cidr(classless-inter-domain-routing)&quot;&gt;CIDR(Classless Inter-Domain Routing)&lt;/h2&gt;
 
 &lt;p&gt;네트워크가 다른 네트워크의 집합으로 구성되어 있을 경우, 내부 네트워크(Subnetwork) 간의 통신을 위해 각 내부 네트워크에도 주소가 할당되어야 할 필요가 있다.&lt;strong&gt;(Subnetting)&lt;/strong&gt;&lt;/p&gt;
 
@@ -53,15 +124,15 @@
 
 &lt;p&gt;111.222.333.444/24 의 경우 Subnet Mask의 길이가 24 Bit임을 명시한 것이다.&lt;/p&gt;
 
-&lt;h3&gt;Supernetting&lt;/h3&gt;
+&lt;h3 id=&quot;supernetting&quot;&gt;Supernetting&lt;/h3&gt;
 
 &lt;p&gt;여러 Subnetwork의 접두 부분의 공통 부분을 취해서 각 Subnetwork들이 같은 Network ID를 갖는 것처럼 표현하여, 라우팅 테이블을 간소화하는 방법이다.&lt;/p&gt;
 
-&lt;h2&gt;Gateway&lt;/h2&gt;
+&lt;h2 id=&quot;gateway&quot;&gt;Gateway&lt;/h2&gt;
 
 &lt;p&gt;두 말단이 직접 연결되어 있지 않은 경우, 패킷의 직접 전송이 불가능하기 때문에 다른 지점들을 거쳐서 전송해야 하는데, 이 때 게이트웨이로 패킷을 전송하게 된다. 일반적으로 외부와 연결되어 있는 지점이 기본 게이트웨이가 된다.&lt;/p&gt;
 
-&lt;h2&gt;DNS(Domain Name Service)&lt;/h2&gt;
+&lt;h2 id=&quot;dns(domain-name-service)&quot;&gt;DNS(Domain Name Service)&lt;/h2&gt;
 
 &lt;p&gt;컴퓨터들은 IP 주소를 통해 서로를 구별하고 통신하지만, 이 주소를 사람이 외워서 사용하기는 힘들기 때문에 사람이 기억하고 사용하기 쉬운 문자열로 만든 &lt;strong&gt;도메인 이름(Domain Name)&lt;/strong&gt;을 이용한다.&lt;/p&gt;
 
@@ -79,7 +150,7 @@
 
 &lt;p&gt;의 순서로 해당 도메인의 IP 주소를 찾아간다. &lt;/p&gt;
 
-&lt;h2&gt;참고자료, Reference&lt;/h2&gt;
+&lt;h2 id=&quot;참고자료,-reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/169289/ko&quot;&gt;Microsoft Support. DHCP 기본 사항&lt;/a&gt;&lt;/li&gt;
@@ -118,7 +189,7 @@
 
 &lt;p&gt;여러 네트워크가 서로 다른 통신 규약(&lt;strong&gt;Protocol, 프로토콜&lt;/strong&gt;)을 사용한다면, 통신이 불가능하기 때문에 표준을 정하여 모두가 같은 프로토콜을 사용함으로서 이질성을 확보하였다. 현재의 표준은 &lt;strong&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95&quot;&gt;OSI 참조 모델(OSI Reference Model)&lt;/a&gt;&lt;/strong&gt;이다. 본 포스트는 해당 모델에 대한 지식이 있다는 것을 전제로 작성된다.&lt;/p&gt;
 
-&lt;h2&gt;IP Service Model&lt;/h2&gt;
+&lt;h2 id=&quot;ip-service-model&quot;&gt;IP Service Model&lt;/h2&gt;
 
 &lt;p&gt;인터넷을 사용 중이라면, 많이 들어보았을 법 한 이름이다. &lt;strong&gt;IP(Internet Protocol)&lt;/strong&gt;는 OSI 참조 모델에서 3 계층, 네트워크 계층의 역할을 맡는다.&lt;/p&gt;
 
@@ -128,13 +199,13 @@
 
 &lt;p&gt;또한, IP는 &lt;strong&gt;Best-Effort Delivery&lt;/strong&gt;의 특성을 갖는데, 이는 통신에 대해 보장하지 않는다는(Unreliable) 의미이다. 즉, 손실, 순서 바뀜, 중복, 지연 등의 문제가 발생 가능하며, 이는  IP에서 해결하지 않는다.&lt;/p&gt;
 
-&lt;h3&gt;IP Address&lt;/h3&gt;
+&lt;h3 id=&quot;ip-address&quot;&gt;IP Address&lt;/h3&gt;
 
 &lt;p&gt;v4 기준으로 32bit의 주소를 사용한다. 네트워크의 크기에 따라 &lt;a href=&quot;http://ko.wikipedia.org/wiki/IPv4&quot;&gt;Class를 나누어 Hierachical한 구조를 형성한다&lt;/a&gt;. 하위 네트워크들은 모두 상위 네트워크 주소가 같기 때문에, 여러 호스트들을 네트워크 단위로 관리할 수 있는 장점이 있다.&lt;/p&gt;
 
 &lt;p&gt;특수 목적용으로 일반적인 호스트에 할당할 수 없는 주소도 있다.&lt;/p&gt;
 
-&lt;h3&gt;ARP, Address Resolution Protocol&lt;/h3&gt;
+&lt;h3 id=&quot;arp,-address-resolution-protocol&quot;&gt;ARP, Address Resolution Protocol&lt;/h3&gt;
 
 &lt;p&gt;통신 시, IP 주소를 사용한다고 해도 직접적인 통신은 하위 계층인 물리 계층을 통해 이루어지므로, IP 주소를 MAC 주소로 변환하는 과정이 필요하다.&lt;/p&gt;
 
@@ -146,13 +217,13 @@
 
 &lt;p&gt;ARP를 통해 알아낸 MAC 주소는 별도로 저장하여 사용한다. &lt;/p&gt;
 
-&lt;h4&gt;Vulnerability, 취약점&lt;/h4&gt;
+&lt;h4 id=&quot;vulnerability,-취약점&quot;&gt;Vulnerability, 취약점&lt;/h4&gt;
 
 &lt;p&gt;ARP 과정에는 별도의 인증 과정이 없기 때문에, 요청과 응답(Request, Response)이 모두 위조될 수 있다. 이와 관련된 공격 기법은 &lt;strong&gt;ARP Spoofing, Poisoning&lt;/strong&gt;이라 하며, 이 후 별도의 포스트에서 다뤄보도록 한다.&lt;/p&gt;
 
 &lt;p&gt;또한, &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%83%81%ED%83%9C_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;&lt;strong&gt;Stateless(무상태)&lt;/strong&gt;&lt;/a&gt; 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.&lt;/p&gt;
 
-&lt;h2&gt;Fowarding / Routing&lt;/h2&gt;
+&lt;h2 id=&quot;fowarding-/-routing&quot;&gt;Fowarding / Routing&lt;/h2&gt;
 
 &lt;p&gt;위에서도 언급했듯이, 매 송신마다 ARP를 통해 MAC 주소를 알아내는 것이 아니라, 한 번 알아낸 주소는 별도의 Table에 저장하여 사용한다. 이 때,&lt;/p&gt;
 
@@ -163,15 +234,15 @@
 
 &lt;p&gt;이라 한다. &lt;/p&gt;
 
-&lt;h3&gt;Fowarding Algorithm&lt;/h3&gt;
+&lt;h3 id=&quot;fowarding-algorithm&quot;&gt;Fowarding Algorithm&lt;/h3&gt;
 
 &lt;p&gt;Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대상의 주소들과 Masking 한 후, &lt;strong&gt;앞 부분이 가장 길게 일치하는(Longest Prefix Matched)&lt;/strong&gt; 대상으로 전송한다.&lt;/p&gt;
 
-&lt;h2&gt;Fragmentation / Reassembly&lt;/h2&gt;
+&lt;h2 id=&quot;fragmentation-/-reassembly&quot;&gt;Fragmentation / Reassembly&lt;/h2&gt;
 
 &lt;p&gt;각 네트워크에는 &lt;strong&gt;MTU, Maximum Transmission Unit&lt;/strong&gt;, 최대로 전송 가능한 용량이 정해져 있기 때문에 이 크기보다 큰 데이터를 보내기 위해서는 &lt;strong&gt;MTU 단위로 나누어서(Fragmentation)&lt;/strong&gt; 전송해야 한다. 또한, 재조립을 위해서 Fragmentation 되었다는 사실과, 순서 정보를 포함해야 한다.&lt;/p&gt;
 
-&lt;h2&gt;참고 자료, Reference&lt;/h2&gt;
+&lt;h2 id=&quot;참고-자료,-reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://www1.pldworld.com/@xilinx/html/link/network/inter.htm&quot;&gt;pldworld.com. 인터네트워킹의 개념적 이해&lt;/a&gt;&lt;/li&gt;
@@ -199,13 +270,13 @@
 
 &lt;p&gt;타임라인은 디지털 포렌식 분야에서도 많이 사용되는 단어인데, 그 뜻은 크게 다르지 않다. 특정 환경, 보통 사건이 일어난 환경에 남아 있는 기록들을 시간 순에 따라 정리한 것을 의미한다. &lt;/p&gt;
 
-&lt;h2&gt;타임 스탬프, Timestamp&lt;/h2&gt;
+&lt;h2 id=&quot;타임-스탬프,-timestamp&quot;&gt;타임 스탬프, Timestamp&lt;/h2&gt;
 
 &lt;p&gt;기록을 시간 순으로 정리하기 위해서는 당연히, 기록 외에도 추가적인 시간 정보가 필요하다. 대부분의 시스템은 다양한 이유로 행동/작업 등에 시간 기록을 추가로 남겨두는데 이를 &lt;strong&gt;타임 스탬프(Timestamp)&lt;/strong&gt;라 한다.&lt;/p&gt;
 
 &lt;p&gt;각 운영체제와 파일 시스템마다, 시간 정보를 기록해두는 요소가 다르므로 분석할 환경에서 어떤 시간 정보가 남는지 숙지하고 있으면 좋을 듯하다.&lt;/p&gt;
 
-&lt;h2&gt;Super Timeline&lt;/h2&gt;
+&lt;h2 id=&quot;super-timeline&quot;&gt;Super Timeline&lt;/h2&gt;
 
 &lt;p&gt;타임라인 중에서도, 전체 시스템을 대상으로 구축된 타임라인을 &lt;strong&gt;수퍼 타임라인(Super Timeline)&lt;/strong&gt;이라 한다.&lt;/p&gt;
 
@@ -220,12 +291,12 @@
 또한, 이미지 파일의 다운로드 링크가 바뀌었으나 해당 사이트에서 쉽게 찾을 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2&gt;한계점&lt;/h2&gt;
+&lt;h2 id=&quot;한계점&quot;&gt;한계점&lt;/h2&gt;
 
 &lt;p&gt;log2timeline 등의 도구를 이용하면 타임라인은 쉽게 얻어낼 수 있다. 하지만, 각각의 행동을 조립하여 하나의 사건으로 묶어내는 것은 오롯이 조사자의 역량에 달려있다.
 또한, 타임 스탬프는 조작이 어렵지 않기 때문에, 생성된 타임라인이 온전하지 않을 수 있다.&lt;/p&gt;
 
-&lt;h2&gt;참고 자료, Reference&lt;/h2&gt;
+&lt;h2 id=&quot;참고-자료,-reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Timestamp&quot;&gt;Wikipedia, English. TimeStamp&lt;/a&gt;&lt;/li&gt;
@@ -248,37 +319,37 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
     
       <item>
         <title>파일 카빙을 통한 데이터 복구</title>
-        <description>&lt;h2&gt;파일(File)&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;파일(file)&quot;&gt;파일(File)&lt;/h2&gt;
 
 &lt;p&gt;파일은 각종 컴퓨터 프로그램 등에서 사용하기 위한 데이터로서, 저장장치에 기록되어 사용된다. 종이 문서로 이루어진 &amp;#39;파일&amp;#39;과 같은 비슷한 역할이다.&lt;/p&gt;
 
-&lt;h2&gt;파일 시스템(File System)&lt;/h2&gt;
+&lt;h2 id=&quot;파일-시스템(file-system)&quot;&gt;파일 시스템(File System)&lt;/h2&gt;
 
 &lt;p&gt;파일이 저장장치에 기록되어 있어도, 저장장치의 어느 위치에 저장되어 있는지 모른다면 해당 파일을 사용할 수 없을 것이다. 이런 일을 막기 위하여 각 저장장치에는 저장장치 내의 모든 파일들을 관리하는 &lt;strong&gt;파일 시스템&lt;/strong&gt;이라는 것을 둔다.&lt;/p&gt;
 
 &lt;p&gt;파일 시스템은 각 파일들이 어디에 저장되어 있는지 기록하여, 운영체제나 여러 프로그램들이 저장장치에 기록되어 있는 파일들을 원활하게 사용할 수 있게 한다. 또한, 생성/수정/접근 시간 등의 다양한 정보를 기록한다. 이렇게 파일을 위한 정보들은 &lt;strong&gt;메타 데이터(Meta Data)&lt;/strong&gt;라 한다.&lt;/p&gt;
 
-&lt;h2&gt;할당(Allocation)&lt;/h2&gt;
+&lt;h2 id=&quot;할당(allocation)&quot;&gt;할당(Allocation)&lt;/h2&gt;
 
 &lt;p&gt;파일 시스템이 각 파일이 어디에 저장되어 있는지 기록한다고 했는데, 이는 정확하게 말하면 파일 시스템이 해당 파일에게 저장 장치의 일정 영역을 &lt;strong&gt;할당&lt;/strong&gt;하는 것이다. 이렇게 파일에게 할당된 영역은, 다른 파일들이 사용할 수 없다.&lt;/p&gt;
 
-&lt;h2&gt;파일 삭제&lt;/h2&gt;
+&lt;h2 id=&quot;파일-삭제&quot;&gt;파일 삭제&lt;/h2&gt;
 
 &lt;p&gt;파일을 삭제한다고 하면 파일의 데이터를 모두 제거한다고 생각하지만, 대부분의 파일 시스템에서는 그렇지 않다. 보통 파일에 할당된 영역을 할당 해제하여 다른 파일들이 사용할 수 있는 상태로 만들고, 해당 파일의 메타 데이터를 사용하지 않는 것으로 파일을 삭제한다.&lt;/p&gt;
 
 &lt;p&gt;모든 데이터를 삭제하지 않는 이유는 컴퓨터 내의 여러 장치에서 저장장치가 가장 느리기 때문에, 저장장치의 사용을 최대한 줄여야 컴퓨터의 전반적인 처리 속도를 높일 수 있다.&lt;/p&gt;
 
-&lt;h2&gt;파일 복구(Recover)&lt;/h2&gt;
+&lt;h2 id=&quot;파일-복구(recover)&quot;&gt;파일 복구(Recover)&lt;/h2&gt;
 
 &lt;p&gt;위에서 설명한 대로 파일이 삭제되어도 데이터와 메타 데이터는 남아있기 때문에, 데이터가 다른 파일로 덮여쓰여지지 않았다면, 메타 데이터에 기록되어 있는 할당 영역을 살펴보면 어렵지 않게 파일을 복구해낼 수 있다.&lt;/p&gt;
 
-&lt;h2&gt;파일 카빙(Carving)&lt;/h2&gt;
+&lt;h2 id=&quot;파일-카빙(carving)&quot;&gt;파일 카빙(Carving)&lt;/h2&gt;
 
 &lt;p&gt;하지만 메타 데이터 또한 다른 메타 데이터에 의해 덮여씌어질 수 있고, 모종의 이유로 손상/변조될 수 있다. 이런 경우에는 메타 데이터의 도움을 받지 못하기 때문에 분석가가 직접 저장장치에서 원하는 파일을 찾아내야 한다.&lt;/p&gt;
 
-&lt;h2&gt;파일 구조&lt;/h2&gt;
+&lt;h2 id=&quot;파일-구조&quot;&gt;파일 구조&lt;/h2&gt;
 
-&lt;h3&gt;시그니처(Signiture)&lt;/h3&gt;
+&lt;h3 id=&quot;시그니처(signiture)&quot;&gt;시그니처(Signiture)&lt;/h3&gt;
 
 &lt;p&gt;여러 프로그램 등에서, 파일을 쉽게 구분하기 위해서 대부분의 파일은 데이터의 여러 위치에 &lt;strong&gt;시그니처&lt;/strong&gt;를 새겨 놓는다. 일반적으로 데이터의 가장 앞에 있는 시그니처를 &lt;strong&gt;헤더(Header)&lt;/strong&gt;, 마지막에 있는 시그니처를 &lt;strong&gt;푸터(Footer) 혹은 트레일러(Trailer) 시그니처&lt;/strong&gt;라 한다.&lt;/p&gt;
 
@@ -286,7 +357,7 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/jpeg_header.png&quot; alt=&quot;JPEG File Header&quot; title=&quot;JPEG 파일의 시그니처&quot;&gt;&lt;/p&gt;
 
-&lt;h2&gt;비할당 영역(Unallocated Area)&lt;/h2&gt;
+&lt;h2 id=&quot;비할당-영역(unallocated-area)&quot;&gt;비할당 영역(Unallocated Area)&lt;/h2&gt;
 
 &lt;p&gt;특정 파일을 카빙해내기 위해서는 단순히 저장장치의 모든 영역에 대해서 해당 파일의 시그니처를 탐색해내면 된다. 그러면, 그 파일과 같은 형식의 파일을 전부 찾을 수 있고, 찾아낸 파일 중에서 원하는 파일을 찾으면 된다. &lt;/p&gt;
 
@@ -296,7 +367,7 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;따라서, 비할당 영역을 대상으로 시그니처 탐색을 수행하면 조금 더 빠르게 원하는 파일을 찾아낼 수 있다.&lt;/p&gt;
 
-&lt;h2&gt;조각화(Fragmentation)&lt;/h2&gt;
+&lt;h2 id=&quot;조각화(fragmentation)&quot;&gt;조각화(Fragmentation)&lt;/h2&gt;
 
 &lt;p&gt;데이터가 덮어씌어져 복구가 불가능한 것 외에도, 파일 카빙 작업에 있어 큰 문제점이 있다. 파일이 생성되고 삭제되고 하는 과정을 반복하면 저장장치의 공간을 완벽하게 채워서 사용하지 못하고, 중간 중간에 크고 작은 빈 영역이 생기게 된다. 이러한 빈 영역들을 사용하다 보면, 파일의 데이터를 한 번에 다 기록하지 못하고 여러 영역에 나누어 기록하게 되는 경우가 있는데, 이를 &lt;strong&gt;조각화(Fragmentation)&lt;/strong&gt;라 한다.&lt;/p&gt;
 
@@ -311,26 +382,26 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/fragmentaion.png&quot; alt=&quot;Fragmented File&quot; title=&quot;조각난 파일&quot;&gt;&lt;/p&gt;
 
-&lt;h2&gt;도구&lt;/h2&gt;
+&lt;h2 id=&quot;도구&quot;&gt;도구&lt;/h2&gt;
 
 &lt;p&gt;파일 카빙은 분석가가 직접 하나하나 하기엔 번거로운 작업이므로, 도와주는 도구가 여럿 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.forensicswiki.org/wiki/Tools:Data_Recovery#Carving&quot;&gt;Forensic Wiki, Tools:Data_Recovery#Carving&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2&gt;활용&lt;/h2&gt;
+&lt;h2 id=&quot;활용&quot;&gt;활용&lt;/h2&gt;
 
 &lt;p&gt;실수로 삭제한 파일을 복구 해낼 때도 사용할 수 있겠지만, 파일 카빙 기법은 침해 사고 대응 및 디지털 포렌식 분야에서 빛을 발한다.&lt;/p&gt;
 
 &lt;p&gt;현실의 범죄자들이 자신의 흔적을 지우려고, 남기지 않으려고 노력하듯이 해커, 악성코드, 바이러스등도 최대한 자신의 흔적을 남기지 않으려고 노력한다. 이 과정에서 자신들이 남긴 흔적(파일이나 각종 기록)들을 지우는 경우가 많은데, 이런 흔적들을 복구해내는 것이 큰 도움이 된다.&lt;/p&gt;
 
-&lt;h2&gt;참고 자료&lt;/h2&gt;
+&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Computer_file&quot;&gt;Wikipedia, English. Computer file&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.forensicswiki.org/wiki/File_Carving#File_Carving_challenges_and_test_images&quot;&gt;Forensic Wiki. File Carving&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;발표 자료&lt;/h2&gt;
+&lt;h2 id=&quot;발표-자료&quot;&gt;발표 자료&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://onedrive.live.com/redir?resid=BF1489D51F814C5C!8265&amp;amp;authkey=!AP1vDhsDXxIg5HE&amp;amp;ithint=file%2cpptx&quot;&gt;20150125 Security One 2nd, 파일 카빙을 통한 데이터 복구&lt;/a&gt;&lt;/p&gt;
 
@@ -351,15 +422,15 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
         <title>What is Digital Forensics?</title>
         <description>&lt;p&gt;기존에는 Digital Device 내의 증거를 토대로 범죄의 사실관계를 규명하는 작업을 일컬었지만, 현재는 범죄 수사 외에도 여러 분야에서 보편적으로 쓰이는 용어가 됨에 따라 Digital Device 내의 자료를 증거로서 이용하여 특정행위의 사실관계를 규명하는 것으로 정의할 수 있을 듯 하다.&lt;/p&gt;
 
-&lt;h3&gt;증거, Evidence&lt;/h3&gt;
+&lt;h3 id=&quot;증거,-evidence&quot;&gt;증거, Evidence&lt;/h3&gt;
 
 &lt;p&gt;사실관계를 확실하게 하기 위해 사용되는 자료&lt;/p&gt;
 
-&lt;h2&gt;Application&lt;/h2&gt;
+&lt;h2 id=&quot;application&quot;&gt;Application&lt;/h2&gt;
 
 &lt;p&gt;침해 사고 대응시 피해와 공격자 등을 밝혀낼 때 사용될 수 있으며, 기업의 감사 및 회계 시 무결성을 입증하는 데에도 사용될 수 있다. 최근에는 디지털 데이터의 저작권과 관련된 작업 및 전자 증거 개시 제도(E-Discovery)에도 사용되고 있다.&lt;/p&gt;
 
-&lt;h2&gt;Reference Documents&lt;/h2&gt;
+&lt;h2 id=&quot;reference-documents&quot;&gt;Reference Documents&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%A6%9D%EA%B1%B0&quot;&gt;Wikipedia, Korean. 증거&lt;/a&gt;&lt;/li&gt;

@@ -10,6 +10,9 @@ facebook: dal4segno@gmail.com
 
 # Build settings
 markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+  
 comments:
   provider: disqus
   disqus:

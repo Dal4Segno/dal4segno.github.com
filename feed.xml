@@ -6,8 +6,8 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Mar 2015 11:31:14 +0900</pubDate>
-    <lastBuildDate>Mon, 09 Mar 2015 11:31:14 +0900</lastBuildDate>
+    <pubDate>Mon, 09 Mar 2015 11:35:21 +0900</pubDate>
+    <lastBuildDate>Mon, 09 Mar 2015 11:35:21 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -69,6 +69,10 @@
 &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Port_(computer_networking)&quot;&gt;Wikipedia, English. Port(Computer Networking)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.terms.co.kr/port.htm&quot;&gt;텀즈. port&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
         <pubDate>Mon, 09 Mar 2015 19:15:53 +0900</pubDate>
         <link>http://dal4segno.github.io/network/2015/03/09/nat.html</link>

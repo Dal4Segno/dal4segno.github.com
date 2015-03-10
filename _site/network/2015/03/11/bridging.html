@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bridging</title>
+  <meta name="description" content="BridgeData Link Layer에서 작동하며 2개 이상의 LAN을 Interconnect하고 해당 LAN들의 패킷을 포워딩한다. 각 LAN에는 영향을 끼치지 않으며 Self-Configuration이 가능하여 별도의 설정 없이 사용가능 하다.">
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/jquery-ui.min.css">
+  <link rel="canonical" href="http://dal4segno.github.io/network/2015/03/11/bridging.html">
+  <link rel="alternate" type="application/rss+xml" title="Dal4Segno's Whatnot." href="http://dal4segno.github.io/feed.xml" />
+  <link rel="stylesheet" href="/css/jquery.tocify.css" />
+  <script type="text/javascript" src="/js/jquery.tocify.min.js "></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-ui.min.js "></script>
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45713206-2', 'auto');
+  ga('send', 'pageview');
+  
+</script>
+</head>
+
+
+  <body>
+
+    <header>
+  <div class="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Dal4Segno's Whatnot.</a>
+      </div>
+     
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              
+                <li><a href="/digitalforensics">digitalforensics</a></li>
+              
+                <li><a href="/network">network</a></li>
+              
+                <li><a href="/conference">conference</a></li>
+              
+            </ul>
+          </li>
+          
+            
+              <li><a href="/about/">About</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div id="toc" class="tocify" ></div>
+
+<div class="post">
+  <header class="jumbotron">
+    <h1>Bridging</h1>
+    <div class="lead">
+      <p class="post-tag">network bridge bridging</p>
+      <p class="post-meta">Mar 11, 2015</p>
+    </div>
+  </header>
+
+  <article class="post-content">
+    <h2 id="bridge">Bridge</h2>
+
+<p><strong>Data Link Layer</strong>에서 작동하며 2개 이상의 LAN을 Interconnect하고 해당 LAN들의 패킷을 포워딩한다. 각 LAN에는 영향을 끼치지 않으며 Self-Configuration이 가능하여 별도의 설정 없이 사용가능 하다.</p>
+
+<h3 id="routing">Routing</h3>
+
+<p>패킷을 보낼 목적지가 2개 이상의 호스트를 거쳐야(Multiple <strong>Hop</strong>) 할 경우 경로를 설정하는 방법은 다음과 같다.</p>
+
+<ul>
+<li>Fixed Routing : 항상 지정된(고정된) 경로를 사용한다..</li>
+<li>Source Routing : 보내는 측에서 경로를 지정한다.</li>
+<li><strong>Spanning Tree Routing</strong> : 현재 네트워크의 구성을 그래프로 표현했을때, Spanning Tree가 되도록 설정한다.</li>
+</ul>
+
+<h3 id="fowarding">Fowarding</h3>
+
+<p>브릿지는 포워딩 시, 목적지 호스트의 위치를 알고 있다면 브릿지의 특정 포트로 패킷을 포워딩하면 되지만, 알지 못한다면 브릿지와 연결된 모든 호스트 및 브릿지에게 패킷을 <strong>Flooding</strong> 한다. Flooding된 패킷을 받은 호스트는, 목적지가 자신이라면 응답을, 아니라면 무시한다. </p>
+
+<p>브릿지는 받는 패킷으로 부터 각 호스트의 주소를 저장한다. 즉, 자신을 통해 패킷을 보내지 않는 호스트의 위치는 알 수 없다.</p>
+
+<p>Flooding된 패킷을 다른 브릿지가 받고, 그 브릿지 또한 목적지의 위치를 알지 못한다면 다시 Flooding이 일어나게 되고, 이 패킷은 결국 처음의 브릿지로 가게 될 뿐만 아니라, 두 브릿지 사이를 계속 순환하게 되어 지속적인 네트워크 트래픽을 발생시키는데 이를 <strong>Broadcast Storm(브로드캐스트 스톰)</strong>이라 한다.</p>
+
+<h3 id="stp(spanning-tree-protocol)">STP(Spanning Tree Protocol)</h3>
+
+<p>브로드캐스트 스톰과 같은 낭비를 막기 위해서는 네트워크 구성을 그래프로 표현했을 때(노드 = 브릿지), 모든 노드가 그래프에 연결되어 있고, 한 노드에서 다른 한 노드로 가는 경로를 단 1개로 제한하는 <strong>Spanning Tree</strong> 구조를 취함으로서 해결할 수 있다. 또한 경로가 1개로 고정되므로 여러 브릿지로 부터 접근가능한 호스트가 있을 시, 포워딩 테이블에서 Fault(실패)가 발생하는 것을 없앨 수 있다.</p>
+
+<blockquote>
+<p>Spanning Tree와 같은 자료구조는 본 포스트에서 다루지 않습니다. <a href="http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C">참고 자료 1</a>, <a href="http://ko.wikipedia.org/wiki/%EC%83%9D%EC%84%B1%EB%82%98%EB%AC%B4">참고 자료 2</a></p>
+</blockquote>
+
+<h4 id="elect-a-root-bridge">Elect a Root Bridge</h4>
+
+<p>Spanning Tree에서 기준점(Root Node)를 맡을 브릿지를 선출한다. 이 때 각 브릿지에 있는 <strong>브릿지 ID(브릿지 우선순위와 MAC 주소의 연속)</strong>에서 브릿지 우선순위가 가장 작은 브릿지가 루트 브릿지가 된다. 우선순위가 같다면 MAC 주소를 기준으로 한다.</p>
+
+<blockquote>
+<p>우선순위는 기본적으로 32768(0x8000)이며 수정이 가능하다.</p>
+</blockquote>
+
+<h4 id="compute-a-spanning-tree">Compute a Spanning Tree</h4>
+
+<p>각 브릿지는 루트 브릿지로 부터의 최소 경로를 계산하며, 해당 경로에서 사용된 포트를 <strong>Root Port(루트 포트)</strong>라 한다.</p>
+
+<p>브릿지가 아닌 호스트들도 루트 브릿지까지의 최소 경로를 갖는 브릿지를 결정한다. 해당 호스트와 연결된 브릿지의 포트를 <strong>Designated Port(지명 포트)</strong>라 한다.</p>
+
+<p>최소 경로가 2개 이상 있을 시에는 브릿지 ID가 낮은 브릿지를 선택한다.</p>
+
+<p>이렇게 모든 계산이 끝난 후에, 루트 포트와 지명 포트가 아닌 모든 포트를 닫는다.</p>
+
+<h3 id="bpdus(bridge-protocol-units)">BPDUs(Bridge Protocol Units)</h3>
+
+<p>STP를 통해 Spanning Tree를 구성하기 위해서는 전체 네트워크 망에 대한 정보를 가지고 있어야 하기 때문에 각 브릿지들이 충분한 정보를 가질 수 있도록 각 브릿지들은 BPDU라 불리는 데이터를 통해 정보를 교환한다. BPDU에는 다음과 같은 종류가 있다.</p>
+
+<ul>
+<li>Configuratino BPDU(CBPDU) : Spanning Tree 계산 시 사용</li>
+<li>Topology Change Notification(TCN) BPDU : <strong>망 구성(토폴로지)</strong> 변경을 알리기 위해 사용</li>
+<li>Topology Change Notification Acknowledgement(TCA) : TCN BPDU에 대한 응답</li>
+</ul>
+
+<p>BPDU는 정기적으로 교환되어 토폴로지 변화 감지와 포워딩을 제어한다.</p>
+
+<h2 id="참고-자료,-reference">참고 자료, Reference</h2>
+
+<ul>
+<li><a href="http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C">Wikipedia, Korean. 신장 트리 프로토콜</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Spanning_Tree_Protocol">Wikipedai, English. Spanning Tree Protocol</a></li>
+</ul>
+
+<blockquote>
+<p>영문 위키피디아에 STP 과정이 그림과 함께 설명되어 있습니다. 참고하시면 좋을 듯 하네요 :)</p>
+
+<p>본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.</p>
+</blockquote>
+
+  </article>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'dal4segno'; // required: replace example with your forum shortname
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <script type="text/javascript">
+  </script>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Dal4Segno's Whatnot.</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>Dal4Segno's Whatnot.</li>
+          <li><a href="mailto:dal4segno@gmail.com">dal4segno@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/dal4segno">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">dal4segno</span>
+            </a>
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">Computer, Digital Forensics, etc...
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

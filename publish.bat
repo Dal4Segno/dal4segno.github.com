@@ -1,3 +1,4 @@
+git add *
 git commit -am "Publish"
 git branch -D master
 git checkout -b master 

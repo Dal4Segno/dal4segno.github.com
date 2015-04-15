@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>타임라인, 타임스탬프</title>
-  <meta name="description" content="Facebook 메인의 그것과 같이, 어떤 것을 시간 순서에 따라 나열한 것을 타임라인(Timeline)이라 한다. Facebook의 경우에는 친구들의 작성 글이 작성 시간 순서에 따라 나타나고, 흔히 볼 수 있는 연대기나, 연표도 일종의 타임라인이다.">
+  <title>Wireless Network Security</title>
+  <meta name="description" content="본 포스트에서 언급되는 암호학적 지식은 별도의 포스트에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.">
 
   <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/jquery-ui.min.css">
-  <link rel="canonical" href="http://dal4segno.github.io/digitalforensics/2015/02/08/timeline-analysis.html">
+  <link rel="canonical" href="http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html">
   <link rel="alternate" type="application/rss+xml" title="Dal4Segno's Whatnot." href="http://dal4segno.github.io/feed.xml" />
 
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -97,49 +97,28 @@
 <div class="post">
 
   <div class="page-header">
-    <h1>타임라인, 타임스탬프</h1>
-    <h5><strong><font color="#FF4000">digitalforensics timeline supertimeline timestamp log2timeline</font></strong></h4>
-    <h4><font color="#BBBBBB">Feb 8, 2015</font></h3>
+    <h1>Wireless Network Security</h1>
+    <h5><strong><font color="#FF4000">wireless network wi-fi wifi wep wpa wpa2</font></strong></h4>
+    <h4><font color="#BBBBBB">Apr 15, 2015</font></h3>
   </div>  
   <article class="post-content">
-    <p>Facebook 메인의 그것과 같이, 어떤 것을 시간 순서에 따라 나열한 것을 <strong>타임라인(Timeline)</strong>이라 한다. Facebook의 경우에는 친구들의 작성 글이 작성 시간 순서에 따라 나타나고, 흔히 볼 수 있는 연대기나, 연표도 일종의 타임라인이다.</p>
-
-<p>타임라인은 디지털 포렌식 분야에서도 많이 사용되는 단어인데, 그 뜻은 크게 다르지 않다. 특정 환경, 보통 사건이 일어난 환경에 남아 있는 기록들을 시간 순에 따라 정리한 것을 의미한다. </p>
-
-<h2 id="타임-스탬프,-timestamp">타임 스탬프, Timestamp</h2>
-
-<p>기록을 시간 순으로 정리하기 위해서는 당연히, 기록 외에도 추가적인 시간 정보가 필요하다. 대부분의 시스템은 다양한 이유로 행동/작업 등에 시간 기록을 추가로 남겨두는데 이를 <strong>타임 스탬프(Timestamp)</strong>라 한다.</p>
-
-<p>각 운영체제와 파일 시스템마다, 시간 정보를 기록해두는 요소가 다르므로 분석할 환경에서 어떤 시간 정보가 남는지 숙지하고 있으면 좋을 듯하다.</p>
-
-<h2 id="super-timeline">Super Timeline</h2>
-
-<p>타임라인 중에서도, 전체 시스템을 대상으로 구축된 타임라인을 <strong>수퍼 타임라인(Super Timeline)</strong>이라 한다.</p>
-
-<p>타임 스탬프를 하나하나 조사하여 타임라인을 구축하는 것이 불가능하지는 않겠지만, 각 환경에 따라 조사 대상이 다르고, 매우 많은 양의 정보를 수집 및 분석해야 하기 때문에 오랜 시간이 걸리는 작업이 될 것이다. 그렇기 때문에 수퍼 타임라인을 구축해주는 도구들이 몇 있는데, 그 중 대표적인 것이 <strong>log2timeline</strong>이란 도구이다.</p>
-
-<p>해당 도구의 사용법은 
-<strong><a href="http://digital-forensics.sans.org/blog/2011/12/07/digital-forensic-sifting-super-timeline-analysis-and-creation#">SANS Digital Forensics and Incident Response Blog
- . Digital Forensic SIFTing: SUPER Timeline Creation using log2timeline</a></strong> 에 튜토리얼과 함께 친절하게 설명되어 있으므로, 도구를 사용해보고 싶다면 천천히 따라해보는 것이 좋을 듯하다.</p>
-
-<blockquote>
-<p>해당 글 사이사이에 많은 참조 링크가 있으니, 막히는 부분에서 참조하도록 한다.
-또한, 이미지 파일의 다운로드 링크가 바뀌었으나 해당 사이트에서 쉽게 찾을 수 있다.</p>
+    <blockquote>
+<p>본 포스트에서 언급되는 암호학적 지식은 별도의 <strong><a href="">포스트</a></strong>에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.</p>
 </blockquote>
 
-<h2 id="한계점">한계점</h2>
+<h2 id="wep">WEP</h2>
 
-<p>log2timeline 등의 도구를 이용하면 타임라인은 쉽게 얻어낼 수 있다. 하지만, 각각의 행동을 조립하여 하나의 사건으로 묶어내는 것은 오롯이 조사자의 역량에 달려있다.
-또한, 타임 스탬프는 조작이 어렵지 않기 때문에, 생성된 타임라인이 온전하지 않을 수 있다.</p>
+<p>유선 동등 프라이버시(<strong>Wired Equivalent Privacy</strong>)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.</p>
 
-<h2 id="참고-자료,-reference">참고 자료, Reference</h2>
+<p>기밀성을 위해 RC4 암호화 기법을 사용하였으며, CRC-32 체크섬(Checksum)을 사용하여 무결성을 확보하였다.</p>
+
+<p>각 통신 단말들은 사전에 공유된 비밀키(비밀번호)를 사용하여 데이터의 암호화/복호화를 수행한다.</p>
+
+<h2 id="reference">Reference</h2>
 
 <ul>
-<li><a href="http://en.wikipedia.org/wiki/Timestamp">Wikipedia, English. TimeStamp</a></li>
-<li><a href="http://forensic-proof.com/archives/3779">Forensic-Proof. 타임라인 분석</a></li>
-<li><a href="http://forensic-proof.com/archives/2323">Forensic-Proof. 타임라인 통합 분석</a></li>
-<li><a href="http://www.champlain.edu/Documents/LCDI/archive/SuperTimelineReport.pdf">The Senator Patrick Leahy Center for Digital Investigation
-Champlain College. Super Timeline</a></li>
+<li><a href="http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C">Wikipedia(KR). 유선 동등 프라이버시</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy">Wikipedia(EN). Wired Equivalent Privacy</a></li>
 </ul>
 
   </article>

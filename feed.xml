@@ -6,9 +6,65 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Apr 2015 20:30:52 +0900</pubDate>
-    <lastBuildDate>Mon, 13 Apr 2015 20:30:52 +0900</lastBuildDate>
+    <pubDate>Wed, 15 Apr 2015 13:08:39 +0900</pubDate>
+    <lastBuildDate>Wed, 15 Apr 2015 13:08:39 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Wireless Network Security</title>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;본 포스트에서 언급되는 암호학적 지식은 별도의 &lt;strong&gt;&lt;a href=&quot;&quot;&gt;포스트&lt;/a&gt;&lt;/strong&gt;에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;wep&quot;&gt;WEP&lt;/h2&gt;
+
+&lt;p&gt;유선 동등 프라이버시(&lt;strong&gt;Wired Equivalent Privacy&lt;/strong&gt;)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.&lt;/p&gt;
+
+&lt;p&gt;기밀성을 위해 RC4 암호화 기법을 사용하였으며, CRC-32 체크섬(Checksum)을 사용하여 무결성을 확보하였다.&lt;/p&gt;
+
+&lt;p&gt;각 통신 단말들은 사전에 공유된 비밀키(비밀번호)를 사용하여 데이터의 암호화/복호화를 수행한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C&quot;&gt;Wikipedia(KR). 유선 동등 프라이버시&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy&quot;&gt;Wikipedia(EN). Wired Equivalent Privacy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Apr 2015 07:36:39 +0900</pubDate>
+        <link>http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</guid>
+        
+        <category>wireless network wi-fi wifi wep wpa wpa2</category>
+        
+        
+        <category>network</category>
+        
+      </item>
+    
+      <item>
+        <title>Cryptography In Wireless Network Security</title>
+        <description>&lt;p&gt;not yet.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt; - &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%B4%88%EA%B8%B0%ED%99%94_%EB%B2%A1%ED%84%B0&quot;&gt;Wikipedia(KR). 초기화 벡터&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Initialization_vector&quot;&gt;Wikipedia(EN). Initialization Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Time/memory/data_tradeoff_attack&quot;&gt;Wikipedia(EN). Time/Memory/Data Tradeoff Attack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%B8%94%EB%A1%9D_%EC%95%94%ED%98%B8_%EC%9A%B4%EC%9A%A9_%EB%B0%A9%EC%8B%9D&quot;&gt;Wikipedia(KR). 블록 암호 운용 방식&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation&quot;&gt;Wikipedia(EN). Block Cipher Mode of Operation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Apr 2015 00:00:00 +0900</pubDate>
+        <link>http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html</guid>
+        
+        
+        <category>cryptography</category>
+        
+      </item>
     
       <item>
         <title>Search Engine Query Parameter</title>
@@ -772,142 +828,6 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
         <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/02/08/timeline-analysis.html</guid>
         
         <category>digitalforensics timeline supertimeline timestamp log2timeline</category>
-        
-        
-        <category>digitalforensics</category>
-        
-      </item>
-    
-      <item>
-        <title>파일 카빙을 통한 데이터 복구</title>
-        <description>&lt;h2 id=&quot;파일(file)&quot;&gt;파일(File)&lt;/h2&gt;
-
-&lt;p&gt;파일은 각종 컴퓨터 프로그램 등에서 사용하기 위한 데이터로서, 저장장치에 기록되어 사용된다. 종이 문서로 이루어진 &amp;#39;파일&amp;#39;과 같은 비슷한 역할이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;파일-시스템(file-system)&quot;&gt;파일 시스템(File System)&lt;/h2&gt;
-
-&lt;p&gt;파일이 저장장치에 기록되어 있어도, 저장장치의 어느 위치에 저장되어 있는지 모른다면 해당 파일을 사용할 수 없을 것이다. 이런 일을 막기 위하여 각 저장장치에는 저장장치 내의 모든 파일들을 관리하는 &lt;strong&gt;파일 시스템&lt;/strong&gt;이라는 것을 둔다.&lt;/p&gt;
-
-&lt;p&gt;파일 시스템은 각 파일들이 어디에 저장되어 있는지 기록하여, 운영체제나 여러 프로그램들이 저장장치에 기록되어 있는 파일들을 원활하게 사용할 수 있게 한다. 또한, 생성/수정/접근 시간 등의 다양한 정보를 기록한다. 이렇게 파일을 위한 정보들은 &lt;strong&gt;메타 데이터(Meta Data)&lt;/strong&gt;라 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;할당(allocation)&quot;&gt;할당(Allocation)&lt;/h2&gt;
-
-&lt;p&gt;파일 시스템이 각 파일이 어디에 저장되어 있는지 기록한다고 했는데, 이는 정확하게 말하면 파일 시스템이 해당 파일에게 저장 장치의 일정 영역을 &lt;strong&gt;할당&lt;/strong&gt;하는 것이다. 이렇게 파일에게 할당된 영역은, 다른 파일들이 사용할 수 없다.&lt;/p&gt;
-
-&lt;h2 id=&quot;파일-삭제&quot;&gt;파일 삭제&lt;/h2&gt;
-
-&lt;p&gt;파일을 삭제한다고 하면 파일의 데이터를 모두 제거한다고 생각하지만, 대부분의 파일 시스템에서는 그렇지 않다. 보통 파일에 할당된 영역을 할당 해제하여 다른 파일들이 사용할 수 있는 상태로 만들고, 해당 파일의 메타 데이터를 사용하지 않는 것으로 파일을 삭제한다.&lt;/p&gt;
-
-&lt;p&gt;모든 데이터를 삭제하지 않는 이유는 컴퓨터 내의 여러 장치에서 저장장치가 가장 느리기 때문에, 저장장치의 사용을 최대한 줄여야 컴퓨터의 전반적인 처리 속도를 높일 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;파일-복구(recover)&quot;&gt;파일 복구(Recover)&lt;/h2&gt;
-
-&lt;p&gt;위에서 설명한 대로 파일이 삭제되어도 데이터와 메타 데이터는 남아있기 때문에, 데이터가 다른 파일로 덮여쓰여지지 않았다면, 메타 데이터에 기록되어 있는 할당 영역을 살펴보면 어렵지 않게 파일을 복구해낼 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;파일-카빙(carving)&quot;&gt;파일 카빙(Carving)&lt;/h2&gt;
-
-&lt;p&gt;하지만 메타 데이터 또한 다른 메타 데이터에 의해 덮여씌어질 수 있고, 모종의 이유로 손상/변조될 수 있다. 이런 경우에는 메타 데이터의 도움을 받지 못하기 때문에 분석가가 직접 저장장치에서 원하는 파일을 찾아내야 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;파일-구조&quot;&gt;파일 구조&lt;/h2&gt;
-
-&lt;h3 id=&quot;시그니처(signiture)&quot;&gt;시그니처(Signiture)&lt;/h3&gt;
-
-&lt;p&gt;여러 프로그램 등에서, 파일을 쉽게 구분하기 위해서 대부분의 파일은 데이터의 여러 위치에 &lt;strong&gt;시그니처&lt;/strong&gt;를 새겨 놓는다. 일반적으로 데이터의 가장 앞에 있는 시그니처를 &lt;strong&gt;헤더(Header)&lt;/strong&gt;, 마지막에 있는 시그니처를 &lt;strong&gt;푸터(Footer) 혹은 트레일러(Trailer) 시그니처&lt;/strong&gt;라 한다.&lt;/p&gt;
-
-&lt;p&gt;파일의 구분 뿐만 아니라, 파일의 처리를 위해서 데이터를 여러 영역으로 구분하여 기록하는 경우도 있는데, 이런 경우에는 영역마다 시그니처가 붙어있는 경우도 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/jpeg_header.png&quot; alt=&quot;JPEG File Header&quot; title=&quot;JPEG 파일의 시그니처&quot;&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;비할당-영역(unallocated-area)&quot;&gt;비할당 영역(Unallocated Area)&lt;/h2&gt;
-
-&lt;p&gt;특정 파일을 카빙해내기 위해서는 단순히 저장장치의 모든 영역에 대해서 해당 파일의 시그니처를 탐색해내면 된다. 그러면, 그 파일과 같은 형식의 파일을 전부 찾을 수 있고, 찾아낸 파일 중에서 원하는 파일을 찾으면 된다. &lt;/p&gt;
-
-&lt;p&gt;하지만, 저장장치의 전 영역을 살펴보는 것은 용량에 따라 매우 긴 시간이 필요한 작업이 될 수도 있고, 저렇게 찾아낸 파일은 &lt;strong&gt;복구가 필요하지 않은&lt;/strong&gt;, 지워지지 않은 파일일 수도 있다. 따라서, 검색 대상을 &lt;strong&gt;지워진&lt;/strong&gt; 파일로 한정할 필요가 있다.&lt;/p&gt;
-
-&lt;p&gt;위에서, 파일이 파일 시스템으로 부터 공간을 할당받는다고 했는데, 이렇게 파일에게 할당되지 않은 공간을 &lt;strong&gt;비할당 영역&lt;/strong&gt;이라 한다. 이 비할당 영역은 파일에 할당되지 않은 공간과, 파일이 삭제됨에 따라 할당이 해제된 영역을 포함한다. 파일 시스템은 저장장치의 할당 상태를 기록하고 있으므로, 파일 시스템이 손상되지 않았다면 쉽게 비할당 영역을 추려낼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;따라서, 비할당 영역을 대상으로 시그니처 탐색을 수행하면 조금 더 빠르게 원하는 파일을 찾아낼 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;조각화(fragmentation)&quot;&gt;조각화(Fragmentation)&lt;/h2&gt;
-
-&lt;p&gt;데이터가 덮어씌어져 복구가 불가능한 것 외에도, 파일 카빙 작업에 있어 큰 문제점이 있다. 파일이 생성되고 삭제되고 하는 과정을 반복하면 저장장치의 공간을 완벽하게 채워서 사용하지 못하고, 중간 중간에 크고 작은 빈 영역이 생기게 된다. 이러한 빈 영역들을 사용하다 보면, 파일의 데이터를 한 번에 다 기록하지 못하고 여러 영역에 나누어 기록하게 되는 경우가 있는데, 이를 &lt;strong&gt;조각화(Fragmentation)&lt;/strong&gt;라 한다.&lt;/p&gt;
-
-&lt;p&gt;메타 데이터를 이용할 경우에는, 파일이 어느 영역을, 얼마나 할당 받았는지에 대한 기록이 있기 때문에 파일이 조각나도 문제없이 사용할 수 있지만, 메타 데이터의 도움을 받지 않는 파일 카빙 과정에서는 여러 문제점이 발생하는데, 특히&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;파일 헤더부터 푸터까지 복구하는 경우, 중간에 다른 파일의 데이터가 포함되는지 알 수 없다.&lt;/li&gt;
-&lt;li&gt;파일 헤더를 분석하여 파일 크기만큼 복구하는 경우, 파일의 일부분이 복구되지 않는다.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;조각화를 극복하고 파일을 카빙해내려는 다양한 시도가 있으나, 아직은 완벽한 방법이 없는 것으로 보인다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://dal4segno.github.io/image/fragmentaion.png&quot; alt=&quot;Fragmented File&quot; title=&quot;조각난 파일&quot;&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;도구&quot;&gt;도구&lt;/h2&gt;
-
-&lt;p&gt;파일 카빙은 분석가가 직접 하나하나 하기엔 번거로운 작업이므로, 도와주는 도구가 여럿 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.forensicswiki.org/wiki/Tools:Data_Recovery#Carving&quot;&gt;Forensic Wiki, Tools:Data_Recovery#Carving&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;활용&quot;&gt;활용&lt;/h2&gt;
-
-&lt;p&gt;실수로 삭제한 파일을 복구 해낼 때도 사용할 수 있겠지만, 파일 카빙 기법은 침해 사고 대응 및 디지털 포렌식 분야에서 빛을 발한다.&lt;/p&gt;
-
-&lt;p&gt;현실의 범죄자들이 자신의 흔적을 지우려고, 남기지 않으려고 노력하듯이 해커, 악성코드, 바이러스등도 최대한 자신의 흔적을 남기지 않으려고 노력한다. 이 과정에서 자신들이 남긴 흔적(파일이나 각종 기록)들을 지우는 경우가 많은데, 이런 흔적들을 복구해내는 것이 큰 도움이 된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Computer_file&quot;&gt;Wikipedia, English. Computer file&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.forensicswiki.org/wiki/File_Carving#File_Carving_challenges_and_test_images&quot;&gt;Forensic Wiki. File Carving&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;발표-자료&quot;&gt;발표 자료&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://onedrive.live.com/redir?resid=BF1489D51F814C5C!8265&amp;amp;authkey=!AP1vDhsDXxIg5HE&amp;amp;ithint=file%2cpptx&quot;&gt;20150125 Security One 2nd, 파일 카빙을 통한 데이터 복구&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;발표 자료 대부분이 설명이 없는 그림입니다. 본 포스트와 함께 봐주세요. &lt;/p&gt;
-</description>
-        <pubDate>Sat, 31 Jan 2015 07:25:42 +0900</pubDate>
-        <link>http://dal4segno.github.io/digitalforensics/2015/01/31/data-recovery-via-the-file-carving.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/01/31/data-recovery-via-the-file-carving.html</guid>
-        
-        <category>digitalforensics filecarving datarecovery</category>
-        
-        
-        <category>digitalforensics</category>
-        
-      </item>
-    
-      <item>
-        <title>What is Digital Forensics?</title>
-        <description>&lt;p&gt;기존에는 Digital Device 내의 증거를 토대로 범죄의 사실관계를 규명하는 작업을 일컬었지만, 현재는 범죄 수사 외에도 여러 분야에서 보편적으로 쓰이는 용어가 됨에 따라 Digital Device 내의 자료를 증거로서 이용하여 특정행위의 사실관계를 규명하는 것으로 정의할 수 있을 듯 하다.&lt;/p&gt;
-
-&lt;h3 id=&quot;증거,-evidence&quot;&gt;증거, Evidence&lt;/h3&gt;
-
-&lt;p&gt;사실관계를 확실하게 하기 위해 사용되는 자료&lt;/p&gt;
-
-&lt;h2 id=&quot;application&quot;&gt;Application&lt;/h2&gt;
-
-&lt;p&gt;침해 사고 대응시 피해와 공격자 등을 밝혀낼 때 사용될 수 있으며, 기업의 감사 및 회계 시 무결성을 입증하는 데에도 사용될 수 있다. 최근에는 디지털 데이터의 저작권과 관련된 작업 및 전자 증거 개시 제도(E-Discovery)에도 사용되고 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference-documents&quot;&gt;Reference Documents&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%A6%9D%EA%B1%B0&quot;&gt;Wikipedia, Korean. 증거&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%94%94%EC%8A%A4%EC%BB%A4%EB%B2%84%EB%A6%AC_%28%EB%B2%95%29&quot;&gt;Wikipedia, Korean. 디스커버리 (법)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Digital_forensics&quot;&gt;Wikipedia, English. Digital Forensics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://forensicswiki.org/wiki/Computer_forensics&quot;&gt;Forensics Wiki. Computer Forensics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/4466&quot;&gt;Forensic-Proof. 전자증거개시제도의 준비&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/3357&quot;&gt;Forensic-Proof. 디지털포렌식 용어와 절차&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/6350&quot;&gt;Forensic-Proof. 포렌식이 먼가요?&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 18 Jan 2015 06:35:27 +0900</pubDate>
-        <link>http://dal4segno.github.io/digitalforensics/2015/01/18/what-is-digital-forensics.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/01/18/what-is-digital-forensics.html</guid>
-        
-        <category>digitalforensics evidence</category>
         
         
         <category>digitalforensics</category>

@@ -6,44 +6,12 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Apr 2015 13:08:39 +0900</pubDate>
-    <lastBuildDate>Wed, 15 Apr 2015 13:08:39 +0900</lastBuildDate>
+    <pubDate>Thu, 16 Apr 2015 01:01:26 +0900</pubDate>
+    <lastBuildDate>Thu, 16 Apr 2015 01:01:26 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Wireless Network Security</title>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;본 포스트에서 언급되는 암호학적 지식은 별도의 &lt;strong&gt;&lt;a href=&quot;&quot;&gt;포스트&lt;/a&gt;&lt;/strong&gt;에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;wep&quot;&gt;WEP&lt;/h2&gt;
-
-&lt;p&gt;유선 동등 프라이버시(&lt;strong&gt;Wired Equivalent Privacy&lt;/strong&gt;)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.&lt;/p&gt;
-
-&lt;p&gt;기밀성을 위해 RC4 암호화 기법을 사용하였으며, CRC-32 체크섬(Checksum)을 사용하여 무결성을 확보하였다.&lt;/p&gt;
-
-&lt;p&gt;각 통신 단말들은 사전에 공유된 비밀키(비밀번호)를 사용하여 데이터의 암호화/복호화를 수행한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C&quot;&gt;Wikipedia(KR). 유선 동등 프라이버시&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy&quot;&gt;Wikipedia(EN). Wired Equivalent Privacy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 15 Apr 2015 07:36:39 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</guid>
-        
-        <category>wireless network wi-fi wifi wep wpa wpa2</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>Cryptography In Wireless Network Security</title>
+        <title>Crytography in Wireless Network Security</title>
         <description>&lt;p&gt;not yet.&lt;/p&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
@@ -57,12 +25,68 @@
 &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation&quot;&gt;Wikipedia(EN). Block Cipher Mode of Operation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Wed, 15 Apr 2015 00:00:00 +0900</pubDate>
+        <pubDate>Wed, 15 Apr 2015 09:06:47 +0900</pubDate>
         <link>http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html</link>
         <guid isPermaLink="true">http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html</guid>
         
         
         <category>cryptography</category>
+        
+      </item>
+    
+      <item>
+        <title>Wireless Network Security</title>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;본 포스트에서 언급되는 암호학적 지식(과 취약점)은 별도의 &lt;strong&gt;&lt;a href=&quot;&quot;&gt;포스트&lt;/a&gt;&lt;/strong&gt;에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;wep&quot;&gt;WEP&lt;/h2&gt;
+
+&lt;p&gt;유선 동등 프라이버시(&lt;strong&gt;Wired Equivalent Privacy&lt;/strong&gt;)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.&lt;/p&gt;
+
+&lt;p&gt;기밀성을 위해 &lt;strong&gt;RC4&lt;/strong&gt; 암호화 기법을 사용하였으며, CRC-32 체크섬(Checksum)을 사용하여 무결성을 확보하였다.&lt;/p&gt;
+
+&lt;p&gt;각 통신 단말들은 사전에 공유된 비밀키(비밀번호)를 사용하여 데이터의 암호화/복호화를 수행한다.&lt;/p&gt;
+
+&lt;p&gt;2004년도에 &lt;strong&gt;IEEE 802.11i&lt;/strong&gt;(or IEEE 802.11i-2004, 무선 네트워크 보안에 관한 표준)이 제정되면서 사용 중지(Deprecated)되었다.&lt;/p&gt;
+
+&lt;h2 id=&quot;wpa&quot;&gt;WPA&lt;/h2&gt;
+
+&lt;p&gt;와이파이 보호 접속(&lt;strong&gt;Wi-Fi Protected Access&lt;/strong&gt;)은 IEEE 802.11i가 제정되기 이전에 WEP를 대체하기 위해 구현되었으며, IEEE 802.11i에 큰 영향을 미쳤다.&lt;/p&gt;
+
+&lt;h3 id=&quot;tkip&quot;&gt;TKIP&lt;/h3&gt;
+
+&lt;p&gt;WPA는 임시 키 무결성 프로토콜(Temporal Key Integrity Protocol)을 사용하여 입력된 키를 모든 패킷에 사용하는 WEP에 반해서 각 패킷에 대한 암호화키를 동적으로 생성할 수 있었다.&lt;/p&gt;
+
+&lt;p&gt;WEP를 사용하던 하드웨어에서도 WPA를 사용할 수 있어야 했기 때문에, TKIP는 RC4 방식의 암호화를 사용하고, 그로 인해서 WEP와 비슷한 공격에 대해서 취약하다.&lt;/p&gt;
+
+&lt;p&gt;2009년도에 사용 중지되었다.&lt;/p&gt;
+
+&lt;h2 id=&quot;wpa2&quot;&gt;WPA2&lt;/h2&gt;
+
+&lt;p&gt;IEEE 802.11i에서 제정된 기술로, WPA를 기반으로 만들어졌다. 
+암호화키를 동적으로 생성하는 &lt;strong&gt;CCMP&lt;/strong&gt;(Counter Mode Cipher Block Chaining Message Authentication Code Protocol, Counter Mode CBC-MAC Protocol or CCM mode Protocol)를 사용하는데, WPA-TKIP와는 다르게 안전한 AES 암호화 방식을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;현재까지 나온 무선 네트워크 보안 기술 중에 가장 안전하므로, 공유기나 각종 설정 시 WPA2를 사용하는 것이 권장됨.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C&quot;&gt;Wikipedia(KR). 유선 동등 프라이버시&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy&quot;&gt;Wikipedia(EN). Wired Equivalent Privacy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/IEEE_802.11i-2004&quot;&gt;Wikipedia(EN). IEEE 802.11-2004&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access&quot;&gt;Wikipedia(EN). Wi-Fi Protected Access&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4_%EB%B3%B4%ED%98%B8_%EC%A0%91%EC%86%8D&quot;&gt;Wikipedia(KR). 와이파이 보호 접속&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Apr 2015 07:36:39 +0900</pubDate>
+        <link>http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</guid>
+        
+        <category>wireless network wi-fi wifi wep wpa wpa2</category>
+        
+        
+        <category>network</category>
         
       </item>
     

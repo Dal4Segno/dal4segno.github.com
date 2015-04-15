@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Crytography in Wireless Network Security
+title: "Crytography in Wireless Network Security"
 date: 2015-04-15 00:06:47
 tag: 
 categories: cryptography

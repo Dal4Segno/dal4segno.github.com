@@ -5,7 +5,7 @@ date: 2015-04-14 22:36:39
 tag: wireless network wi-fi wifi wep wpa wpa2
 categories: network
 ---
-> 본 포스트에서 언급되는 암호학적 지식(과 취약점)은 별도의 **[포스트]()**에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.
+> 본 포스트에서 언급되는 암호학적 지식(과 취약점)은 별도의 **[포스트](http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html)**에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.
 
 ## WEP ##
 유선 동등 프라이버시(**Wired Equivalent Privacy**)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.

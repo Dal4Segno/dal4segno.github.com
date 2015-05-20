@@ -13,6 +13,7 @@ categories: web-programming
  - Bundler
  - Git
  - Sqlite
+	 - Heroku를 이용해서 배포할 생각이라면 처음부터 **PostgreSQL**을 사용하도록 하자.
  - DevKit
 
 Windows와 OS X에서는 [RailsInstaller](http://railsinstaller.org/en)를 통해서 해당 환경을 쉽게 구축할 수 있다.
@@ -22,6 +23,7 @@ Windows와 OS X에서는 [RailsInstaller](http://railsinstaller.org/en)를 통�
 # Gems
  - Rails 4.1.8
  - sqlite
+	 - PostgreSQL의 경우에는 pg
  - sass-rails
  - uglifier
  - coffee-rails
@@ -29,6 +31,8 @@ Windows와 OS X에서는 [RailsInstaller](http://railsinstaller.org/en)를 통�
  - turbolinks
  - jbuilder
  - sdoc
+
+> pg를 사용할 경우, database.yml의 설정들도 변경해야 한다.
 
 위의 목록은 Ruby/Rails IDE인 RubyMine으로 Rails Project 생성시 기본으로 넣어주는 gem들이다. DB나 JS, SCSS 등의 기능을 적용하기 위해 필요하다.
 
@@ -127,11 +131,11 @@ RailsCast의 문서는 구 버전의 Redcarpet을 이용했으므로, 구조만 
  - [RORLAB. 초보자를 위한 Asset Pipeline 개념잡기](http://rorlab.org/rblogs/152)
 
 ## 설정법 ##
-### CSS, JS ###
+### StyleSheet, JS ###
  - /app/assets/javascript/application.js
  - /app/assets/stylesheets/application.css
 
-에서 각 파일들을 추가하면된다. 확장자는 붙이지 않아도되며, JS는 //=, CSS는 *= 을 앞에 붙이는 것을 명심하자. 반드시 주석문 안에 작성되어야 한다.
+에서 각 파일들을 추가하면된다. 확장자는 붙이지 않아도되며, JS는 //=, StyleSheet는 *= 을 앞에 붙이는 것을 명심하자. 반드시 주석문 안에 작성되어야 한다.
 
 각 파일들은 /app/assets 뿐만 아니라 lib나 vendor 의 assets에 있어도 상관없다.
 
@@ -141,7 +145,7 @@ RailsCast의 문서는 구 버전의 Redcarpet을 이용했으므로, 구조만 
 > Rails.application.config.assets.paths << Rails.root.join("fonts")
 > Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )
 
-assets의 경로에 "fonts" 를 추가한다. CSS, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.
+assets의 경로에 "fonts" 를 추가한다. StyleSheet, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.
 
 그리고 해당 확장자를 가진 파일들을 precompile 하도록 설정한다.
 

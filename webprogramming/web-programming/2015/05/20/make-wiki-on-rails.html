@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Make Wiki on Rails</title>
-  <meta name="description" content="환경Windows 10 TP x64Ruby 2.1.5Rails 4.1.8BundlerGitSqliteDevKit">
+  <meta name="description" content="환경Windows 10 TP x64Ruby 2.1.5Rails 4.1.8BundlerGitSqliteHeroku를 이용해서 배포할 생각이라면 처음부터 PostgreSQL을 사용하도록 하자.DevKit">
 
   <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="/css/main.css">
@@ -118,7 +118,11 @@
 <li>Rails 4.1.8</li>
 <li>Bundler</li>
 <li>Git</li>
-<li>Sqlite</li>
+<li>Sqlite
+
+<ul>
+<li>Heroku를 이용해서 배포할 생각이라면 처음부터 <strong>PostgreSQL</strong>을 사용하도록 하자.</li>
+</ul></li>
 <li>DevKit</li>
 </ul>
 
@@ -132,7 +136,11 @@
 
 <ul>
 <li>Rails 4.1.8</li>
-<li>sqlite</li>
+<li>sqlite
+
+<ul>
+<li>PostgreSQL의 경우에는 pg</li>
+</ul></li>
 <li>sass-rails</li>
 <li>uglifier</li>
 <li>coffee-rails</li>
@@ -141,6 +149,10 @@
 <li>jbuilder</li>
 <li>sdoc</li>
 </ul>
+
+<blockquote>
+<p>pg를 사용할 경우, database.yml의 설정들도 변경해야 한다.</p>
+</blockquote>
 
 <p>위의 목록은 Ruby/Rails IDE인 RubyMine으로 Rails Project 생성시 기본으로 넣어주는 gem들이다. DB나 JS, SCSS 등의 기능을 적용하기 위해 필요하다.</p>
 
@@ -275,14 +287,14 @@
 
 <h2 id="설정법">설정법</h2>
 
-<h3 id="css,-js">CSS, JS</h3>
+<h3 id="stylesheet,-js">StyleSheet, JS</h3>
 
 <ul>
 <li>/app/assets/javascript/application.js</li>
 <li>/app/assets/stylesheets/application.css</li>
 </ul>
 
-<p>에서 각 파일들을 추가하면된다. 확장자는 붙이지 않아도되며, JS는 //=, CSS는 *= 을 앞에 붙이는 것을 명심하자. 반드시 주석문 안에 작성되어야 한다.</p>
+<p>에서 각 파일들을 추가하면된다. 확장자는 붙이지 않아도되며, JS는 //=, StyleSheet는 *= 을 앞에 붙이는 것을 명심하자. 반드시 주석문 안에 작성되어야 한다.</p>
 
 <p>각 파일들은 /app/assets 뿐만 아니라 lib나 vendor 의 assets에 있어도 상관없다.</p>
 
@@ -295,13 +307,33 @@
 Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )</p>
 </blockquote>
 
-<p>assets의 경로에 &quot;fonts&quot; 를 추가한다. CSS, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.</p>
+<p>assets의 경로에 &quot;fonts&quot; 를 추가한다. StyleSheet, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.</p>
 
 <p>그리고 해당 확장자를 가진 파일들을 precompile 하도록 설정한다.</p>
 
 <blockquote>
 <p>설정 후에는 rake assets:precompile 을 실행해야 한다.</p>
 </blockquote>
+
+<h1 id="design">Design</h1>
+
+<p>Bootstrap을 사용하여 어렵지 않게 있어보이는 레이아웃을 만들어낼 수 있다.</p>
+
+<ul>
+<li><a href="http://bootstrapk.com/">Bootstrap Korean</a></li>
+</ul>
+
+<h1 id="deploy-using-heroku">Deploy Using Heroku</h1>
+
+<p>별도의 포스트에서 설명하도록 한다.</p>
+
+<ul>
+<li><a href="">Rails on Heroku</a></li>
+</ul>
+
+<h1 id="후기">후기</h1>
+
+<p>크게 활용도가 높은 서비스도 아니고, 폐쇄형이라 남들에게 자랑도 하기 힘든 그런 사이트이지만, 배운 기술로 뭔가 뚝딱뚝딱 만들어내니 재밌고 보람찬 시간이었습니다. 이걸 계기로 더 많은 Rails 앱을 만들게 될 것 같네요.</p>
 
   </article>
 

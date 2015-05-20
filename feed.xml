@@ -6,9 +6,118 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 May 2015 11:44:21 +0900</pubDate>
-    <lastBuildDate>Wed, 20 May 2015 11:44:21 +0900</lastBuildDate>
+    <pubDate>Thu, 21 May 2015 00:16:40 +0900</pubDate>
+    <lastBuildDate>Thu, 21 May 2015 00:16:40 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Rails on Heroku</title>
+        <description>&lt;p&gt;Heroku는 PaaS, Platform as a Service 중 하나로, 플랫폼을 제공함으로서 사용자가 어플리케이션에만 집중할 수 있도록 해주는 서비스이다. Heroku에 어플리케이션을 올리면 알아서 가상 서버에서 설정 같은걸 다 해주고 심지어 도메인까지 하나 제공한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.google.co.kr/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0CCMQ7QgwAA&amp;amp;url=https%3A%2F%2Fwww.heroku.com%2F&amp;amp;ei=hZxcVejxIM_X8gXa4oLgAg&amp;amp;usg=AFQjCNF8-hoB8iHVyZ2dDq3bYi_oSmHVtg&amp;amp;sig2=tfCbeO9LOZvll5vWv3PLMA&quot;&gt;Heroku&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;게다가 안내 및 튜토리얼도 매우 친절하게 잘 되어있어서, 따라가면 어렵지 않게 Heroku의 서비스를 이용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;다음에 언급할 사항들만 잘 알고있다면.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Windows 10 TP 환경이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;postgresql&quot;&gt;PostgreSQL&lt;/h1&gt;
+
+&lt;p&gt;Heroku는 PostgreSQL 을 DBMS로 사용한다. 여러가지 장점이 있다고 하는데, 설명은 링크로 대체한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://helloworld.naver.com/helloworld/227936&quot;&gt;hello world, NAVER. 한눈에 살펴보는 PostgreSQL &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;문제는 Rails 어플리케이션에서 기본으로 이용하는 DBMS가 Sqlite3 이고, Heroku에서는 이를 지원하지 않는다. sqlite gem을 설치할 수 없다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;RubyMine 기준&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;migrate-sqlite3-to-postgresql&quot;&gt;Migrate Sqlite3 to PostgreSQL&lt;/h2&gt;
+
+&lt;p&gt;Rails는 Development, Production, Test의 3가지 환경을 제공하는데, Heroku는 Production 모드로 배포된다. 그래서 &lt;em&gt;database.yml&lt;/em&gt; 의 production: 의 adapter만 &lt;strong&gt;postgresql&lt;/strong&gt;로 바꾸면 된다고 하는데, 필자는 계속 sqilte 관련 에러가 났기 때문에, 모든 모드의 adapter를 postgresql로 수정하였다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;지금 생각해보면 yml 파일 수정 후 git add , commit을 안해서 그런 것 같다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;사용 중인 sqilte3 DB를 PostgreSQL로 이전하는 방법은 다음과 같다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;PostgreSQL 설치 및 기본 설정은 크게 어렵지 않으므로 생략한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://watabelabs.com/blog/view/migrating-rails-application-data-from-sqlite3-to-postgresql&quot;&gt;watabe. Migrating Rails Application Data from sqlite3 to PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://railscasts.com/episodes/342-migrating-to-postgresql?language=ko&amp;amp;view=asciicast&quot;&gt;RailsCast. Migrating to PostgreSQL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;요약하면 다음과 같다. &lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;yml 파일에서 adapter 수정&lt;/li&gt;
+&lt;li&gt;rake db:create:all&lt;/li&gt;
+&lt;li&gt;sequel -C sqlite://db/development.sqlite3 postgres://pgusername@localhost/&lt;strong&gt;YourDB&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이렇게 하면 기존의 sqlite3 DB를 postgreSQL로 사용할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;push-local-db-to-heroku&quot;&gt;Push Local DB to Heroku&lt;/h3&gt;
+
+&lt;p&gt;이제 Local의 PostgreSQL DB를 Heroku 서버로 보내주어야 한다. &lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;heroku pg:push&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;가 기본적으로 제공되는 명령어이긴 하지만, 필자는 &lt;em&gt;Invaild Argument&lt;/em&gt; 에러를 뿜으며 실패했기 때문에 다른 방법을 찾았다.&lt;/p&gt;
+
+&lt;h4 id=&quot;sequel&quot;&gt;Sequel&lt;/h4&gt;
+
+&lt;p&gt;로컬에서 사용했던 &lt;strong&gt;Sequel&lt;/strong&gt;을 Heroku 서버를 대상으로 사용했다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;sequel -C sqlite://db/development.sqlite3 &lt;strong&gt;{Your Heroku DB URL}&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Heroku App의 DB 주소는 설정 창에서 어렵지 않게 발견할 수 있다.&lt;/p&gt;
+
+&lt;h4 id=&quot;pg_dump&quot;&gt;pg_dump&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;이 방법은 Windows 에서는 작동하지 않는다.&lt;/strong&gt; &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.chrismccord.com/blog/2013/01/09/better-heroku-db-push-and-db-pull/&quot;&gt;chrismccord. A better heroku db:push and db:pull&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;pg:push 내부적으로 사용하는 pg_dump를 사용하는 방법이다. pg_dump를 사용하면 대상 데이터베이스의 Schema와 Record 전체를 생성하는 sql파일이 만들어진다. 이를 Heroku PostgreSQL Shell에 입력하여 DB를 복사하는 방법이다.&lt;/p&gt;
+
+&lt;p&gt;PowerShell에서는 Stdin Redirect인 &amp;#39;&amp;lt;&amp;#39;가 먹히지 않으며, CMD에서는 쿼리가 제대로 작동하지 않는다.&lt;/p&gt;
+
+&lt;h1 id=&quot;후기&quot;&gt;후기&lt;/h1&gt;
+
+&lt;p&gt;적은 건 얼마 없지만 어마어마한 삽질 끝에 얻은 결과입니다. 다음부터 Rails 개발할 때는 초장부터 PostgreSQL 쓰겠습니다.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 May 2015 08:38:05 +0900</pubDate>
+        <link>http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html</guid>
+        
+        <category>heroku rails ruby ror paas</category>
+        
+        
+        <category>webprogramming</category>
+        
+        <category>web-programming</category>
+        
+      </item>
     
       <item>
         <title>Make Wiki on Rails</title>
@@ -20,7 +129,11 @@
 &lt;li&gt;Rails 4.1.8&lt;/li&gt;
 &lt;li&gt;Bundler&lt;/li&gt;
 &lt;li&gt;Git&lt;/li&gt;
-&lt;li&gt;Sqlite&lt;/li&gt;
+&lt;li&gt;Sqlite
+
+&lt;ul&gt;
+&lt;li&gt;Heroku를 이용해서 배포할 생각이라면 처음부터 &lt;strong&gt;PostgreSQL&lt;/strong&gt;을 사용하도록 하자.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;DevKit&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -34,7 +147,11 @@
 
 &lt;ul&gt;
 &lt;li&gt;Rails 4.1.8&lt;/li&gt;
-&lt;li&gt;sqlite&lt;/li&gt;
+&lt;li&gt;sqlite
+
+&lt;ul&gt;
+&lt;li&gt;PostgreSQL의 경우에는 pg&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;sass-rails&lt;/li&gt;
 &lt;li&gt;uglifier&lt;/li&gt;
 &lt;li&gt;coffee-rails&lt;/li&gt;
@@ -43,6 +160,10 @@
 &lt;li&gt;jbuilder&lt;/li&gt;
 &lt;li&gt;sdoc&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;pg를 사용할 경우, database.yml의 설정들도 변경해야 한다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;위의 목록은 Ruby/Rails IDE인 RubyMine으로 Rails Project 생성시 기본으로 넣어주는 gem들이다. DB나 JS, SCSS 등의 기능을 적용하기 위해 필요하다.&lt;/p&gt;
 
@@ -177,14 +298,14 @@
 
 &lt;h2 id=&quot;설정법&quot;&gt;설정법&lt;/h2&gt;
 
-&lt;h3 id=&quot;css,-js&quot;&gt;CSS, JS&lt;/h3&gt;
+&lt;h3 id=&quot;stylesheet,-js&quot;&gt;StyleSheet, JS&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;/app/assets/javascript/application.js&lt;/li&gt;
 &lt;li&gt;/app/assets/stylesheets/application.css&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;에서 각 파일들을 추가하면된다. 확장자는 붙이지 않아도되며, JS는 //=, CSS는 *= 을 앞에 붙이는 것을 명심하자. 반드시 주석문 안에 작성되어야 한다.&lt;/p&gt;
+&lt;p&gt;에서 각 파일들을 추가하면된다. 확장자는 붙이지 않아도되며, JS는 //=, StyleSheet는 *= 을 앞에 붙이는 것을 명심하자. 반드시 주석문 안에 작성되어야 한다.&lt;/p&gt;
 
 &lt;p&gt;각 파일들은 /app/assets 뿐만 아니라 lib나 vendor 의 assets에 있어도 상관없다.&lt;/p&gt;
 
@@ -197,13 +318,33 @@
 Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;assets의 경로에 &amp;quot;fonts&amp;quot; 를 추가한다. CSS, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.&lt;/p&gt;
+&lt;p&gt;assets의 경로에 &amp;quot;fonts&amp;quot; 를 추가한다. StyleSheet, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.&lt;/p&gt;
 
 &lt;p&gt;그리고 해당 확장자를 가진 파일들을 precompile 하도록 설정한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;설정 후에는 rake assets:precompile 을 실행해야 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;h1 id=&quot;design&quot;&gt;Design&lt;/h1&gt;
+
+&lt;p&gt;Bootstrap을 사용하여 어렵지 않게 있어보이는 레이아웃을 만들어낼 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://bootstrapk.com/&quot;&gt;Bootstrap Korean&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;deploy-using-heroku&quot;&gt;Deploy Using Heroku&lt;/h1&gt;
+
+&lt;p&gt;별도의 포스트에서 설명하도록 한다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;&quot;&gt;Rails on Heroku&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;후기&quot;&gt;후기&lt;/h1&gt;
+
+&lt;p&gt;크게 활용도가 높은 서비스도 아니고, 폐쇄형이라 남들에게 자랑도 하기 힘든 그런 사이트이지만, 배운 기술로 뭔가 뚝딱뚝딱 만들어내니 재밌고 보람찬 시간이었습니다. 이걸 계기로 더 많은 Rails 앱을 만들게 될 것 같네요.&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 May 2015 07:41:47 +0900</pubDate>
         <link>http://dal4segno.github.io/webprogramming/web-programming/2015/05/20/make-wiki-on-rails.html</link>
@@ -986,59 +1127,6 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
         
         
         <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>타임라인, 타임스탬프</title>
-        <description>&lt;p&gt;Facebook 메인의 그것과 같이, 어떤 것을 시간 순서에 따라 나열한 것을 &lt;strong&gt;타임라인(Timeline)&lt;/strong&gt;이라 한다. Facebook의 경우에는 친구들의 작성 글이 작성 시간 순서에 따라 나타나고, 흔히 볼 수 있는 연대기나, 연표도 일종의 타임라인이다.&lt;/p&gt;
-
-&lt;p&gt;타임라인은 디지털 포렌식 분야에서도 많이 사용되는 단어인데, 그 뜻은 크게 다르지 않다. 특정 환경, 보통 사건이 일어난 환경에 남아 있는 기록들을 시간 순에 따라 정리한 것을 의미한다. &lt;/p&gt;
-
-&lt;h2 id=&quot;타임-스탬프,-timestamp&quot;&gt;타임 스탬프, Timestamp&lt;/h2&gt;
-
-&lt;p&gt;기록을 시간 순으로 정리하기 위해서는 당연히, 기록 외에도 추가적인 시간 정보가 필요하다. 대부분의 시스템은 다양한 이유로 행동/작업 등에 시간 기록을 추가로 남겨두는데 이를 &lt;strong&gt;타임 스탬프(Timestamp)&lt;/strong&gt;라 한다.&lt;/p&gt;
-
-&lt;p&gt;각 운영체제와 파일 시스템마다, 시간 정보를 기록해두는 요소가 다르므로 분석할 환경에서 어떤 시간 정보가 남는지 숙지하고 있으면 좋을 듯하다.&lt;/p&gt;
-
-&lt;h2 id=&quot;super-timeline&quot;&gt;Super Timeline&lt;/h2&gt;
-
-&lt;p&gt;타임라인 중에서도, 전체 시스템을 대상으로 구축된 타임라인을 &lt;strong&gt;수퍼 타임라인(Super Timeline)&lt;/strong&gt;이라 한다.&lt;/p&gt;
-
-&lt;p&gt;타임 스탬프를 하나하나 조사하여 타임라인을 구축하는 것이 불가능하지는 않겠지만, 각 환경에 따라 조사 대상이 다르고, 매우 많은 양의 정보를 수집 및 분석해야 하기 때문에 오랜 시간이 걸리는 작업이 될 것이다. 그렇기 때문에 수퍼 타임라인을 구축해주는 도구들이 몇 있는데, 그 중 대표적인 것이 &lt;strong&gt;log2timeline&lt;/strong&gt;이란 도구이다.&lt;/p&gt;
-
-&lt;p&gt;해당 도구의 사용법은 
-&lt;strong&gt;&lt;a href=&quot;http://digital-forensics.sans.org/blog/2011/12/07/digital-forensic-sifting-super-timeline-analysis-and-creation#&quot;&gt;SANS Digital Forensics and Incident Response Blog
- . Digital Forensic SIFTing: SUPER Timeline Creation using log2timeline&lt;/a&gt;&lt;/strong&gt; 에 튜토리얼과 함께 친절하게 설명되어 있으므로, 도구를 사용해보고 싶다면 천천히 따라해보는 것이 좋을 듯하다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;해당 글 사이사이에 많은 참조 링크가 있으니, 막히는 부분에서 참조하도록 한다.
-또한, 이미지 파일의 다운로드 링크가 바뀌었으나 해당 사이트에서 쉽게 찾을 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;한계점&quot;&gt;한계점&lt;/h2&gt;
-
-&lt;p&gt;log2timeline 등의 도구를 이용하면 타임라인은 쉽게 얻어낼 수 있다. 하지만, 각각의 행동을 조립하여 하나의 사건으로 묶어내는 것은 오롯이 조사자의 역량에 달려있다.
-또한, 타임 스탬프는 조작이 어렵지 않기 때문에, 생성된 타임라인이 온전하지 않을 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고-자료,-reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Timestamp&quot;&gt;Wikipedia, English. TimeStamp&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/3779&quot;&gt;Forensic-Proof. 타임라인 분석&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/2323&quot;&gt;Forensic-Proof. 타임라인 통합 분석&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.champlain.edu/Documents/LCDI/archive/SuperTimelineReport.pdf&quot;&gt;The Senator Patrick Leahy Center for Digital Investigation
-Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 08 Feb 2015 07:42:58 +0900</pubDate>
-        <link>http://dal4segno.github.io/digitalforensics/2015/02/08/timeline-analysis.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/02/08/timeline-analysis.html</guid>
-        
-        <category>digitalforensics timeline supertimeline timestamp log2timeline</category>
-        
-        
-        <category>digitalforensics</category>
         
       </item>
     

@@ -6,8 +6,8 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 May 2015 00:18:01 +0900</pubDate>
-    <lastBuildDate>Thu, 21 May 2015 00:18:01 +0900</lastBuildDate>
+    <pubDate>Thu, 21 May 2015 00:27:04 +0900</pubDate>
+    <lastBuildDate>Thu, 21 May 2015 00:27:04 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -107,13 +107,11 @@
 &lt;p&gt;적은 건 얼마 없지만 어마어마한 삽질 끝에 얻은 결과입니다. 다음부터 Rails 개발할 때는 초장부터 PostgreSQL 쓰겠습니다.&lt;/p&gt;
 </description>
         <pubDate>Thu, 21 May 2015 08:38:05 +0900</pubDate>
-        <link>http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html</guid>
+        <link>http://dal4segno.github.io/web-programming/2015/05/21/rails-on-heroku.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/web-programming/2015/05/21/rails-on-heroku.html</guid>
         
         <category>heroku rails ruby ror paas</category>
         
-        
-        <category>webprogramming</category>
         
         <category>web-programming</category>
         
@@ -347,13 +345,11 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;p&gt;크게 활용도가 높은 서비스도 아니고, 폐쇄형이라 남들에게 자랑도 하기 힘든 그런 사이트이지만, 배운 기술로 뭔가 뚝딱뚝딱 만들어내니 재밌고 보람찬 시간이었습니다. 이걸 계기로 더 많은 Rails 앱을 만들게 될 것 같네요.&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 May 2015 07:41:47 +0900</pubDate>
-        <link>http://dal4segno.github.io/webprogramming/web-programming/2015/05/20/make-wiki-on-rails.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/webprogramming/web-programming/2015/05/20/make-wiki-on-rails.html</guid>
+        <link>http://dal4segno.github.io/web-programming/2015/05/20/make-wiki-on-rails.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/web-programming/2015/05/20/make-wiki-on-rails.html</guid>
         
         <category>wiki ror rails ruby</category>
         
-        
-        <category>webprogramming</category>
         
         <category>web-programming</category>
         

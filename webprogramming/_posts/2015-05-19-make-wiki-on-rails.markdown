@@ -162,7 +162,7 @@ Bootstrap을 사용하여 어렵지 않게 있어보이는 레이아웃을 만�
 
 별도의 포스트에서 설명하도록 한다.
  
- - [Rails on Heroku]()
+ - [Dal4segno's Whatnot. Rails on Heroku](http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html)
 
 
 # 후기 #

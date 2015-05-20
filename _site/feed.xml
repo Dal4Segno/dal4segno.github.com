@@ -6,8 +6,8 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 21 May 2015 00:16:40 +0900</pubDate>
-    <lastBuildDate>Thu, 21 May 2015 00:16:40 +0900</lastBuildDate>
+    <pubDate>Thu, 21 May 2015 00:18:01 +0900</pubDate>
+    <lastBuildDate>Thu, 21 May 2015 00:18:01 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -339,7 +339,7 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;p&gt;별도의 포스트에서 설명하도록 한다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;Rails on Heroku&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html&quot;&gt;Dal4segno&amp;#39;s Whatnot. Rails on Heroku&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;후기&quot;&gt;후기&lt;/h1&gt;

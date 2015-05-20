@@ -152,9 +152,20 @@ assets의 경로에 "fonts" 를 추가한다. StyleSheet, JS와 같이 app, lib,
 > 설정 후에는 rake assets:precompile 을 실행해야 한다.
 
 
+# Design #
+
+Bootstrap을 사용하여 어렵지 않게 있어보이는 레이아웃을 만들어낼 수 있다.
+
+ - [Bootstrap Korean](http://bootstrapk.com/)
+
+# Deploy Using Heroku #
+
+별도의 포스트에서 설명하도록 한다.
+ 
+ - [Rails on Heroku]()
 
 
+# 후기 #
 
-
-
+크게 활용도가 높은 서비스도 아니고, 폐쇄형이라 남들에게 자랑도 하기 힘든 그런 사이트이지만, 배운 기술로 뭔가 뚝딱뚝딱 만들어내니 재밌고 보람찬 시간이었습니다. 이걸 계기로 더 많은 Rails 앱을 만들게 될 것 같네요.
 

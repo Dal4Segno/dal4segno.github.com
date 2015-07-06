@@ -126,7 +126,7 @@
 
 <p>Flooding된 패킷을 다른 브릿지가 받고, 그 브릿지 또한 목적지의 위치를 알지 못한다면 다시 Flooding이 일어나게 되고, 이 패킷은 결국 처음의 브릿지로 가게 될 뿐만 아니라, 두 브릿지 사이를 계속 순환하게 되어 지속적인 네트워크 트래픽을 발생시키는데 이를 <strong>Broadcast Storm(브로드캐스트 스톰)</strong>이라 한다.</p>
 
-<h3 id="stp(spanning-tree-protocol)">STP(Spanning Tree Protocol)</h3>
+<h3 id="stp-spanning-tree-protocol">STP(Spanning Tree Protocol)</h3>
 
 <p>브로드캐스트 스톰과 같은 낭비를 막기 위해서는 네트워크 구성을 그래프로 표현했을 때(노드 = 브릿지), 모든 노드가 그래프에 연결되어 있고, 한 노드에서 다른 한 노드로 가는 경로를 단 1개로 제한하는 <strong>Spanning Tree</strong> 구조를 취함으로서 해결할 수 있다. 또한 경로가 1개로 고정되므로 여러 브릿지로 부터 접근가능한 호스트가 있을 시, 포워딩 테이블에서 Fault(실패)가 발생하는 것을 없앨 수 있다.</p>
 
@@ -152,7 +152,7 @@
 
 <p>이렇게 모든 계산이 끝난 후에, 루트 포트와 지명 포트가 아닌 모든 포트를 닫는다.</p>
 
-<h3 id="bpdus(bridge-protocol-units)">BPDUs(Bridge Protocol Units)</h3>
+<h3 id="bpdus-bridge-protocol-units">BPDUs(Bridge Protocol Units)</h3>
 
 <p>STP를 통해 Spanning Tree를 구성하기 위해서는 전체 네트워크 망에 대한 정보를 가지고 있어야 하기 때문에 각 브릿지들이 충분한 정보를 가질 수 있도록 각 브릿지들은 BPDU라 불리는 데이터를 통해 정보를 교환한다. BPDU에는 다음과 같은 종류가 있다.</p>
 
@@ -164,7 +164,7 @@
 
 <p>BPDU는 정기적으로 교환되어 토폴로지 변화 감지와 포워딩을 제어한다.</p>
 
-<h2 id="참고-자료,-reference">참고 자료, Reference</h2>
+<h2 id="참고-자료-reference">참고 자료, Reference</h2>
 
 <ul>
 <li><a href="http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C">Wikipedia, Korean. 신장 트리 프로토콜</a></li>

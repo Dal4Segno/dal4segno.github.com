@@ -6,9 +6,57 @@
 </description>
     <link>http://dal4segno.github.io/</link>
     <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 08 Jun 2015 07:50:34 +0900</pubDate>
-    <lastBuildDate>Mon, 08 Jun 2015 07:50:34 +0900</lastBuildDate>
+    <pubDate>Mon, 06 Jul 2015 16:14:00 +0900</pubDate>
+    <lastBuildDate>Mon, 06 Jul 2015 16:14:00 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Wi-Fi Sense</title>
+        <description>&lt;p&gt;Windows 10에 탑재되는 기술로 유명해진 기술이지만 Windows Phone 8.1 부터 지원하는 기술로, 자신의 Wi-Fi 테터링에 Facebook, Outlook, Skype 친구들이 별도의 인증 절차 없이 접근할 수 있도록 하는 기술이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;과정&quot;&gt;과정&lt;/h2&gt;
+
+&lt;p&gt;테더링의 Host(이하 Host)가 자신의 정보를 MS에 보내면, 이를 저장해두었다가 Host의 친구들에게 해당 정보를 건네준다.&lt;/p&gt;
+
+&lt;h2 id=&quot;효과&quot;&gt;효과&lt;/h2&gt;
+
+&lt;p&gt;관련 정보(SSID, Password 등)을 직접 알려주지 않아도 접근할 수 있기 때문에, 알려주는 과정에서 발생하는 누출을 걱정하지 않아도 되며 편리하다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;관련 정보를 어딘가에 적어두면 누구나 볼 수 있는 것과 같은 문제를 걱정하지 않아도 된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;문제점&quot;&gt;문제점&lt;/h2&gt;
+
+&lt;h3 id=&quot;불투명성&quot;&gt;불투명성&lt;/h3&gt;
+
+&lt;p&gt;정보를 저장하고 건네주는 과정이 MS에 의해 이루어지기 때문에, 실제 사용자는 알 수 없다.&lt;/p&gt;
+
+&lt;h3 id=&quot;사회공학&quot;&gt;사회공학&lt;/h3&gt;
+
+&lt;p&gt;테더링 접근 권한을 위해서 Host에게 친구 신청을 하는 경우가 있을 것으로 보인다.&lt;/p&gt;
+
+&lt;h2 id=&quot;바라는-점&quot;&gt;바라는 점&lt;/h2&gt;
+
+&lt;p&gt;Host에게 사용자 필터 기능이나 접근 시도시 승인 과정이 추가되어야 할 것으로 보인다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;www.computerworld.com/article/2943636/mobile-wireless/wifi-passwordsharing-feature-in-windows-10-raises-security-concerns.html&quot;&gt;Computer World. Wi-fi Password Sharing Feature in Windows 10 Raises Security Concerns.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.windowsphone.com/en-in/how-to/wp8/connectivity/use-wi-fi-sense-to-get-connected&quot;&gt;Windows Phone. Use Wi-Fi Sense to get Connected&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 06 Jul 2015 21:47:38 +0900</pubDate>
+        <link>http://dal4segno.github.io/network/2015/07/06/wi-fi-sense.html</link>
+        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/07/06/wi-fi-sense.html</guid>
+        
+        <category>microsoft, wifi, wifisense, tethering</category>
+        
+        
+        <category>network</category>
+        
+      </item>
     
       <item>
         <title>Rails on Heroku</title>
@@ -296,7 +344,7 @@
 
 &lt;h2 id=&quot;설정법&quot;&gt;설정법&lt;/h2&gt;
 
-&lt;h3 id=&quot;stylesheet,-js&quot;&gt;StyleSheet, JS&lt;/h3&gt;
+&lt;h3 id=&quot;stylesheet-js&quot;&gt;StyleSheet, JS&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;/app/assets/javascript/application.js&lt;/li&gt;
@@ -579,7 +627,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;Flooding된 패킷을 다른 브릿지가 받고, 그 브릿지 또한 목적지의 위치를 알지 못한다면 다시 Flooding이 일어나게 되고, 이 패킷은 결국 처음의 브릿지로 가게 될 뿐만 아니라, 두 브릿지 사이를 계속 순환하게 되어 지속적인 네트워크 트래픽을 발생시키는데 이를 &lt;strong&gt;Broadcast Storm(브로드캐스트 스톰)&lt;/strong&gt;이라 한다.&lt;/p&gt;
 
-&lt;h3 id=&quot;stp(spanning-tree-protocol)&quot;&gt;STP(Spanning Tree Protocol)&lt;/h3&gt;
+&lt;h3 id=&quot;stp-spanning-tree-protocol&quot;&gt;STP(Spanning Tree Protocol)&lt;/h3&gt;
 
 &lt;p&gt;브로드캐스트 스톰과 같은 낭비를 막기 위해서는 네트워크 구성을 그래프로 표현했을 때(노드 = 브릿지), 모든 노드가 그래프에 연결되어 있고, 한 노드에서 다른 한 노드로 가는 경로를 단 1개로 제한하는 &lt;strong&gt;Spanning Tree&lt;/strong&gt; 구조를 취함으로서 해결할 수 있다. 또한 경로가 1개로 고정되므로 여러 브릿지로 부터 접근가능한 호스트가 있을 시, 포워딩 테이블에서 Fault(실패)가 발생하는 것을 없앨 수 있다.&lt;/p&gt;
 
@@ -605,7 +653,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;이렇게 모든 계산이 끝난 후에, 루트 포트와 지명 포트가 아닌 모든 포트를 닫는다.&lt;/p&gt;
 
-&lt;h3 id=&quot;bpdus(bridge-protocol-units)&quot;&gt;BPDUs(Bridge Protocol Units)&lt;/h3&gt;
+&lt;h3 id=&quot;bpdus-bridge-protocol-units&quot;&gt;BPDUs(Bridge Protocol Units)&lt;/h3&gt;
 
 &lt;p&gt;STP를 통해 Spanning Tree를 구성하기 위해서는 전체 네트워크 망에 대한 정보를 가지고 있어야 하기 때문에 각 브릿지들이 충분한 정보를 가질 수 있도록 각 브릿지들은 BPDU라 불리는 데이터를 통해 정보를 교환한다. BPDU에는 다음과 같은 종류가 있다.&lt;/p&gt;
 
@@ -617,7 +665,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;BPDU는 정기적으로 교환되어 토폴로지 변화 감지와 포워딩을 제어한다.&lt;/p&gt;
 
-&lt;h2 id=&quot;참고-자료,-reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
+&lt;h2 id=&quot;참고-자료-reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;Wikipedia, Korean. 신장 트리 프로토콜&lt;/a&gt;&lt;/li&gt;
@@ -653,7 +701,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;&lt;/br&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;어떻게-대응할-것인가?&quot;&gt;어떻게 대응할 것인가?&lt;/h2&gt;
+&lt;h2 id=&quot;어떻게-대응할-것인가&quot;&gt;어떻게 대응할 것인가?&lt;/h2&gt;
 
 &lt;p&gt;첫 번째 세션은 &lt;strong&gt;넥슨코리아&lt;/strong&gt;에서 IS 감사를 맡고 계신 &lt;strong&gt;여성구&lt;/strong&gt;님께서 발표해주셨습니다.&lt;/p&gt;
 
@@ -703,7 +751,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;&lt;/br&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;어떻게-조사할-것인가?&quot;&gt;어떻게 조사할 것인가?&lt;/h2&gt;
+&lt;h2 id=&quot;어떻게-조사할-것인가&quot;&gt;어떻게 조사할 것인가?&lt;/h2&gt;
 
 &lt;p&gt;두 번째 세션은 이 전 공개세미나에서 &lt;strong&gt;메모리 해킹 케이스&lt;/strong&gt;를 발표해주셨던, &lt;strong&gt;경찰청&lt;/strong&gt; 사이버안전국 &lt;strong&gt;이병길&lt;/strong&gt; 수사관님께서 발표해주셨습니다. 초반에 알 수없는 문제로 슬라이드가 알아서 넘어갈 때는 제가 놀랐었네요 :)&lt;/p&gt;
 
@@ -735,7 +783,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;&lt;/br&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;어떻게-들어왔는가?&quot;&gt;어떻게 들어왔는가?&lt;/h2&gt;
+&lt;h2 id=&quot;어떻게-들어왔는가&quot;&gt;어떻게 들어왔는가?&lt;/h2&gt;
 
 &lt;p&gt;세 번째 세션은 &lt;strong&gt;Ahnlab A-First&lt;/strong&gt;팀의 &lt;strong&gt;오정훈&lt;/strong&gt; 연구원님이 발표해주셨습니다. &lt;/p&gt;
 
@@ -777,11 +825,11 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;&lt;/br&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;어떻게-가져갔는가?-그리고..&quot;&gt;어떻게 가져갔는가? 그리고..&lt;/h2&gt;
+&lt;h2 id=&quot;어떻게-가져갔는가-그리고&quot;&gt;어떻게 가져갔는가? 그리고..&lt;/h2&gt;
 
 &lt;p&gt;네 번째 세션은 &lt;strong&gt;Plainbit&lt;/strong&gt;의 &lt;strong&gt;김진국&lt;/strong&gt; 대표님이 발표해주셨습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;무엇을-조사해야-하는가?&quot;&gt;무엇을 조사해야 하는가?&lt;/h3&gt;
+&lt;h3 id=&quot;무엇을-조사해야-하는가&quot;&gt;무엇을 조사해야 하는가?&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;로그&lt;/strong&gt;는 행동에 대한 증거를 명시적으로 남겨두지만, &lt;strong&gt;아티팩트&lt;/strong&gt;는 정황을 조합하여 추론해내는 것이기 때문에 로그가 오래 보존될 수 있도록 미리 설정해두는 것이 중요합니다.&lt;/p&gt;
 
@@ -795,11 +843,11 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;현재 보안은 사고 가능성을 낮추기 위한 방어 체계에만 포커스가 맞춰져 있는데, 사고 발생시 피해를 최소화하는 데에도 신경을 써야 합니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;누가-인지하였는가?&quot;&gt;누가 인지하였는가?&lt;/h4&gt;
+&lt;h4 id=&quot;누가-인지하였는가&quot;&gt;누가 인지하였는가?&lt;/h4&gt;
 
 &lt;p&gt;첫 발표에서도 언급되었지만, 침해사고를 빨리 인식할 수록 대응 시간이 크게 늘어나게 됩니다만, 현재 국내의 침해사고는 대부분 외부 제보로 인한 인지가 많기 때문에, 상대적으로 대응에 미흡한 모습입니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;어떻게-처리되었는가?&quot;&gt;어떻게 처리되었는가?&lt;/h4&gt;
+&lt;h4 id=&quot;어떻게-처리되었는가&quot;&gt;어떻게 처리되었는가?&lt;/h4&gt;
 
 &lt;p&gt;세 번째 발표에서도 언급되었듯이, 전용 백신을 돌린다거나 해당 파일을 지우는 것으로는 완벽하게 대응되었다고 할 수 없습니다. &lt;/p&gt;
 
@@ -833,15 +881,15 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;정보 공개의 경우에는 전략 보호를 위해 절제되어야 하며, 또한 수사에서 얻은 정보를 공개하는 것에 대한 법률이 있기 때문에 해당 법률 또한 준수해야해서 정보 공개는 힘들다고 합니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;북한-사칭은?&quot;&gt;북한 사칭은?&lt;/h4&gt;
+&lt;h4 id=&quot;북한-사칭은&quot;&gt;북한 사칭은?&lt;/h4&gt;
 
 &lt;p&gt;해당 사례가 &lt;strong&gt;있었다&lt;/strong&gt; 라고 언급하신 거 보면, 이 정도는 충분히 식별해 내실 수 있는 것 같습니다 :)&lt;/p&gt;
 
-&lt;h3 id=&quot;선호-인력?&quot;&gt;선호 인력?&lt;/h3&gt;
+&lt;h3 id=&quot;선호-인력&quot;&gt;선호 인력?&lt;/h3&gt;
 
 &lt;p&gt;우선 다들 공통적으로 커뮤니케이션 능력을 선호하시는 것 같고, 그 외에 정보 수집/응용력, 타국인(사이트)와의 소통을 위한 영어 능력도 있으면 좋다고 합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;현재-보안-시장의-문제점?&quot;&gt;현재 보안 시장의 문제점?&lt;/h3&gt;
+&lt;h3 id=&quot;현재-보안-시장의-문제점&quot;&gt;현재 보안 시장의 문제점?&lt;/h3&gt;
 
 &lt;p&gt;너무 솔루션 위주로 시장이 발달했고, 기업 본인들이 자신의 상태를 잘 모르기 때문에 무작정 솔루션들만 사들이는 경향이 있다고 합니다. 앞의 발표들, 특히 첫 번째 발표에서 나왔듯이 어떤 것을 보호해야 할지 특정하는 것이 급선무로 보입니다 :)&lt;/p&gt;
 
@@ -886,7 +934,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 &lt;p&gt;사설 IP를 Class C부터 A까지 따라올라가도 결국 사설 네트워크이기 때문에 외부와 통신이 불가능하다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;nat(network-address-translation)&quot;&gt;NAT(Network Address Translation)&lt;/h2&gt;
+&lt;h2 id=&quot;nat-network-address-translation&quot;&gt;NAT(Network Address Translation)&lt;/h2&gt;
 
 &lt;p&gt;내부 네트워크에서 나가는 패킷의 출발지에 공인 IP를 부여하고, 외부 네트워크에서 들어오는 패킷의 도착지에 사설 IP를 부여함으로서 적은 공인 IP를 사용하여 통신이 가능하며, 이러한 방법을 &lt;strong&gt;NAT&lt;/strong&gt;라 한다. NAT에는 몇 가지 종류가 있는데, 이는 다음과 같다.&lt;/p&gt;
 
@@ -920,7 +968,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 
-&lt;h2 id=&quot;참고자료,-reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/TCP_%EB%B0%8F_UDP_%ED%8F%AC%ED%8A%B8&quot;&gt;Wikipedia, Korean. TCP 및 UDP 포트&lt;/a&gt;&lt;/li&gt;
@@ -974,7 +1022,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 &lt;li&gt;&lt;strong&gt;Acknowledge&lt;/strong&gt; - 임대 절차가 완료된 IP의 주소, 기간 등의 정보를 전송한다.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;cidr(classless-inter-domain-routing)&quot;&gt;CIDR(Classless Inter-Domain Routing)&lt;/h2&gt;
+&lt;h2 id=&quot;cidr-classless-inter-domain-routing&quot;&gt;CIDR(Classless Inter-Domain Routing)&lt;/h2&gt;
 
 &lt;p&gt;네트워크가 다른 네트워크의 집합으로 구성되어 있을 경우, 내부 네트워크(Subnetwork) 간의 통신을 위해 각 내부 네트워크에도 주소가 할당되어야 할 필요가 있다.&lt;strong&gt;(Subnetting)&lt;/strong&gt;&lt;/p&gt;
 
@@ -994,7 +1042,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;두 말단이 직접 연결되어 있지 않은 경우, 패킷의 직접 전송이 불가능하기 때문에 다른 지점들을 거쳐서 전송해야 하는데, 이 때 게이트웨이로 패킷을 전송하게 된다. 일반적으로 외부와 연결되어 있는 지점이 기본 게이트웨이가 된다.&lt;/p&gt;
 
-&lt;h2 id=&quot;dns(domain-name-service)&quot;&gt;DNS(Domain Name Service)&lt;/h2&gt;
+&lt;h2 id=&quot;dns-domain-name-service&quot;&gt;DNS(Domain Name Service)&lt;/h2&gt;
 
 &lt;p&gt;컴퓨터들은 IP 주소를 통해 서로를 구별하고 통신하지만, 이 주소를 사람이 외워서 사용하기는 힘들기 때문에 사람이 기억하고 사용하기 쉬운 문자열로 만든 &lt;strong&gt;도메인 이름(Domain Name)&lt;/strong&gt;을 이용한다.&lt;/p&gt;
 
@@ -1012,7 +1060,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;의 순서로 해당 도메인의 IP 주소를 찾아간다. &lt;/p&gt;
 
-&lt;h2 id=&quot;참고자료,-reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
+&lt;h2 id=&quot;참고자료-reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/169289/ko&quot;&gt;Microsoft Support. DHCP 기본 사항&lt;/a&gt;&lt;/li&gt;
@@ -1032,94 +1080,6 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
         <guid isPermaLink="true">http://dal4segno.github.io/network/2015/03/08/ip-configuration.html</guid>
         
         <category>network ip dhcp subnetting supernetting gateway dns</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>Internetworking, 인터네트워킹</title>
-        <description>&lt;p&gt;문자 그대로, 네트워크 간의 교류(통신)하는 개념 혹은 기술 전반을 이르는 단어이다. 여기서의 네트워크는 물리적으로 직접 연결되지 않은 네트워크와 심지어 구성이 다른 것들을 모두 포함한다. 마치 우리가 일반적으로 인터넷을 사용할 때 네트워크 구성 및 구조를 고려하지 않는 것처럼 말이다.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;연결된 각 네트워크는 다른 구성일 수 있으므로 다양한 구성에 대응할 수 있는 &lt;strong&gt;Heterogeneity(이질성)&lt;/strong&gt;와&lt;/li&gt;
-&lt;li&gt;수 많은 네트워크에 대응할 수 있는 &lt;strong&gt;Scalability(확장성)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;가 매우 중요하다. &lt;/p&gt;
-
-&lt;p&gt;여러 네트워크가 서로 다른 통신 규약(&lt;strong&gt;Protocol, 프로토콜&lt;/strong&gt;)을 사용한다면, 통신이 불가능하기 때문에 표준을 정하여 모두가 같은 프로토콜을 사용함으로서 이질성을 확보하였다. 현재의 표준은 &lt;strong&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95&quot;&gt;OSI 참조 모델(OSI Reference Model)&lt;/a&gt;&lt;/strong&gt;이다. 본 포스트는 해당 모델에 대한 지식이 있다는 것을 전제로 작성된다.&lt;/p&gt;
-
-&lt;h2 id=&quot;ip-service-model&quot;&gt;IP Service Model&lt;/h2&gt;
-
-&lt;p&gt;인터넷을 사용 중이라면, 많이 들어보았을 법 한 이름이다. &lt;strong&gt;IP(Internet Protocol)&lt;/strong&gt;는 OSI 참조 모델에서 3 계층, 네트워크 계층의 역할을 맡는다.&lt;/p&gt;
-
-&lt;p&gt;통신 시, 데이터는 송신자와 수신자 외에도 그 사이에 있는 많은 네트워크를 거치게 되는데, IP는 각종 세부 사항의 처리는 &lt;strong&gt;End Point(말단)&lt;/strong&gt;, 송신자와 수신자&lt;strong&gt;(상위 계층)&lt;/strong&gt;에게 맡기고, 최대한 단순한 구성을 통해 확장성을 높인 프로토콜이다. &lt;/p&gt;
-
-&lt;p&gt;데이터 전송은 의미 단위(파일 등)가 아닌 &lt;strong&gt;용량, 덩어리(Datagram, Packet)&lt;/strong&gt; 단위로 이루어진다.&lt;/p&gt;
-
-&lt;p&gt;또한, IP는 &lt;strong&gt;Best-Effort Delivery&lt;/strong&gt;의 특성을 갖는데, 이는 통신에 대해 보장하지 않는다는(Unreliable) 의미이다. 즉, 손실, 순서 바뀜, 중복, 지연 등의 문제가 발생 가능하며, 이는  IP에서 해결하지 않는다.&lt;/p&gt;
-
-&lt;h3 id=&quot;ip-address&quot;&gt;IP Address&lt;/h3&gt;
-
-&lt;p&gt;v4 기준으로 32bit의 주소를 사용한다. 네트워크의 크기에 따라 &lt;a href=&quot;http://ko.wikipedia.org/wiki/IPv4&quot;&gt;Class를 나누어 Hierachical한 구조를 형성한다&lt;/a&gt;. 하위 네트워크들은 모두 상위 네트워크 주소가 같기 때문에, 여러 호스트들을 네트워크 단위로 관리할 수 있는 장점이 있다.&lt;/p&gt;
-
-&lt;p&gt;특수 목적용으로 일반적인 호스트에 할당할 수 없는 주소도 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;arp,-address-resolution-protocol&quot;&gt;ARP, Address Resolution Protocol&lt;/h3&gt;
-
-&lt;p&gt;통신 시, IP 주소를 사용한다고 해도 직접적인 통신은 하위 계층인 물리 계층을 통해 이루어지므로, IP 주소를 MAC 주소로 변환하는 과정이 필요하다.&lt;/p&gt;
-
-&lt;p&gt;이 과정은 수신자의 IP에 대한(혹은 상위 네트워크) MAC 주소를 알고 있는 호스트를 &lt;strong&gt;Broadcasting(브로드캐스팅)&lt;/strong&gt; 을 통해서 찾는다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;브로드캐스팅이란, 같은 네트워크에 있는 모든 호스트에게 데이터를 전송하는 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;ARP를 통해 알아낸 MAC 주소는 별도로 저장하여 사용한다. &lt;/p&gt;
-
-&lt;h4 id=&quot;vulnerability,-취약점&quot;&gt;Vulnerability, 취약점&lt;/h4&gt;
-
-&lt;p&gt;ARP 과정에는 별도의 인증 과정이 없기 때문에, 요청과 응답(Request, Response)이 모두 위조될 수 있다. 이와 관련된 공격 기법은 &lt;strong&gt;ARP Spoofing, Poisoning&lt;/strong&gt;이라 하며, 이 후 별도의 포스트에서 다뤄보도록 한다.&lt;/p&gt;
-
-&lt;p&gt;또한, &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%83%81%ED%83%9C_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;&lt;strong&gt;Stateless(무상태)&lt;/strong&gt;&lt;/a&gt; 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;fowarding-/-routing&quot;&gt;Fowarding / Routing&lt;/h2&gt;
-
-&lt;p&gt;위에서도 언급했듯이, 매 송신마다 ARP를 통해 MAC 주소를 알아내는 것이 아니라, 한 번 알아낸 주소는 별도의 Table에 저장하여 사용한다. 이 때,&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Table을 만드는 작업을 &lt;strong&gt;Routing(라우팅)&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Table을 이용하여 데이터를 적절하게 송신하는 것을 &lt;strong&gt;Fowarding(포워딩)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;이라 한다. &lt;/p&gt;
-
-&lt;h3 id=&quot;fowarding-algorithm&quot;&gt;Fowarding Algorithm&lt;/h3&gt;
-
-&lt;p&gt;Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대상의 주소들과 Masking 한 후, &lt;strong&gt;앞 부분이 가장 길게 일치하는(Longest Prefix Matched)&lt;/strong&gt; 대상으로 전송한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;fragmentation-/-reassembly&quot;&gt;Fragmentation / Reassembly&lt;/h2&gt;
-
-&lt;p&gt;각 네트워크에는 &lt;strong&gt;MTU, Maximum Transmission Unit&lt;/strong&gt;, 최대로 전송 가능한 용량이 정해져 있기 때문에 이 크기보다 큰 데이터를 보내기 위해서는 &lt;strong&gt;MTU 단위로 나누어서(Fragmentation)&lt;/strong&gt; 전송해야 한다. 또한, 재조립을 위해서 Fragmentation 되었다는 사실과, 순서 정보를 포함해야 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고-자료,-reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www1.pldworld.com/@xilinx/html/link/network/inter.htm&quot;&gt;pldworld.com. 인터네트워킹의 개념적 이해&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.terms.co.kr/internetworking.htm&quot;&gt;텀즈. 인터네트워킹&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Thu, 12 Feb 2015 09:26:44 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/02/12/internetworking.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/02/12/internetworking.html</guid>
-        
-        <category>network internetworking ip arp fowarding routing</category>
         
         
         <category>network</category>

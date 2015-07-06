@@ -131,7 +131,7 @@
 
 <p>특수 목적용으로 일반적인 호스트에 할당할 수 없는 주소도 있다.</p>
 
-<h3 id="arp,-address-resolution-protocol">ARP, Address Resolution Protocol</h3>
+<h3 id="arp-address-resolution-protocol">ARP, Address Resolution Protocol</h3>
 
 <p>통신 시, IP 주소를 사용한다고 해도 직접적인 통신은 하위 계층인 물리 계층을 통해 이루어지므로, IP 주소를 MAC 주소로 변환하는 과정이 필요하다.</p>
 
@@ -143,13 +143,13 @@
 
 <p>ARP를 통해 알아낸 MAC 주소는 별도로 저장하여 사용한다. </p>
 
-<h4 id="vulnerability,-취약점">Vulnerability, 취약점</h4>
+<h4 id="vulnerability-취약점">Vulnerability, 취약점</h4>
 
 <p>ARP 과정에는 별도의 인증 과정이 없기 때문에, 요청과 응답(Request, Response)이 모두 위조될 수 있다. 이와 관련된 공격 기법은 <strong>ARP Spoofing, Poisoning</strong>이라 하며, 이 후 별도의 포스트에서 다뤄보도록 한다.</p>
 
 <p>또한, <a href="http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%83%81%ED%83%9C_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C"><strong>Stateless(무상태)</strong></a> 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.</p>
 
-<h2 id="fowarding-/-routing">Fowarding / Routing</h2>
+<h2 id="fowarding-routing">Fowarding / Routing</h2>
 
 <p>위에서도 언급했듯이, 매 송신마다 ARP를 통해 MAC 주소를 알아내는 것이 아니라, 한 번 알아낸 주소는 별도의 Table에 저장하여 사용한다. 이 때,</p>
 
@@ -164,11 +164,11 @@
 
 <p>Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대상의 주소들과 Masking 한 후, <strong>앞 부분이 가장 길게 일치하는(Longest Prefix Matched)</strong> 대상으로 전송한다.</p>
 
-<h2 id="fragmentation-/-reassembly">Fragmentation / Reassembly</h2>
+<h2 id="fragmentation-reassembly">Fragmentation / Reassembly</h2>
 
 <p>각 네트워크에는 <strong>MTU, Maximum Transmission Unit</strong>, 최대로 전송 가능한 용량이 정해져 있기 때문에 이 크기보다 큰 데이터를 보내기 위해서는 <strong>MTU 단위로 나누어서(Fragmentation)</strong> 전송해야 한다. 또한, 재조립을 위해서 Fragmentation 되었다는 사실과, 순서 정보를 포함해야 한다.</p>
 
-<h2 id="참고-자료,-reference">참고 자료, Reference</h2>
+<h2 id="참고-자료-reference">참고 자료, Reference</h2>
 
 <ul>
 <li><a href="http://www1.pldworld.com/@xilinx/html/link/network/inter.htm">pldworld.com. 인터네트워킹의 개념적 이해</a></li>

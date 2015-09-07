@@ -2,14 +2,11 @@
 
 title:            Dal4Segno's Whatnot
 locale:           ko_KR
-url: http://localhost:4000
+url: dal4segno.github.io
 timezone: Asia/Seoul
 
 # Jekyll configuration
 
-pagination: true
-paginate: 10
-paginate_path: "blog/page:num"
 permalink:   /:categories/:title/
 markdown:    kramdown
 highlighter: pygments

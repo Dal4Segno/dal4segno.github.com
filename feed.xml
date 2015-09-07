@@ -2,13 +2,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Dal4Segno's Whatnot</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2015-09-07T18:39:29+00:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="https://dal4segno.github.io/feed.xml" />
+<link rel="alternate" type="text/html" href="https://dal4segno.github.io" />
+<updated>2015-09-07T19:03:21+00:00</updated>
+<id>https://dal4segno.github.io/</id>
 <author>
   <name>Dal4Segno</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>https://dal4segno.github.io/</uri>
   <email>dal4segno@gmail.com</email>
 </author>
 
@@ -17,13 +17,13 @@
 
 <entry>
   <title type="html"><![CDATA[Suricata Rules - 2]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/suricata-rules-2/" />
-  <id>http://localhost:4000/network/suricata-rules-2</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/suricata-rules-2/" />
+  <id>https://dal4segno.github.io/network/suricata-rules-2</id>
   <published>2015-07-21T16:40:45+00:00</published>
   <updated>2015-07-21T16:40:45+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -250,7 +250,7 @@
 &lt;/ul&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/suricata-rules-2/&quot;&gt;Suricata Rules - 2&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 21, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/suricata-rules-2/&quot;&gt;Suricata Rules - 2&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 21, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -259,13 +259,13 @@
 
 <entry>
   <title type="html"><![CDATA[Suricata Rules - 1]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/suricata-rules/" />
-  <id>http://localhost:4000/network/suricata-rules</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/suricata-rules/" />
+  <id>https://dal4segno.github.io/network/suricata-rules</id>
   <published>2015-07-21T02:06:06+00:00</published>
   <updated>2015-07-21T02:06:06+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -460,7 +460,7 @@
 &lt;h2 id=&quot;suricata-rules---2httpdal4segnogithubionetwork20150722suricata-rules-2html&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/network/2015/07/22/suricata-rules-2.html&quot;&gt;» Suricata Rules - 2&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/suricata-rules/&quot;&gt;Suricata Rules - 1&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 21, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/suricata-rules/&quot;&gt;Suricata Rules - 1&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 21, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -469,13 +469,13 @@
 
 <entry>
   <title type="html"><![CDATA[Wi-Fi Sense]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/wi-fi-sense/" />
-  <id>http://localhost:4000/network/wi-fi-sense</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/wi-fi-sense/" />
+  <id>https://dal4segno.github.io/network/wi-fi-sense</id>
   <published>2015-07-06T12:47:38+00:00</published>
   <updated>2015-07-06T12:47:38+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -508,7 +508,7 @@
   &lt;li&gt;&lt;a href=&quot;https://www.windowsphone.com/en-in/how-to/wp8/connectivity/use-wi-fi-sense-to-get-connected&quot;&gt;Windows Phone. Use Wi-Fi Sense to get Connected&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/wi-fi-sense/&quot;&gt;Wi-Fi Sense&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 06, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/wi-fi-sense/&quot;&gt;Wi-Fi Sense&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 06, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -517,13 +517,13 @@
 
 <entry>
   <title type="html"><![CDATA[Rails on Heroku]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/web-programming/rails-on-heroku/" />
-  <id>http://localhost:4000/web-programming/rails-on-heroku</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/web-programming/rails-on-heroku/" />
+  <id>https://dal4segno.github.io/web-programming/rails-on-heroku</id>
   <published>2015-05-20T23:38:05+00:00</published>
   <updated>2015-05-20T23:38:05+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -621,7 +621,7 @@
 &lt;p&gt;적은 건 얼마 없지만 어마어마한 삽질 끝에 얻은 결과입니다. 다음부터 Rails 개발할 때는 초장부터 PostgreSQL 쓰겠습니다.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/web-programming/rails-on-heroku/&quot;&gt;Rails on Heroku&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on May 20, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/web-programming/rails-on-heroku/&quot;&gt;Rails on Heroku&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on May 20, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -630,13 +630,13 @@
 
 <entry>
   <title type="html"><![CDATA[Make Wiki on Rails]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/web-programming/make-wiki-on-rails/" />
-  <id>http://localhost:4000/web-programming/make-wiki-on-rails</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/web-programming/make-wiki-on-rails/" />
+  <id>https://dal4segno.github.io/web-programming/make-wiki-on-rails</id>
   <published>2015-05-19T22:41:47+00:00</published>
   <updated>2015-05-19T22:41:47+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -850,7 +850,7 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;p&gt;크게 활용도가 높은 서비스도 아니고, 폐쇄형이라 남들에게 자랑도 하기 힘든 그런 사이트이지만, 배운 기술로 뭔가 뚝딱뚝딱 만들어내니 재밌고 보람찬 시간이었습니다. 이걸 계기로 더 많은 Rails 앱을 만들게 될 것 같네요.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/web-programming/make-wiki-on-rails/&quot;&gt;Make Wiki on Rails&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on May 19, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/web-programming/make-wiki-on-rails/&quot;&gt;Make Wiki on Rails&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on May 19, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -859,13 +859,13 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 
 <entry>
   <title type="html"><![CDATA[Wireless Network Security]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/wireless-network-security/" />
-  <id>http://localhost:4000/network/wireless-network-security</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/wireless-network-security/" />
+  <id>https://dal4segno.github.io/network/wireless-network-security</id>
   <published>2015-04-14T22:36:39+00:00</published>
   <updated>2015-04-14T22:36:39+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -908,7 +908,7 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
   &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4_%EB%B3%B4%ED%98%B8_%EC%A0%91%EC%86%8D&quot;&gt;Wikipedia(KR). 와이파이 보호 접속&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/wireless-network-security/&quot;&gt;Wireless Network Security&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 14, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/wireless-network-security/&quot;&gt;Wireless Network Security&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 14, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -917,13 +917,13 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 
 <entry>
   <title type="html"><![CDATA[Search Engine Query Parameter]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/serach-engine-parameter/" />
-  <id>http://localhost:4000/digitalforensics/serach-engine-parameter</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/digitalforensics/serach-engine-parameter/" />
+  <id>https://dal4segno.github.io/digitalforensics/serach-engine-parameter</id>
   <published>2015-04-13T19:57:07+00:00</published>
   <updated>2015-04-13T19:57:07+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -937,7 +937,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;이 정보를 통해서 간단하게 사용자의 검색 엔진 사용결과를 조사할 수 있을 것으로 보인다.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/serach-engine-parameter/&quot;&gt;Search Engine Query Parameter&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 13, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/digitalforensics/serach-engine-parameter/&quot;&gt;Search Engine Query Parameter&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 13, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -946,13 +946,13 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 <entry>
   <title type="html"><![CDATA[Wi-Fi]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/wifi/" />
-  <id>http://localhost:4000/network/wifi</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/wifi/" />
+  <id>https://dal4segno.github.io/network/wifi</id>
   <published>2015-04-12T14:07:04+00:00</published>
   <updated>2015-04-12T14:07:04+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1046,7 +1046,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
   &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/wifi/&quot;&gt;Wi-Fi&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 12, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/wifi/&quot;&gt;Wi-Fi&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 12, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1055,13 +1055,13 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 <entry>
   <title type="html"><![CDATA[Bridging]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/bridging/" />
-  <id>http://localhost:4000/network/bridging</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/bridging/" />
+  <id>https://dal4segno.github.io/network/bridging</id>
   <published>2015-03-10T20:59:38+00:00</published>
   <updated>2015-03-10T20:59:38+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1133,7 +1133,7 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
   &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/bridging/&quot;&gt;Bridging&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 10, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/bridging/&quot;&gt;Bridging&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 10, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1142,13 +1142,13 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 <entry>
   <title type="html"><![CDATA[FICON 2015]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/conference/ficon-2015/" />
-  <id>http://localhost:4000/conference/ficon-2015</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/conference/ficon-2015/" />
+  <id>https://dal4segno.github.io/conference/ficon-2015</id>
   <published>2015-03-10T11:33:29+00:00</published>
   <updated>2015-03-10T11:33:29+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1320,7 +1320,7 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
 
 &lt;p&gt;맨 앞에서도 말씀드렸듯이, 정말 만족스러운 컨퍼런스였습니다, 다음엔 더 많은 분들이 오셔서 좋은 지식들을 얻어가실 수 있었으면 좋겠습니다 :)&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/conference/ficon-2015/&quot;&gt;FICON 2015&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 10, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/conference/ficon-2015/&quot;&gt;FICON 2015&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 10, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1329,13 +1329,13 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
 
 <entry>
   <title type="html"><![CDATA[NAT]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/nat/" />
-  <id>http://localhost:4000/network/nat</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/nat/" />
+  <id>https://dal4segno.github.io/network/nat</id>
   <published>2015-03-09T10:15:53+00:00</published>
   <updated>2015-03-09T10:15:53+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1367,7 +1367,7 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
 
 &lt;p&gt;인터넷이 호스트들은 외부 요청에 대한 응답 시, 요청 시와 동일한 Port 번호로 응답하기 때문에, 외부에서 사설 네트워크로 들어오는 패킷들도 구별이 가능하다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/pat.png&quot; alt=&quot;PAT&quot; title=&quot;PAT 과정&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dal4segno.github.io/image/pat.png&quot; alt=&quot;PAT&quot; title=&quot;PAT 과정&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;라우터에서 목적지로 패킷을 보낼 때 출발지 IP와 Port 번호가 바뀌는 것을 볼 수 있는데, 이는 NAT 변환 테이블에 의해 변환된 것이다. 만약 테이블에 해당 IP와 Port번호에 대한 정보가 없다면 이 과정에서 추가된다.&lt;/p&gt;
 
@@ -1397,7 +1397,7 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
   &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/nat/&quot;&gt;NAT&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 09, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/nat/&quot;&gt;NAT&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 09, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1406,13 +1406,13 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
 
 <entry>
   <title type="html"><![CDATA[IP Configuration]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/ip-configuration/" />
-  <id>http://localhost:4000/network/ip-configuration</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/ip-configuration/" />
+  <id>https://dal4segno.github.io/network/ip-configuration</id>
   <published>2015-03-08T10:58:47+00:00</published>
   <updated>2015-03-08T10:58:47+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1430,7 +1430,7 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
 
 &lt;p&gt;DHCP에서 IP 주소는 &lt;strong&gt;Lease(임대)&lt;/strong&gt;되는 것 이기때문에, 정책에 따라 부여받은 IP 주소가 회수되거나 재할당되는 경우가 있을 수 있다.
 #### DORA Operation ####
-&lt;img src=&quot;http://localhost:4000/image/dhcp_dora.png&quot; alt=&quot;DHCP DORA Operation&quot; title=&quot;DHCP의 과정(DORA)&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://dal4segno.github.io/image/dhcp_dora.png&quot; alt=&quot;DHCP DORA Operation&quot; title=&quot;DHCP의 과정(DORA)&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;DHCP 작업은 &lt;strong&gt;UDP(User Datagram Protocol)&lt;/strong&gt;을 이용한다. 이는 추후에 상세한 포스팅을 올릴 예정이다.&lt;/p&gt;
 
@@ -1446,7 +1446,7 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
 
 &lt;p&gt;Class 기반의 주소 할당으로도 계층 구조를 나타낼 수 있지만, Class를 나타내는 데에 필요한 주소 길이가 고정적인 특성으로 인해 유연한 주소 할당이 불가하며 낭비되는 주소가 많다는 문제점이 있다. 이를 해결하기 위해 도입된 방법이 CIDR이다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/subnetting.png&quot; alt=&quot;Subnetwork&quot; title=&quot;Subnetwork 주소 구조&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dal4segno.github.io/image/subnetting.png&quot; alt=&quot;Subnetwork&quot; title=&quot;Subnetwork 주소 구조&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;상위 네트워크의 Network ID를 사용하여, 하위 네트워크임을 명시하고 뒤에 &lt;strong&gt;Subnet ID&lt;/strong&gt;를 이용하여 내부 네트워크들을 구분한다. Class가 아닌, 주소의 접두(Prefix), Network ID와 Subnet ID의 연속을 통해 계층을 나타내는 것이 가능하다. 해당 접두 부분의 길이를 Masking으로 나타내는 것을 &lt;strong&gt;Subnet Mask&lt;/strong&gt;라 한다.&lt;/p&gt;
 
@@ -1489,7 +1489,7 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
   &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/ip-configuration/&quot;&gt;IP Configuration&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 08, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/ip-configuration/&quot;&gt;IP Configuration&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 08, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1498,13 +1498,13 @@ DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/stro
 
 <entry>
   <title type="html"><![CDATA[Internetworking, 인터네트워킹]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/network/internetworking/" />
-  <id>http://localhost:4000/network/internetworking</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/network/internetworking/" />
+  <id>https://dal4segno.github.io/network/internetworking</id>
   <published>2015-02-12T00:26:44+00:00</published>
   <updated>2015-02-12T00:26:44+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1571,7 +1571,7 @@ Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대�
   &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/internetworking/&quot;&gt;Internetworking, 인터네트워킹&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on February 12, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/network/internetworking/&quot;&gt;Internetworking, 인터네트워킹&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on February 12, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1580,13 +1580,13 @@ Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대�
 
 <entry>
   <title type="html"><![CDATA[타임라인, 타임스탬프]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/timeline-analysis/" />
-  <id>http://localhost:4000/digitalforensics/timeline-analysis</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/digitalforensics/timeline-analysis/" />
+  <id>https://dal4segno.github.io/digitalforensics/timeline-analysis</id>
   <published>2015-02-07T22:42:58+00:00</published>
   <updated>2015-02-07T22:42:58+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1625,7 +1625,7 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/timeline-analysis/&quot;&gt;타임라인, 타임스탬프&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on February 07, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/digitalforensics/timeline-analysis/&quot;&gt;타임라인, 타임스탬프&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on February 07, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1634,13 +1634,13 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 <entry>
   <title type="html"><![CDATA[파일 카빙을 통한 데이터 복구]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/data-recovery-via-the-file-carving/" />
-  <id>http://localhost:4000/digitalforensics/data-recovery-via-the-file-carving</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/digitalforensics/data-recovery-via-the-file-carving/" />
+  <id>https://dal4segno.github.io/digitalforensics/data-recovery-via-the-file-carving</id>
   <published>2015-01-30T22:25:42+00:00</published>
   <updated>2015-01-30T22:25:42+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1666,7 +1666,7 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;파일의 구분 뿐만 아니라, 파일의 처리를 위해서 데이터를 여러 영역으로 구분하여 기록하는 경우도 있는데, 이런 경우에는 영역마다 시그니처가 붙어있는 경우도 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/jpeg_header.png&quot; alt=&quot;JPEG File Header&quot; title=&quot;JPEG 파일의 시그니처&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://dal4segno.github.io/image/jpeg_header.png&quot; alt=&quot;JPEG File Header&quot; title=&quot;JPEG 파일의 시그니처&quot; /&gt;
 ##비할당 영역(Unallocated Area)##
 특정 파일을 카빙해내기 위해서는 단순히 저장장치의 모든 영역에 대해서 해당 파일의 시그니처를 탐색해내면 된다. 그러면, 그 파일과 같은 형식의 파일을 전부 찾을 수 있고, 찾아낸 파일 중에서 원하는 파일을 찾으면 된다.&lt;/p&gt;
 
@@ -1687,7 +1687,7 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;조각화를 극복하고 파일을 카빙해내려는 다양한 시도가 있으나, 아직은 완벽한 방법이 없는 것으로 보인다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/fragmentaion.png&quot; alt=&quot;Fragmented File&quot; title=&quot;조각난 파일&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;https://dal4segno.github.io/image/fragmentaion.png&quot; alt=&quot;Fragmented File&quot; title=&quot;조각난 파일&quot; /&gt;
 ##도구##
 파일 카빙은 분석가가 직접 하나하나 하기엔 번거로운 작업이므로, 도와주는 도구가 여럿 있다.&lt;/p&gt;
 
@@ -1705,7 +1705,7 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 &lt;p&gt;발표 자료 대부분이 설명이 없는 그림입니다. 본 포스트와 함께 봐주세요.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/data-recovery-via-the-file-carving/&quot;&gt;파일 카빙을 통한 데이터 복구&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on January 30, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/digitalforensics/data-recovery-via-the-file-carving/&quot;&gt;파일 카빙을 통한 데이터 복구&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on January 30, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -1714,13 +1714,13 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 
 <entry>
   <title type="html"><![CDATA[What is Digital Forensics?]]></title>
-  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/what-is-digital-forensics/" />
-  <id>http://localhost:4000/digitalforensics/what-is-digital-forensics</id>
+  <link rel="alternate" type="text/html" href="https://dal4segno.github.io/digitalforensics/what-is-digital-forensics/" />
+  <id>https://dal4segno.github.io/digitalforensics/what-is-digital-forensics</id>
   <published>2015-01-17T21:35:27+00:00</published>
   <updated>2015-01-17T21:35:27+00:00</updated>
   <author>
     <name>Dal4Segno</name>
-    <uri>http://localhost:4000</uri>
+    <uri>https://dal4segno.github.io</uri>
     <email>dal4segno@gmail.com</email>
   </author>
   <content type="html">
@@ -1747,7 +1747,7 @@ Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/what-is-digital-forensics/&quot;&gt;What is Digital Forensics?&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on January 17, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://dal4segno.github.io/digitalforensics/what-is-digital-forensics/&quot;&gt;What is Digital Forensics?&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;https://dal4segno.github.io&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on January 17, 2015.&lt;/p&gt;
   </content>
 </entry>
 

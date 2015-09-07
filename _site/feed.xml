@@ -1,106 +1,171 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Dal4Segno&#39;s Whatnot.</title>
-    <description>Computer, Digital Forensics, etc...
-</description>
-    <link>http://dal4segno.github.io/</link>
-    <atom:link href="http://dal4segno.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Jul 2015 19:51:37 +0900</pubDate>
-    <lastBuildDate>Tue, 21 Jul 2015 19:51:37 +0900</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
-    
-      <item>
-        <title>Suricata Rules - 2</title>
-        <description>&lt;h2 id=&quot;lt-lt-suricata-rules-1&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/network/2015/07/21/suricata-rules.html&quot;&gt;&amp;lt;&amp;lt; Suricata Rules - 1&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">Dal4Segno's Whatnot</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2015-09-07T18:39:29+00:00</updated>
+<id>http://localhost:4000/</id>
+<author>
+  <name>Dal4Segno</name>
+  <uri>http://localhost:4000/</uri>
+  <email>dal4segno@gmail.com</email>
+</author>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Suricata Rules - 2]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/suricata-rules-2/" />
+  <id>http://localhost:4000/network/suricata-rules-2</id>
+  <published>2015-07-21T16:40:45+00:00</published>
+  <updated>2015-07-21T16:40:45+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;section id=&quot;table-of-contents&quot; class=&quot;toc&quot;&gt;
+  &lt;header&gt;
+    &lt;h3&gt;&lt;i class=&quot;fa fa-book&quot;&gt;&lt;/i&gt; Overview&lt;/h3&gt;
+  &lt;/header&gt;
+&lt;div id=&quot;drawer&quot;&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#suricata-rules---1httpdal4segnogithubionetwork20150721suricata-ruleshtml&quot; id=&quot;markdown-toc-suricata-rules---1httpdal4segnogithubionetwork20150721suricata-ruleshtml&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/network/2015/07/21/suricata-rules.html&quot;&gt;« Suricata Rules - 1&lt;/a&gt;&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#http-keywords&quot; id=&quot;markdown-toc-http-keywords&quot;&gt;HTTP Keywords&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpmethod&quot; id=&quot;markdown-toc-httpmethod&quot;&gt;http_method&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpuri-httprawuri&quot; id=&quot;markdown-toc-httpuri-httprawuri&quot;&gt;http_uri, http_raw_uri&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#uricontent&quot; id=&quot;markdown-toc-uricontent&quot;&gt;uricontent&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpheader-httprawheader&quot; id=&quot;markdown-toc-httpheader-httprawheader&quot;&gt;http_header, http_raw_header&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpcookie&quot; id=&quot;markdown-toc-httpcookie&quot;&gt;http_cookie&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpuseragent&quot; id=&quot;markdown-toc-httpuseragent&quot;&gt;http_user_agent&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpclientbody&quot; id=&quot;markdown-toc-httpclientbody&quot;&gt;http_client_body&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpstatcode&quot; id=&quot;markdown-toc-httpstatcode&quot;&gt;http_stat_code&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpstatmsg&quot; id=&quot;markdown-toc-httpstatmsg&quot;&gt;http_stat_msg&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#httpserverbody&quot; id=&quot;markdown-toc-httpserverbody&quot;&gt;http_server_body&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#filedata&quot; id=&quot;markdown-toc-filedata&quot;&gt;file_data&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#urilen&quot; id=&quot;markdown-toc-urilen&quot;&gt;urilen&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dns-keywords&quot; id=&quot;markdown-toc-dns-keywords&quot;&gt;DNS Keywords&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#dnsquery&quot; id=&quot;markdown-toc-dnsquery&quot;&gt;dns_query&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#flow-keywords&quot; id=&quot;markdown-toc-flow-keywords&quot;&gt;Flow Keywords&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#flowbits&quot; id=&quot;markdown-toc-flowbits&quot;&gt;Flowbits&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#flow&quot; id=&quot;markdown-toc-flow&quot;&gt;Flow&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#direction&quot; id=&quot;markdown-toc-direction&quot;&gt;Direction&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#established&quot; id=&quot;markdown-toc-established&quot;&gt;Established&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#match&quot; id=&quot;markdown-toc-match&quot;&gt;Match&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#flowint&quot; id=&quot;markdown-toc-flowint&quot;&gt;FlowInt&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#streamsize&quot; id=&quot;markdown-toc-streamsize&quot;&gt;stream_size&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ip-reputation-rules&quot; id=&quot;markdown-toc-ip-reputation-rules&quot;&gt;IP Reputation Rules&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#iprep&quot; id=&quot;markdown-toc-iprep&quot;&gt;iprep&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- /#table-of-contents --&gt;
+
+&lt;h2 id=&quot;suricata-rules---1httpdal4segnogithubionetwork20150721suricata-ruleshtml&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/network/2015/07/21/suricata-rules.html&quot;&gt;« Suricata Rules - 1&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;h2 id=&quot;http-keywords&quot;&gt;HTTP Keywords&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/HTTP-keywords&quot;&gt;Suricata. HTTP Keywords&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;http_method&quot;&gt;http_method&lt;/h3&gt;
+&lt;h3 id=&quot;httpmethod&quot;&gt;http_method&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 method-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;HTTP Method는 method-buffer에 별도 저장된다.&lt;/p&gt;
+  &lt;p&gt;HTTP Method는 method-buffer에 별도 저장된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;http_uri-http_raw_uri&quot;&gt;http_uri, http_raw_uri&lt;/h3&gt;
+&lt;h3 id=&quot;httpuri-httprawuri&quot;&gt;http_uri, http_raw_uri&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 uri-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;http_raw_uri&lt;/strong&gt; Keyword는 &lt;em&gt;%20&lt;/em&gt;과 같이 uri Encoding 된 상태의 uri를 대상으로 사용한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;URI 는 uri-buffer에 별도 저장된다.&lt;/p&gt;
+  &lt;p&gt;URI 는 uri-buffer에 별도 저장된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;uricontent&quot;&gt;uricontent&lt;/h3&gt;
 
 &lt;p&gt;&lt;em&gt;Deprecated&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;http_header-http_raw_header&quot;&gt;http_header, http_raw_header&lt;/h3&gt;
+&lt;h3 id=&quot;httpheader-httprawheader&quot;&gt;http_header, http_raw_header&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 header-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;HTTP Header는 header-buffer에 별도 저장된다.&lt;/p&gt;
+  &lt;p&gt;HTTP Header는 header-buffer에 별도 저장된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Normalize 되므로 마지막에 붙는 공백이나 Tab은 모두 제거된다. 이를 확인하고 싶으면 raw를 사용해야 한다.&lt;/p&gt;
 
-&lt;h3 id=&quot;http_cookie&quot;&gt;http_cookie&lt;/h3&gt;
+&lt;h3 id=&quot;httpcookie&quot;&gt;http_cookie&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 cookie-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Cookie는 cookie-buffer에 별도 저장된다.&lt;/p&gt;
+  &lt;p&gt;Cookie는 cookie-buffer에 별도 저장된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;http_user_agent&quot;&gt;http_user_agent&lt;/h3&gt;
+&lt;h3 id=&quot;httpuseragent&quot;&gt;http_user_agent&lt;/h3&gt;
 
 &lt;p&gt;HTTP Header의 Content Modifier로, 탐색 영역은 header-buffer에 한정된다.&lt;/p&gt;
 
-&lt;p&gt;조건에 &lt;strong&gt;&amp;quot;User-Agent: &amp;quot;&lt;/strong&gt;를 &lt;strong&gt;쓰지 않는다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;조건에 &lt;strong&gt;“User-Agent: “&lt;/strong&gt;를 &lt;strong&gt;쓰지 않는다.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;User-Agent 를 대상으로 탐색 시에는 &lt;strong&gt;http_user_agent&lt;/strong&gt;가 &lt;strong&gt;http_header&lt;/strong&gt;보다 더 빠르며, 사용하기 쉽다.
-&lt;a href=&quot;http://blog.inliniac.net/2012/07/09/suricata-http_user_agent-vs-http_header/&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;User-Agent 를 대상으로 탐색 시에는 &lt;strong&gt;http_user_agent&lt;/strong&gt;가 &lt;strong&gt;http_header&lt;/strong&gt;보다 더 빠르며, 사용하기 쉽다.
+[](http://blog.inliniac.net/2012/07/09/suricata-http_user_agent-vs-http_header/)&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;http_client_body&quot;&gt;http_client_body&lt;/h3&gt;
+&lt;h3 id=&quot;httpclientbody&quot;&gt;http_client_body&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 Request Body에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
-&lt;h3 id=&quot;http_stat_code&quot;&gt;http_stat_code&lt;/h3&gt;
+&lt;h3 id=&quot;httpstatcode&quot;&gt;http_stat_code&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 stat-code-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Stat Code는 stat-code-buffer에 별도 저장된다.&lt;/p&gt;
+  &lt;p&gt;Stat Code는 stat-code-buffer에 별도 저장된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;http_stat_msg&quot;&gt;http_stat_msg&lt;/h3&gt;
+&lt;h3 id=&quot;httpstatmsg&quot;&gt;http_stat_msg&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 stat-msg-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Stat Code는 stat-msg-buffer에 별도 저장된다.&lt;/p&gt;
+  &lt;p&gt;Stat Code는 stat-msg-buffer에 별도 저장된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;http_server_body&quot;&gt;http_server_body&lt;/h3&gt;
+&lt;h3 id=&quot;httpserverbody&quot;&gt;http_server_body&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword를 사용하면 탐색 범위를 Response Body에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.&lt;/p&gt;
 
-&lt;h3 id=&quot;file_data&quot;&gt;file_data&lt;/h3&gt;
+&lt;h3 id=&quot;filedata&quot;&gt;file_data&lt;/h3&gt;
 
 &lt;p&gt;해당 Keyword는 &lt;strong&gt;http_server_body&lt;/strong&gt; Keyword와 같이 탐색 범위를 HTTP Response body에 한정한다.&lt;/p&gt;
 
 &lt;p&gt;다른 Content Modifier와 다르게 &lt;strong&gt;pkt_data&lt;/strong&gt; 를 만나기 전까지 모든 Content 에 영향을 미친다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;gzip Encoding이 되어 있는 경우 압축해제 후에 분석한다.&lt;/p&gt;
+  &lt;p&gt;gzip Encoding이 되어 있는 경우 압축해제 후에 분석한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;urilen&quot;&gt;urilen&lt;/h3&gt;
@@ -109,7 +174,7 @@
 
 &lt;h2 id=&quot;dns-keywords&quot;&gt;DNS Keywords&lt;/h2&gt;
 
-&lt;h3 id=&quot;dns_query&quot;&gt;dns_query&lt;/h3&gt;
+&lt;h3 id=&quot;dnsquery&quot;&gt;dns_query&lt;/h3&gt;
 
 &lt;p&gt;DNS Response에 영향을 미치며, 다른 Content Modifier와 다르게 &lt;strong&gt;pkt_data&lt;/strong&gt; 를 만나기 전까지 모든 Content 에 영향을 미친다.&lt;/p&gt;
 
@@ -117,19 +182,19 @@
 
 &lt;h3 id=&quot;flowbits&quot;&gt;Flowbits&lt;/h3&gt;
 
-&lt;p&gt;하나의 Flow에 여러 패킷이 있을 때, Suricata는 이 Flow들을 Memory에 남겨둔다. &lt;/p&gt;
+&lt;p&gt;하나의 Flow에 여러 패킷이 있을 때, Suricata는 이 Flow들을 Memory에 남겨둔다.&lt;/p&gt;
 
 &lt;p&gt;독립 된 패킷 내의 Data가 아니라 특정 Flow 내의 패킷 Data를 검사할 때 사용한다.&lt;/p&gt;
 
 &lt;p&gt;Flowbits는 Action과 Name의 두 부분으로 구성되어 있으며 Action의 종류는 다음과 같다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;set : 현재 Flow의 해당 Condition을 Set 한다.&lt;/li&gt;
-&lt;li&gt;isset : 해당 Condition이 Set 되어 있을 경우 Alert을 생성한다.&lt;/li&gt;
-&lt;li&gt;toggle : 해당 Condition의 상태를 반전한다. set &amp;lt;-&amp;gt; unset&lt;/li&gt;
-&lt;li&gt;unset : 현재 Flow의 해당 Condition을 Unset 한다.&lt;/li&gt;
-&lt;li&gt;isnotset : 해당 Condition이 Set 되어 있지 &lt;strong&gt;않을&lt;/strong&gt; 경우 Alert을 생성한다.&lt;/li&gt;
-&lt;li&gt;noalert : 이 Rule에 대하여 Alert을 생성하지 않는다.&lt;/li&gt;
+  &lt;li&gt;set : 현재 Flow의 해당 Condition을 Set 한다.&lt;/li&gt;
+  &lt;li&gt;isset : 해당 Condition이 Set 되어 있을 경우 Alert을 생성한다.&lt;/li&gt;
+  &lt;li&gt;toggle : 해당 Condition의 상태를 반전한다. set &amp;lt;-&amp;gt; unset&lt;/li&gt;
+  &lt;li&gt;unset : 현재 Flow의 해당 Condition을 Unset 한다.&lt;/li&gt;
+  &lt;li&gt;isnotset : 해당 Condition이 Set 되어 있지 &lt;strong&gt;않을&lt;/strong&gt; 경우 Alert을 생성한다.&lt;/li&gt;
+  &lt;li&gt;noalert : 이 Rule에 대하여 Alert을 생성하지 않는다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;flow&quot;&gt;Flow&lt;/h3&gt;
@@ -139,28 +204,28 @@
 &lt;h4 id=&quot;direction&quot;&gt;Direction&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;to_client&lt;/li&gt;
-&lt;li&gt;from_server&lt;/li&gt;
-&lt;li&gt;to_server&lt;/li&gt;
-&lt;li&gt;from_client&lt;/li&gt;
+  &lt;li&gt;to_client&lt;/li&gt;
+  &lt;li&gt;from_server&lt;/li&gt;
+  &lt;li&gt;to_server&lt;/li&gt;
+  &lt;li&gt;from_client&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;to_client와 from_server, 그리고 to_server와 from_client는 동의어이지만, 기존의 Snort Rule과의 호환성을 위해 유지되고 있다.&lt;/p&gt;
+  &lt;p&gt;to_client와 from_server, 그리고 to_server와 from_client는 동의어이지만, 기존의 Snort Rule과의 호환성을 위해 유지되고 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h4 id=&quot;established&quot;&gt;Established&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;established&lt;/li&gt;
-&lt;li&gt;stateless&lt;/li&gt;
+  &lt;li&gt;established&lt;/li&gt;
+  &lt;li&gt;stateless&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;match&quot;&gt;Match&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;only_stream&lt;/li&gt;
-&lt;li&gt;no_stream : 독립된 패킷에 대해서 검사하도록 한다.&lt;/li&gt;
+  &lt;li&gt;only_stream&lt;/li&gt;
+  &lt;li&gt;no_stream : 독립된 패킷에 대해서 검사하도록 한다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;flowint&quot;&gt;FlowInt&lt;/h3&gt;
@@ -169,7 +234,7 @@
 
 &lt;p&gt;Stream 내에서 사용하는 변수와 그에 대한 조건 및 연산에 대한 Keyword이다.&lt;/p&gt;
 
-&lt;h4 id=&quot;stream_size&quot;&gt;stream_size&lt;/h4&gt;
+&lt;h4 id=&quot;streamsize&quot;&gt;stream_size&lt;/h4&gt;
 
 &lt;p&gt;Stream의 크기를 제한한다.&lt;/p&gt;
 
@@ -180,25 +245,32 @@
 &lt;p&gt;해당 IP의 등장 횟수에 따른 조건을 설정할 수 있다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/IPReputationConfig&quot;&gt;Suricata. IP Reputation Config&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/IPReputationFormat&quot;&gt;Suricata. IP Reputation Format&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/IPReputationConfig&quot;&gt;Suricata. IP Reputation Config&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/IPReputationFormat&quot;&gt;Suricata. IP Reputation Format&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-        <pubDate>Wed, 22 Jul 2015 01:40:45 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/07/22/suricata-rules-2.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/07/22/suricata-rules-2.html</guid>
-        
-        <category>suricata signature rule keyword http flow dns ipreputation</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>Suricata Rules - 1</title>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서입니다. 자세한 설명과 그림은 매 단락마다 첨부된 원문 링크를 참조하세요.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/suricata-rules-2/&quot;&gt;Suricata Rules - 2&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 21, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Suricata Rules - 1]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/suricata-rules/" />
+  <id>http://localhost:4000/network/suricata-rules</id>
+  <published>2015-07-21T02:06:06+00:00</published>
+  <updated>2015-07-21T02:06:06+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;blockquote&gt;
+  &lt;p&gt;Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서입니다. 자세한 설명과 그림은 매 단락마다 첨부된 원문 링크를 참조하세요.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;default&quot;&gt;Default&lt;/h2&gt;
@@ -210,9 +282,11 @@
 &lt;p&gt;해당 Signature가 어떤 행동을 할 지 설정한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Signature에는 Pass, Drop, Reject, Alert이 있다.&lt;/p&gt;
+  &lt;p&gt;Signature에는 Pass, Drop, Reject, Alert이 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Suricatayaml#Action-order&quot;&gt;Suricata.yaml Action Order&lt;/a&gt; 참조&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Suricatayaml#Action-order&quot;&gt;Suricata.yaml Action Order&lt;/a&gt; 참조&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;protocol&quot;&gt;Protocol&lt;/h3&gt;
@@ -222,15 +296,15 @@
 &lt;p&gt;지원되는 프로토콜은 다음과 같다&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;TCP&lt;/li&gt;
-&lt;li&gt;UDP&lt;/li&gt;
-&lt;li&gt;ICMP&lt;/li&gt;
-&lt;li&gt;IP&lt;/li&gt;
-&lt;li&gt;HTTP&lt;/li&gt;
-&lt;li&gt;FTP&lt;/li&gt;
-&lt;li&gt;TLS (SSL을 포함하여)&lt;/li&gt;
-&lt;li&gt;SMB&lt;/li&gt;
-&lt;li&gt;DNS&lt;/li&gt;
+  &lt;li&gt;TCP&lt;/li&gt;
+  &lt;li&gt;UDP&lt;/li&gt;
+  &lt;li&gt;ICMP&lt;/li&gt;
+  &lt;li&gt;IP&lt;/li&gt;
+  &lt;li&gt;HTTP&lt;/li&gt;
+  &lt;li&gt;FTP&lt;/li&gt;
+  &lt;li&gt;TLS (SSL을 포함하여)&lt;/li&gt;
+  &lt;li&gt;SMB&lt;/li&gt;
+  &lt;li&gt;DNS&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;source-and-destination&quot;&gt;Source And Destination&lt;/h3&gt;
@@ -238,11 +312,11 @@
 &lt;p&gt;대상 IP를 지정할 수 있으며 .yaml 파일에서 지정한 변수를 사용할 수 있고, Subnet Mask를 사용할 수 있다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;!&lt;/strong&gt;를 사용하여 Negation(부정, 대상을 포함하지 않음)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[ ]&lt;/strong&gt;를 사용하여 복합 조건 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;!&lt;/strong&gt;를 사용하여 Negation(부정, 대상을 포함하지 않음)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;[ ]&lt;/strong&gt;를 사용하여 복합 조건 지정&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;이 가능하다. &lt;/p&gt;
+&lt;p&gt;이 가능하다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;-&amp;gt;&lt;/strong&gt; 로 방향을 지정하거나 &lt;strong&gt;&amp;lt;&amp;gt;&lt;/strong&gt;로 양방향을 나타낼 수 있음.&lt;/p&gt;
 
@@ -250,12 +324,12 @@
 
 &lt;h3 id=&quot;ports&quot;&gt;Ports&lt;/h3&gt;
 
-&lt;p&gt;Port를 특정할 수 있으며 &lt;/p&gt;
+&lt;p&gt;Port를 특정할 수 있으며&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;!&lt;/strong&gt;를 사용하여 Negation(Exception)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;:&lt;/strong&gt;를 사용하여 범위 지정&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[ ]&lt;/strong&gt;를 사용하여 복합 조건 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;!&lt;/strong&gt;를 사용하여 Negation(Exception)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;:&lt;/strong&gt;를 사용하여 범위 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;[ ]&lt;/strong&gt;를 사용하여 복합 조건 지정&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;이 가능하다.&lt;/p&gt;
@@ -320,12 +394,19 @@
 
 &lt;h3 id=&quot;content&quot;&gt;Content&lt;/h3&gt;
 
-&lt;p&gt;Packet 의 Content에 대한 조건이다. Not Printable 문자나 다른 용도로 사용되고 있는 문자는 &lt;strong&gt;|&lt;/strong&gt; &lt;strong&gt;|&lt;/strong&gt; 안에 ASCII의 16진수형을 넣어 표현할 수 있다.&lt;/p&gt;
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Packet 의 Content에 대한 조건이다. Not Printable 문자나 다른 용도로 사용되고 있는 문자는 **&lt;/td&gt;
+      &lt;td&gt;** **&lt;/td&gt;
+      &lt;td&gt;** 안에 ASCII의 16진수형을 넣어 표현할 수 있다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
 &lt;p&gt;다양한 Modifier를 가질 수 있다.&lt;/p&gt;
 
 &lt;h4 id=&quot;nocase&quot;&gt;Nocase&lt;/h4&gt;
-
 &lt;p&gt;&lt;strong&gt;Content&lt;/strong&gt; Keyword는 기본적으로 Case-Sensitive 이지만, &lt;strong&gt;nocase&lt;/strong&gt; Keyword를 사용하여 해제할 수 있다.&lt;/p&gt;
 
 &lt;h4 id=&quot;depth&quot;&gt;Depth&lt;/h4&gt;
@@ -370,79 +451,86 @@
 
 &lt;p&gt;Perl의 정규표현식을 빌려서 조건을 설정할 수 있다.&lt;/p&gt;
 
-&lt;h3 id=&quot;fast_pattern&quot;&gt;fast_pattern&lt;/h3&gt;
+&lt;h3 id=&quot;fastpattern&quot;&gt;fast_pattern&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Fast_pattern&quot;&gt;Suricata. Fast Pattern&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;분석을 빠르게 하기 위한 설정으로, 정밀도가 떨어질 수 있다.&lt;/p&gt;
 
-&lt;h2 id=&quot;gt-gt-suricata-rules-2&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/network/2015/07/22/suricata-rules-2.html&quot;&gt;&amp;gt;&amp;gt; Suricata Rules - 2&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
-</description>
-        <pubDate>Tue, 21 Jul 2015 11:06:06 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/07/21/suricata-rules.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/07/21/suricata-rules.html</guid>
-        
-        <category>suricata Signatures Signature</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>Wi-Fi Sense</title>
-        <description>&lt;p&gt;Windows 10에 탑재되는 기술로 유명해진 기술이지만 Windows Phone 8.1 부터 지원하는 기술로, 자신의 Wi-Fi 테터링에 Facebook, Outlook, Skype 친구들이 별도의 인증 절차 없이 접근할 수 있도록 하는 기술이다.&lt;/p&gt;
+&lt;h2 id=&quot;suricata-rules---2httpdal4segnogithubionetwork20150722suricata-rules-2html&quot;&gt;&lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/network/2015/07/22/suricata-rules-2.html&quot;&gt;» Suricata Rules - 2&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;h2 id=&quot;과정&quot;&gt;과정&lt;/h2&gt;
 
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/suricata-rules/&quot;&gt;Suricata Rules - 1&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 21, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Wi-Fi Sense]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/wi-fi-sense/" />
+  <id>http://localhost:4000/network/wi-fi-sense</id>
+  <published>2015-07-06T12:47:38+00:00</published>
+  <updated>2015-07-06T12:47:38+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Windows 10에 탑재되는 기술로 유명해진 기술이지만 Windows Phone 8.1 부터 지원하는 기술로, 자신의 Wi-Fi 테터링에 Facebook, Outlook, Skype 친구들이 별도의 인증 절차 없이 접근할 수 있도록 하는 기술이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;과정&lt;/h2&gt;
 &lt;p&gt;테더링의 Host(이하 Host)가 자신의 정보를 MS에 보내면, 이를 저장해두었다가 Host의 친구들에게 해당 정보를 건네준다.&lt;/p&gt;
 
-&lt;h2 id=&quot;효과&quot;&gt;효과&lt;/h2&gt;
-
+&lt;h2 id=&quot;section-1&quot;&gt;효과&lt;/h2&gt;
 &lt;p&gt;관련 정보(SSID, Password 등)을 직접 알려주지 않아도 접근할 수 있기 때문에, 알려주는 과정에서 발생하는 누출을 걱정하지 않아도 되며 편리하다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;관련 정보를 어딘가에 적어두면 누구나 볼 수 있는 것과 같은 문제를 걱정하지 않아도 된다.&lt;/p&gt;
+  &lt;p&gt;관련 정보를 어딘가에 적어두면 누구나 볼 수 있는 것과 같은 문제를 걱정하지 않아도 된다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;문제점&quot;&gt;문제점&lt;/h2&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;문제점&lt;/h2&gt;
+&lt;p&gt;### 불투명성 ###
+정보를 저장하고 건네주는 과정이 MS에 의해 이루어지기 때문에, 실제 사용자는 알 수 없다.&lt;/p&gt;
 
-&lt;h3 id=&quot;불투명성&quot;&gt;불투명성&lt;/h3&gt;
-
-&lt;p&gt;정보를 저장하고 건네주는 과정이 MS에 의해 이루어지기 때문에, 실제 사용자는 알 수 없다.&lt;/p&gt;
-
-&lt;h3 id=&quot;사회공학&quot;&gt;사회공학&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-3&quot;&gt;사회공학&lt;/h3&gt;
 &lt;p&gt;테더링 접근 권한을 위해서 Host에게 친구 신청을 하는 경우가 있을 것으로 보인다.&lt;/p&gt;
 
-&lt;h2 id=&quot;바라는-점&quot;&gt;바라는 점&lt;/h2&gt;
-
+&lt;h2 id=&quot;section-4&quot;&gt;바라는 점&lt;/h2&gt;
 &lt;p&gt;Host에게 사용자 필터 기능이나 접근 시도시 승인 과정이 추가되어야 할 것으로 보인다.&lt;/p&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;www.computerworld.com/article/2943636/mobile-wireless/wifi-passwordsharing-feature-in-windows-10-raises-security-concerns.html&quot;&gt;Computer World. Wi-fi Password Sharing Feature in Windows 10 Raises Security Concerns.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.windowsphone.com/en-in/how-to/wp8/connectivity/use-wi-fi-sense-to-get-connected&quot;&gt;Windows Phone. Use Wi-Fi Sense to get Connected&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;www.computerworld.com/article/2943636/mobile-wireless/wifi-passwordsharing-feature-in-windows-10-raises-security-concerns.html&quot;&gt;Computer World. Wi-fi Password Sharing Feature in Windows 10 Raises Security Concerns.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.windowsphone.com/en-in/how-to/wp8/connectivity/use-wi-fi-sense-to-get-connected&quot;&gt;Windows Phone. Use Wi-Fi Sense to get Connected&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-        <pubDate>Mon, 06 Jul 2015 21:47:38 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/07/06/wi-fi-sense.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/07/06/wi-fi-sense.html</guid>
-        
-        <category>microsoft, wifi, wifisense, tethering</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>Rails on Heroku</title>
-        <description>&lt;p&gt;Heroku는 PaaS, Platform as a Service 중 하나로, 플랫폼을 제공함으로서 사용자가 어플리케이션에만 집중할 수 있도록 해주는 서비스이다. Heroku에 어플리케이션을 올리면 알아서 가상 서버에서 설정 같은걸 다 해주고 심지어 도메인까지 하나 제공한다.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/wi-fi-sense/&quot;&gt;Wi-Fi Sense&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on July 06, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Rails on Heroku]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/web-programming/rails-on-heroku/" />
+  <id>http://localhost:4000/web-programming/rails-on-heroku</id>
+  <published>2015-05-20T23:38:05+00:00</published>
+  <updated>2015-05-20T23:38:05+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Heroku는 PaaS, Platform as a Service 중 하나로, 플랫폼을 제공함으로서 사용자가 어플리케이션에만 집중할 수 있도록 해주는 서비스이다. Heroku에 어플리케이션을 올리면 알아서 가상 서버에서 설정 같은걸 다 해주고 심지어 도메인까지 하나 제공한다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.google.co.kr/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0CCMQ7QgwAA&amp;amp;url=https%3A%2F%2Fwww.heroku.com%2F&amp;amp;ei=hZxcVejxIM_X8gXa4oLgAg&amp;amp;usg=AFQjCNF8-hoB8iHVyZ2dDq3bYi_oSmHVtg&amp;amp;sig2=tfCbeO9LOZvll5vWv3PLMA&quot;&gt;Heroku&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.google.co.kr/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;cad=rja&amp;amp;uact=8&amp;amp;ved=0CCMQ7QgwAA&amp;amp;url=https%3A%2F%2Fwww.heroku.com%2F&amp;amp;ei=hZxcVejxIM_X8gXa4oLgAg&amp;amp;usg=AFQjCNF8-hoB8iHVyZ2dDq3bYi_oSmHVtg&amp;amp;sig2=tfCbeO9LOZvll5vWv3PLMA&quot;&gt;Heroku&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;게다가 안내 및 튜토리얼도 매우 친절하게 잘 되어있어서, 따라가면 어렵지 않게 Heroku의 서비스를 이용할 수 있다.&lt;/p&gt;
@@ -450,7 +538,7 @@
 &lt;p&gt;다음에 언급할 사항들만 잘 알고있다면.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Windows 10 TP 환경이다.&lt;/p&gt;
+  &lt;p&gt;Windows 10 TP 환경이다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;postgresql&quot;&gt;PostgreSQL&lt;/h1&gt;
@@ -458,14 +546,14 @@
 &lt;p&gt;Heroku는 PostgreSQL 을 DBMS로 사용한다. 여러가지 장점이 있다고 하는데, 설명은 링크로 대체한다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://helloworld.naver.com/helloworld/227936&quot;&gt;hello world, NAVER. 한눈에 살펴보는 PostgreSQL &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.postgresql.org/&quot;&gt;PostgreSQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://helloworld.naver.com/helloworld/227936&quot;&gt;hello world, NAVER. 한눈에 살펴보는 PostgreSQL &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;문제는 Rails 어플리케이션에서 기본으로 이용하는 DBMS가 Sqlite3 이고, Heroku에서는 이를 지원하지 않는다. sqlite gem을 설치할 수 없다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;RubyMine 기준&lt;/p&gt;
+  &lt;p&gt;RubyMine 기준&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;migrate-sqlite3-to-postgresql&quot;&gt;Migrate Sqlite3 to PostgreSQL&lt;/h2&gt;
@@ -473,36 +561,36 @@
 &lt;p&gt;Rails는 Development, Production, Test의 3가지 환경을 제공하는데, Heroku는 Production 모드로 배포된다. 그래서 &lt;em&gt;database.yml&lt;/em&gt; 의 production: 의 adapter만 &lt;strong&gt;postgresql&lt;/strong&gt;로 바꾸면 된다고 하는데, 필자는 계속 sqilte 관련 에러가 났기 때문에, 모든 모드의 adapter를 postgresql로 수정하였다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;지금 생각해보면 yml 파일 수정 후 git add , commit을 안해서 그런 것 같다.&lt;/p&gt;
+  &lt;p&gt;지금 생각해보면 yml 파일 수정 후 git add , commit을 안해서 그런 것 같다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;사용 중인 sqilte3 DB를 PostgreSQL로 이전하는 방법은 다음과 같다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;PostgreSQL 설치 및 기본 설정은 크게 어렵지 않으므로 생략한다.&lt;/p&gt;
+  &lt;p&gt;PostgreSQL 설치 및 기본 설정은 크게 어렵지 않으므로 생략한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://watabelabs.com/blog/view/migrating-rails-application-data-from-sqlite3-to-postgresql&quot;&gt;watabe. Migrating Rails Application Data from sqlite3 to PostgreSQL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://railscasts.com/episodes/342-migrating-to-postgresql?language=ko&amp;amp;view=asciicast&quot;&gt;RailsCast. Migrating to PostgreSQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://watabelabs.com/blog/view/migrating-rails-application-data-from-sqlite3-to-postgresql&quot;&gt;watabe. Migrating Rails Application Data from sqlite3 to PostgreSQL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://railscasts.com/episodes/342-migrating-to-postgresql?language=ko&amp;amp;view=asciicast&quot;&gt;RailsCast. Migrating to PostgreSQL&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;요약하면 다음과 같다. &lt;/p&gt;
+&lt;p&gt;요약하면 다음과 같다.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;yml 파일에서 adapter 수정&lt;/li&gt;
-&lt;li&gt;rake db:create:all&lt;/li&gt;
-&lt;li&gt;sequel -C sqlite://db/development.sqlite3 postgres://pgusername@localhost/&lt;strong&gt;YourDB&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;yml 파일에서 adapter 수정&lt;/li&gt;
+  &lt;li&gt;rake db:create:all&lt;/li&gt;
+  &lt;li&gt;sequel -C sqlite://db/development.sqlite3 postgres://pgusername@localhost/&lt;strong&gt;YourDB&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;이렇게 하면 기존의 sqlite3 DB를 postgreSQL로 사용할 수 있다.&lt;/p&gt;
 
 &lt;h3 id=&quot;push-local-db-to-heroku&quot;&gt;Push Local DB to Heroku&lt;/h3&gt;
 
-&lt;p&gt;이제 Local의 PostgreSQL DB를 Heroku 서버로 보내주어야 한다. &lt;/p&gt;
+&lt;p&gt;이제 Local의 PostgreSQL DB를 Heroku 서버로 보내주어야 한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;heroku pg:push&lt;/p&gt;
+  &lt;p&gt;heroku pg:push&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;가 기본적으로 제공되는 명령어이긴 하지만, 필자는 &lt;em&gt;Invaild Argument&lt;/em&gt; 에러를 뿜으며 실패했기 때문에 다른 방법을 찾았다.&lt;/p&gt;
@@ -512,116 +600,118 @@
 &lt;p&gt;로컬에서 사용했던 &lt;strong&gt;Sequel&lt;/strong&gt;을 Heroku 서버를 대상으로 사용했다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;sequel -C sqlite://db/development.sqlite3 &lt;strong&gt;{Your Heroku DB URL}&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;sequel -C sqlite://db/development.sqlite3 &lt;strong&gt;{Your Heroku DB URL}&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Heroku App의 DB 주소는 설정 창에서 어렵지 않게 발견할 수 있다.&lt;/p&gt;
 
-&lt;h4 id=&quot;pg_dump&quot;&gt;pg_dump&lt;/h4&gt;
+&lt;h4 id=&quot;pgdump&quot;&gt;pg_dump&lt;/h4&gt;
 
-&lt;p&gt;&lt;strong&gt;이 방법은 Windows 에서는 작동하지 않는다.&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;이 방법은 Windows 에서는 작동하지 않는다.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.chrismccord.com/blog/2013/01/09/better-heroku-db-push-and-db-pull/&quot;&gt;chrismccord. A better heroku db:push and db:pull&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.chrismccord.com/blog/2013/01/09/better-heroku-db-push-and-db-pull/&quot;&gt;chrismccord. A better heroku db:push and db:pull&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;pg:push 내부적으로 사용하는 pg_dump를 사용하는 방법이다. pg_dump를 사용하면 대상 데이터베이스의 Schema와 Record 전체를 생성하는 sql파일이 만들어진다. 이를 Heroku PostgreSQL Shell에 입력하여 DB를 복사하는 방법이다.&lt;/p&gt;
 
-&lt;p&gt;PowerShell에서는 Stdin Redirect인 &amp;#39;&amp;lt;&amp;#39;가 먹히지 않으며, CMD에서는 쿼리가 제대로 작동하지 않는다.&lt;/p&gt;
+&lt;p&gt;PowerShell에서는 Stdin Redirect인 ‘&amp;lt;’가 먹히지 않으며, CMD에서는 쿼리가 제대로 작동하지 않는다.&lt;/p&gt;
 
-&lt;h1 id=&quot;후기&quot;&gt;후기&lt;/h1&gt;
-
+&lt;h1 id=&quot;section&quot;&gt;후기&lt;/h1&gt;
 &lt;p&gt;적은 건 얼마 없지만 어마어마한 삽질 끝에 얻은 결과입니다. 다음부터 Rails 개발할 때는 초장부터 PostgreSQL 쓰겠습니다.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 21 May 2015 08:38:05 +0900</pubDate>
-        <link>http://dal4segno.github.io/web-programming/2015/05/21/rails-on-heroku.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/web-programming/2015/05/21/rails-on-heroku.html</guid>
-        
-        <category>heroku rails ruby ror paas</category>
-        
-        
-        <category>web-programming</category>
-        
-      </item>
-    
-      <item>
-        <title>Make Wiki on Rails</title>
-        <description>&lt;h1 id=&quot;환경&quot;&gt;환경&lt;/h1&gt;
 
-&lt;ul&gt;
-&lt;li&gt;Windows 10 TP x64&lt;/li&gt;
-&lt;li&gt;Ruby 2.1.5&lt;/li&gt;
-&lt;li&gt;Rails 4.1.8&lt;/li&gt;
-&lt;li&gt;Bundler&lt;/li&gt;
-&lt;li&gt;Git&lt;/li&gt;
-&lt;li&gt;Sqlite
 
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/web-programming/rails-on-heroku/&quot;&gt;Rails on Heroku&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on May 20, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Make Wiki on Rails]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/web-programming/make-wiki-on-rails/" />
+  <id>http://localhost:4000/web-programming/make-wiki-on-rails</id>
+  <published>2015-05-19T22:41:47+00:00</published>
+  <updated>2015-05-19T22:41:47+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h1 id=&quot;section&quot;&gt;환경&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Heroku를 이용해서 배포할 생각이라면 처음부터 &lt;strong&gt;PostgreSQL&lt;/strong&gt;을 사용하도록 하자.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;DevKit&lt;/li&gt;
+  &lt;li&gt;Windows 10 TP x64&lt;/li&gt;
+  &lt;li&gt;Ruby 2.1.5&lt;/li&gt;
+  &lt;li&gt;Rails 4.1.8&lt;/li&gt;
+  &lt;li&gt;Bundler&lt;/li&gt;
+  &lt;li&gt;Git&lt;/li&gt;
+  &lt;li&gt;Sqlite
+    &lt;ul&gt;
+      &lt;li&gt;Heroku를 이용해서 배포할 생각이라면 처음부터 &lt;strong&gt;PostgreSQL&lt;/strong&gt;을 사용하도록 하자.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DevKit&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Windows와 OS X에서는 &lt;a href=&quot;http://railsinstaller.org/en&quot;&gt;RailsInstaller&lt;/a&gt;를 통해서 해당 환경을 쉽게 구축할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;여담으로 레일즈가 필요하지 않아도 RailsInstaller를 통해서 환경을 구축하는 것이 훨씬 편하다.&lt;/p&gt;
+  &lt;p&gt;여담으로 레일즈가 필요하지 않아도 RailsInstaller를 통해서 환경을 구축하는 것이 훨씬 편하다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;gems&quot;&gt;Gems&lt;/h1&gt;
-
 &lt;ul&gt;
-&lt;li&gt;Rails 4.1.8&lt;/li&gt;
-&lt;li&gt;sqlite
-
-&lt;ul&gt;
-&lt;li&gt;PostgreSQL의 경우에는 pg&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;sass-rails&lt;/li&gt;
-&lt;li&gt;uglifier&lt;/li&gt;
-&lt;li&gt;coffee-rails&lt;/li&gt;
-&lt;li&gt;jquery-rails&lt;/li&gt;
-&lt;li&gt;turbolinks&lt;/li&gt;
-&lt;li&gt;jbuilder&lt;/li&gt;
-&lt;li&gt;sdoc&lt;/li&gt;
+  &lt;li&gt;Rails 4.1.8&lt;/li&gt;
+  &lt;li&gt;sqlite
+    &lt;ul&gt;
+      &lt;li&gt;PostgreSQL의 경우에는 pg&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;sass-rails&lt;/li&gt;
+  &lt;li&gt;uglifier&lt;/li&gt;
+  &lt;li&gt;coffee-rails&lt;/li&gt;
+  &lt;li&gt;jquery-rails&lt;/li&gt;
+  &lt;li&gt;turbolinks&lt;/li&gt;
+  &lt;li&gt;jbuilder&lt;/li&gt;
+  &lt;li&gt;sdoc&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;pg를 사용할 경우, database.yml의 설정들도 변경해야 한다.&lt;/p&gt;
+  &lt;p&gt;pg를 사용할 경우, database.yml의 설정들도 변경해야 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;위의 목록은 Ruby/Rails IDE인 RubyMine으로 Rails Project 생성시 기본으로 넣어주는 gem들이다. DB나 JS, SCSS 등의 기능을 적용하기 위해 필요하다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;sorcery&lt;/li&gt;
-&lt;li&gt;paper_trail&lt;/li&gt;
-&lt;li&gt;diffy&lt;/li&gt;
-&lt;li&gt;redcarpet&lt;/li&gt;
-&lt;li&gt;albino&lt;/li&gt;
-&lt;li&gt;nokogiri&lt;/li&gt;
+  &lt;li&gt;sorcery&lt;/li&gt;
+  &lt;li&gt;paper_trail&lt;/li&gt;
+  &lt;li&gt;diffy&lt;/li&gt;
+  &lt;li&gt;redcarpet&lt;/li&gt;
+  &lt;li&gt;albino&lt;/li&gt;
+  &lt;li&gt;nokogiri&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;위의 gem들은 아래 항목에서 다시 언급하도록 한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Rails는 Gemfile에 사용할 gem을 명시한 후에 &lt;strong&gt;bundle install&lt;/strong&gt; 명령을 통해 해당 gem들을 모두 설치할 수 있다.&lt;/p&gt;
+  &lt;p&gt;Rails는 Gemfile에 사용할 gem을 명시한 후에 &lt;strong&gt;bundle install&lt;/strong&gt; 명령을 통해 해당 gem들을 모두 설치할 수 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;modeling&quot;&gt;Modeling&lt;/h1&gt;
-
 &lt;p&gt;크게 사용자와 문서로 이루어진다. 하지만 위키의 특성상, 문서가 사용자에게 귀속되지 않기 때문에 문서에 최종 수정자만 기록하고, 별도의 관계는 만들지 않아도 된다.&lt;/p&gt;
 
 &lt;p&gt;위키는 문서 제목이 Primary Key가 되지만 Rails에서는 보통 id 를 통해 검색을 하는데, Rails는 각 Attribute 별로 검색할 수 있는 함수를 만들어 주기 때문에 별도로 함수를 만들 필요는 없다.&lt;/p&gt;
 
 &lt;h1 id=&quot;user-authentication&quot;&gt;User Authentication&lt;/h1&gt;
-
 &lt;p&gt;지인들을 위한 폐쇄형 위키이기 때문에, 회원이 아니면 로그인/회원가입을 제외한 모든 페이지 및 문서에 접근을 제한해야 했다.&lt;/p&gt;
 
 &lt;p&gt;회원 시스템은 &lt;strong&gt;sorcery&lt;/strong&gt; 라는 gem을 이용했다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/NoamB/sorcery&quot;&gt;sorcery GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://railscasts.com/episodes/283-authentication-with-sorcery&quot;&gt;Authentication With Sorcery. RailsCast&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/NoamB/sorcery&quot;&gt;sorcery GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://railscasts.com/episodes/283-authentication-with-sorcery&quot;&gt;Authentication With Sorcery. RailsCast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;RailsCast의 문서에 있는 코드는 아직도 잘 작동하기 때문에, 유용하게 사용할 수 있다.&lt;/p&gt;
@@ -629,126 +719,114 @@
 &lt;p&gt;내가 만드는 위키의 경우에는 email이 아닌 이름(닉네임)을 ID로 사용했기 때문에, Parameter나 다른 부분들의 email을 바꿔주어야 했다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;이렇게 할 경우, email 정보가 없으므로 비밀번호 찾기 기능은 사용할 수 없다.&lt;/p&gt;
+  &lt;p&gt;이렇게 할 경우, email 정보가 없으므로 비밀번호 찾기 기능은 사용할 수 없다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;attr_accessible는 Deprecate 되었으므로, 지우면 된다.&lt;/p&gt;
 
 &lt;h1 id=&quot;history&quot;&gt;History&lt;/h1&gt;
-
-&lt;p&gt;위키에서 문서의 수정내역 확인 및 비교 기능은 매우 유용하다. &lt;/p&gt;
+&lt;p&gt;위키에서 문서의 수정내역 확인 및 비교 기능은 매우 유용하다.&lt;/p&gt;
 
 &lt;h2 id=&quot;versioning&quot;&gt;Versioning&lt;/h2&gt;
-
 &lt;p&gt;수정내역 등을 확인하기 위해서는 문서 모든 버전(혹은 최근 n개 라도)을 가지고 있어야 한다.&lt;/p&gt;
 
 &lt;p&gt;해당 기능은 &lt;strong&gt;paper_trail&lt;/strong&gt; 이라는 gem을 이용했다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/airblade/paper_trail&quot;&gt;paper_trail GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://samurails.com/gems/papertrail/&quot;&gt;Samurails. Jutsu #8 – Version your models with PaperTrail (Rails 4)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/airblade/paper_trail&quot;&gt;paper_trail GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://samurails.com/gems/papertrail/&quot;&gt;Samurails. Jutsu #8 – Version your models with PaperTrail (Rails 4)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Samurails의 문서가 매우 친절하기 때문에, 별도의 설명은 하지 않는다.&lt;/p&gt;
 
 &lt;h2 id=&quot;diff&quot;&gt;Diff&lt;/h2&gt;
-
 &lt;p&gt;각 버전과의 비교는 &lt;strong&gt;diffy&lt;/strong&gt;라는 gem을 이용했다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/samg/diffy&quot;&gt;diffy GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/samg/diffy&quot;&gt;diffy GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Windows 환경에서는 diff가 기본 제공 명령어가 아니라 별도의 설치가 필요하지만, RailsInstaller에 포함되어 있는 DevKit에서 제공되므로, RailsInstaller를 활용한 경우에는 별 문제없이 진행할 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;DevKit의 bin을 %PATH% 환경 변수에 넣어주어야 한다.&lt;/p&gt;
+  &lt;p&gt;DevKit의 bin을 %PATH% 환경 변수에 넣어주어야 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;사용법은 위의 Samuarails의 문서에 같이 있으므로 생략한다.&lt;/p&gt;
 
 &lt;h1 id=&quot;grammar&quot;&gt;Grammar&lt;/h1&gt;
-
 &lt;p&gt;HTML 태그를 직접 사용하는 방법도 있으나, 위키의 사용자가 대부분 비전공자인 것과, CSS 요소를 활용하여 문서의 디자인을 뭉갤 수 있는 위험이 있는 관계로 별도의 문법을 제정하게 되었다.&lt;/p&gt;
 
 &lt;h2 id=&quot;markdown&quot;&gt;Markdown&lt;/h2&gt;
-
 &lt;p&gt;AtoZ까지 전부 다 만드는 것은 아니고 현재 이 블로그에서 사용하고 있는 Markdown이 굉장히 편리해서 위키에 적용시켜 보았다.&lt;/p&gt;
 
 &lt;p&gt;사용한 gem은 &lt;strong&gt;redcarpet&lt;/strong&gt;이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;특별한 이유는 없고, Jekyll 기본 설정이어서 변경없이 그대로 사용하고 있다.&lt;/p&gt;
+  &lt;p&gt;특별한 이유는 없고, Jekyll 기본 설정이어서 변경없이 그대로 사용하고 있다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/vmg/redcarpet&quot;&gt;redcarpet GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://railscasts.com/episodes/272-markdown-with-redcarpet&quot;&gt;RailsCast. Markdown with Redcarpet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://richonrails.com/articles/rendering-markdown-with-redcarpet&quot;&gt;RichOnRails. Rendering Markdown with Redcarpet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.hamcois.com/articles/4&quot;&gt;hamcois. Redcarpet for Rails 4.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/vmg/redcarpet&quot;&gt;redcarpet GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://railscasts.com/episodes/272-markdown-with-redcarpet&quot;&gt;RailsCast. Markdown with Redcarpet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://richonrails.com/articles/rendering-markdown-with-redcarpet&quot;&gt;RichOnRails. Rendering Markdown with Redcarpet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.hamcois.com/articles/4&quot;&gt;hamcois. Redcarpet for Rails 4.0&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;RailsCast의 문서는 구 버전의 Redcarpet을 이용했으므로, 구조만 참조하도록 한다.&lt;/p&gt;
 
 &lt;h3 id=&quot;customize&quot;&gt;Customize&lt;/h3&gt;
-
 &lt;p&gt;여러 위키를 돌아다니다 보면 &lt;strong&gt;틀&lt;/strong&gt;이 많이 사용되고 있는 것을 볼 수 있는데, 틀은 기본 제공되는 마크다운 문법이 아니기 때문에 redcarpet을 커스텀하여 문법을 추가할 필요가 있었다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/14741197/custom-markdown-in-user-input&quot;&gt;StackOverflow. custom markdown in user input&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/14741197/custom-markdown-in-user-input&quot;&gt;StackOverflow. custom markdown in user input&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;추가할 문법이 2개 이상이어서 gsub를 2번 이상 호출해야할 경우에는, &lt;strong&gt;마지막을 제외한 gsub는 gsub!로 호출하도록 한다.&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;추가할 문법이 2개 이상이어서 gsub를 2번 이상 호출해야할 경우에는, &lt;strong&gt;마지막을 제외한 gsub는 gsub!로 호출하도록 한다.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;gsub만 사용할 경우에는 가장 마지막 문법만 적용되며, gsub!만 사용할 경우에는 별도로 추가한 문법이 사용되지 않은 문서에 대해 nil을 반환하기 때문에 nil을 render하게 되어 오류가 발생한다.&lt;/p&gt;
+  &lt;p&gt;gsub만 사용할 경우에는 가장 마지막 문법만 적용되며, gsub!만 사용할 경우에는 별도로 추가한 문법이 사용되지 않은 문서에 대해 nil을 반환하기 때문에 nil을 render하게 되어 오류가 발생한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;asset-pipeline&quot;&gt;Asset Pipeline&lt;/h1&gt;
-
-&lt;p&gt;위키를 구성하는 기능은 아니지만 Rails에서 여러 Assets(JS, CSS, Image, etc...)들을 관리하는 기능이다. &lt;/p&gt;
+&lt;p&gt;위키를 구성하는 기능은 아니지만 Rails에서 여러 Assets(JS, CSS, Image, etc…)들을 관리하는 기능이다.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;사전 컴파일(Precompile)&lt;/li&gt;
-&lt;li&gt;병합(Concatenate)&lt;/li&gt;
-&lt;li&gt;압축(Minify)&lt;/li&gt;
+  &lt;li&gt;사전 컴파일(Precompile)&lt;/li&gt;
+  &lt;li&gt;병합(Concatenate)&lt;/li&gt;
+  &lt;li&gt;압축(Minify)&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;의 과정을 통해 클라이언트가 Asset을 최소한으로 요청하도록 하는 기능이다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://guides.rubyonrails.org/asset_pipeline.html&quot;&gt;RailsGuides. The Asset Pipeline&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://rorlab.org/rblogs/152&quot;&gt;RORLAB. 초보자를 위한 Asset Pipeline 개념잡기&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://guides.rubyonrails.org/asset_pipeline.html&quot;&gt;RailsGuides. The Asset Pipeline&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://rorlab.org/rblogs/152&quot;&gt;RORLAB. 초보자를 위한 Asset Pipeline 개념잡기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;설정법&quot;&gt;설정법&lt;/h2&gt;
-
-&lt;h3 id=&quot;stylesheet-js&quot;&gt;StyleSheet, JS&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;/app/assets/javascript/application.js&lt;/li&gt;
-&lt;li&gt;/app/assets/stylesheets/application.css&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;설정법&lt;/h2&gt;
+&lt;p&gt;### StyleSheet, JS ###
+ - /app/assets/javascript/application.js
+ - /app/assets/stylesheets/application.css&lt;/p&gt;
 
 &lt;p&gt;에서 각 파일들을 추가하면된다. 확장자는 붙이지 않아도되며, JS는 //=, StyleSheet는 *= 을 앞에 붙이는 것을 명심하자. 반드시 주석문 안에 작성되어야 한다.&lt;/p&gt;
 
 &lt;p&gt;각 파일들은 /app/assets 뿐만 아니라 lib나 vendor 의 assets에 있어도 상관없다.&lt;/p&gt;
 
-&lt;h3 id=&quot;기타&quot;&gt;기타&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-2&quot;&gt;기타&lt;/h3&gt;
 &lt;p&gt;폰트와 같은 자원들은 /config/initializers/assets.rb 에서 추가해야한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Rails.application.config.assets.paths &amp;lt;&amp;lt; Rails.root.join(&amp;quot;fonts&amp;quot;)
+  &lt;p&gt;Rails.application.config.assets.paths « Rails.root.join(“fonts”)
 Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;assets의 경로에 &amp;quot;fonts&amp;quot; 를 추가한다. StyleSheet, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.&lt;/p&gt;
+&lt;p&gt;assets의 경로에 “fonts” 를 추가한다. StyleSheet, JS와 같이 app, lib, vendor 중 어디의 assets에 있는 fonts 여도 상관없다.&lt;/p&gt;
 
 &lt;p&gt;그리고 해당 확장자를 가진 파일들을 precompile 하도록 설정한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;설정 후에는 rake assets:precompile 을 실행해야 한다.&lt;/p&gt;
+  &lt;p&gt;설정 후에는 rake assets:precompile 을 실행해야 한다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;design&quot;&gt;Design&lt;/h1&gt;
@@ -756,7 +834,7 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;p&gt;Bootstrap을 사용하여 어렵지 않게 있어보이는 레이아웃을 만들어낼 수 있다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://bootstrapk.com/&quot;&gt;Bootstrap Korean&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bootstrapk.com/&quot;&gt;Bootstrap Korean&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;deploy-using-heroku&quot;&gt;Deploy Using Heroku&lt;/h1&gt;
@@ -764,32 +842,38 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;p&gt;별도의 포스트에서 설명하도록 한다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html&quot;&gt;Dal4segno&amp;#39;s Whatnot. Rails on Heroku&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://dal4segno.github.io/webprogramming/web-programming/2015/05/21/rails-on-heroku.html&quot;&gt;Dal4segno’s Whatnot. Rails on Heroku&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;후기&quot;&gt;후기&lt;/h1&gt;
+&lt;h1 id=&quot;section-3&quot;&gt;후기&lt;/h1&gt;
 
 &lt;p&gt;크게 활용도가 높은 서비스도 아니고, 폐쇄형이라 남들에게 자랑도 하기 힘든 그런 사이트이지만, 배운 기술로 뭔가 뚝딱뚝딱 만들어내니 재밌고 보람찬 시간이었습니다. 이걸 계기로 더 많은 Rails 앱을 만들게 될 것 같네요.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 20 May 2015 07:41:47 +0900</pubDate>
-        <link>http://dal4segno.github.io/web-programming/2015/05/20/make-wiki-on-rails.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/web-programming/2015/05/20/make-wiki-on-rails.html</guid>
-        
-        <category>wiki ror rails ruby</category>
-        
-        
-        <category>web-programming</category>
-        
-      </item>
-    
-      <item>
-        <title>Wireless Network Security</title>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;본 포스트에서 언급되는 암호학적 지식(과 취약점)은 별도의 &lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html&quot;&gt;포스트&lt;/a&gt;&lt;/strong&gt;에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/web-programming/make-wiki-on-rails/&quot;&gt;Make Wiki on Rails&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on May 19, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Wireless Network Security]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/wireless-network-security/" />
+  <id>http://localhost:4000/network/wireless-network-security</id>
+  <published>2015-04-14T22:36:39+00:00</published>
+  <updated>2015-04-14T22:36:39+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;blockquote&gt;
+  &lt;p&gt;본 포스트에서 언급되는 암호학적 지식(과 취약점)은 별도의 &lt;strong&gt;&lt;a href=&quot;http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html&quot;&gt;포스트&lt;/a&gt;&lt;/strong&gt;에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;wep&quot;&gt;WEP&lt;/h2&gt;
-
 &lt;p&gt;유선 동등 프라이버시(&lt;strong&gt;Wired Equivalent Privacy&lt;/strong&gt;)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.&lt;/p&gt;
 
 &lt;p&gt;기밀성을 위해 &lt;strong&gt;RC4&lt;/strong&gt; 암호화 기법을 사용하였으며, CRC-32 체크섬(Checksum)을 사용하여 무결성을 확보하였다.&lt;/p&gt;
@@ -799,11 +883,9 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;p&gt;2004년도에 &lt;strong&gt;IEEE 802.11i&lt;/strong&gt;(or IEEE 802.11i-2004, 무선 네트워크 보안에 관한 표준)이 제정되면서 사용 중지(Deprecated)되었다.&lt;/p&gt;
 
 &lt;h2 id=&quot;wpa&quot;&gt;WPA&lt;/h2&gt;
-
 &lt;p&gt;와이파이 보호 접속(&lt;strong&gt;Wi-Fi Protected Access&lt;/strong&gt;)은 IEEE 802.11i가 제정되기 이전에 WEP를 대체하기 위해 구현되었으며, IEEE 802.11i에 큰 영향을 미쳤다.&lt;/p&gt;
 
 &lt;h3 id=&quot;tkip&quot;&gt;TKIP&lt;/h3&gt;
-
 &lt;p&gt;WPA는 임시 키 무결성 프로토콜(Temporal Key Integrity Protocol)을 사용하여 입력된 키를 모든 패킷에 사용하는 WEP에 반해서 각 패킷에 대한 암호화키를 동적으로 생성할 수 있었다.&lt;/p&gt;
 
 &lt;p&gt;WEP를 사용하던 하드웨어에서도 WPA를 사용할 수 있어야 했기 때문에, TKIP는 RC4 방식의 암호화를 사용하고, 그로 인해서 WEP와 비슷한 공격에 대해서 취약하다.&lt;/p&gt;
@@ -811,7 +893,6 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;p&gt;2009년도에 사용 중지되었다.&lt;/p&gt;
 
 &lt;h2 id=&quot;wpa2&quot;&gt;WPA2&lt;/h2&gt;
-
 &lt;p&gt;IEEE 802.11i에서 제정된 기술로, WPA를 기반으로 만들어졌다. 
 암호화키를 동적으로 생성하는 &lt;strong&gt;CCMP&lt;/strong&gt;(Counter Mode Cipher Block Chaining Message Authentication Code Protocol, Counter Mode CBC-MAC Protocol or CCM mode Protocol)를 사용하는데, WPA-TKIP와는 다르게 안전한 AES 암호화 방식을 사용한다.&lt;/p&gt;
 
@@ -820,210 +901,204 @@ Rails.application.config.assets.precompile += %w( *.eot *.woff *.svg *.ttf )&lt;
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C&quot;&gt;Wikipedia(KR). 유선 동등 프라이버시&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy&quot;&gt;Wikipedia(EN). Wired Equivalent Privacy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/IEEE_802.11i-2004&quot;&gt;Wikipedia(EN). IEEE 802.11-2004&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access&quot;&gt;Wikipedia(EN). Wi-Fi Protected Access&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4_%EB%B3%B4%ED%98%B8_%EC%A0%91%EC%86%8D&quot;&gt;Wikipedia(KR). 와이파이 보호 접속&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C&quot;&gt;Wikipedia(KR). 유선 동등 프라이버시&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy&quot;&gt;Wikipedia(EN). Wired Equivalent Privacy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/IEEE_802.11i-2004&quot;&gt;Wikipedia(EN). IEEE 802.11-2004&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access&quot;&gt;Wikipedia(EN). Wi-Fi Protected Access&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4_%EB%B3%B4%ED%98%B8_%EC%A0%91%EC%86%8D&quot;&gt;Wikipedia(KR). 와이파이 보호 접속&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-        <pubDate>Wed, 15 Apr 2015 07:36:39 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/04/15/wireless-network-security.html</guid>
-        
-        <category>wireless network wi-fi wifi wep wpa wpa2</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>Search Engine Query Parameter</title>
-        <description>&lt;p&gt;검색 엔진을 통해 어떤 것을 검색했는 지는 사용자의 행동을 추측하는데에 꽤 쓸만한 정보가 될 수 있다. 
-Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 입력한 검색어는 특정 매개 변수(Parameter)를 통해 서버로 전송된다. 하지만 각 검색 엔진들은 서로 다른 매개 변수명을 사용하기 때문에, 검색어를 자동으로 수집하기 위해서는 각 검색엔진에서 사용하는 매개 변수명을 알고 있어야한다.&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;수동으로 한다면 매개 변수명 앞에 있는 url을 통해서 어떤 검색 엔진을 사용했는 지 쉽게 알 수 있을 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/wireless-network-security/&quot;&gt;Wireless Network Security&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 14, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Search Engine Query Parameter]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/serach-engine-parameter/" />
+  <id>http://localhost:4000/digitalforensics/serach-engine-parameter</id>
+  <published>2015-04-13T19:57:07+00:00</published>
+  <updated>2015-04-13T19:57:07+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;검색 엔진을 통해 어떤 것을 검색했는 지는 사용자의 행동을 추측하는데에 꽤 쓸만한 정보가 될 수 있다. 
+Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 입력한 검색어는 특정 매개 변수(Parameter)를 통해 서버로 전송된다. 하지만 각 검색 엔진들은 서로 다른 매개 변수명을 사용하기 때문에, 검색어를 자동으로 수집하기 위해서는 각 검색엔진에서 사용하는 매개 변수명을 알고 있어야한다.
+&amp;gt; 수동으로 한다면 매개 변수명 앞에 있는 url을 통해서 어떤 검색 엔진을 사용했는 지 쉽게 알 수 있을 것이다.&lt;/p&gt;
 
 &lt;p&gt;하지만, 다행히도 Google에서 본인들의 Analytics 서비스(자신의 사이트를 어디서 검색해서 들어왔는지에 대한 데이터를 제공)를 위해서 사용하고 있는 여러 유명한 검색 엔진들의 Domain Name과 매개 변수명을 공개하고 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://developers.google.com/analytics/devguides/collection/gajs/gaTrackingTraffic#searchEngine&quot;&gt;Search Engine Configuration - Web Tracking (ga.js)&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;이 정보를 통해서 간단하게 사용자의 검색 엔진 사용결과를 조사할 수 있을 것으로 보인다.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Apr 2015 04:57:07 +0900</pubDate>
-        <link>http://dal4segno.github.io/digitalforensics/2015/04/14/serach-engine-parameter.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/digitalforensics/2015/04/14/serach-engine-parameter.html</guid>
-        
-        <category>se seo searchengine google query parameter search</category>
-        
-        
-        <category>digitalforensics</category>
-        
-      </item>
-    
-      <item>
-        <title>Wi-Fi</title>
-        <description>&lt;h2 id=&quot;ieee-802&quot;&gt;IEEE 802&lt;/h2&gt;
 
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/serach-engine-parameter/&quot;&gt;Search Engine Query Parameter&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 13, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Wi-Fi]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/wifi/" />
+  <id>http://localhost:4000/network/wifi</id>
+  <published>2015-04-12T14:07:04+00:00</published>
+  <updated>2015-04-12T14:07:04+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;ieee-802&quot;&gt;IEEE 802&lt;/h2&gt;
 &lt;p&gt;많은 기술들에 표준이 있듯이, 컴퓨터 네트워크 기술에도 &lt;a href=&quot;http://en.wikipedia.org/wiki/IEEE_802&quot;&gt;IEEE 802&lt;/a&gt;라는 기준(Standard)이 있다. 그중에서 802.11이 흔히 사용되는 무선 네트워크(Wi-Fi 등)에 대한 표준이다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/IEEE_802&quot;&gt;IEEE 802.11 Wikipedia(EN)&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/IEEE_802&quot;&gt;IEEE 802.11 Wikipedia(EN)&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/IEEE_802.11&quot;&gt;IEEE 802.11 Wikipedia(KR)&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/IEEE_802.11&quot;&gt;IEEE 802.11 Wikipedia(KR)&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;frequency&quot;&gt;Frequency&lt;/h2&gt;
-
 &lt;p&gt;무선 통신을 하기 위해서는 송수신측이 같은 주파수를 사용해야 하는데, 다른 통신 주체와 동일한 주파수를 사용하게 되면 간섭으로 인한 문제가 발생할 수 있으므로 주파수를 임의로 설정하여 사용해서는 안된다. 그렇기 때문에 국가/기관으로 부터 주파수 대역에 대한 권한(Licence)을 획득한 후에 사용하게 된다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;이동통신사들은 주파수 경매를 통해 특정 주파수 영역에 대한 사용권한을 얻어온다. 주파수 대역이 넓을 수록 원활한 서비스를 제공할 수 있기 때문에, 경쟁이 치열하다.&lt;/p&gt;
+  &lt;p&gt;이동통신사들은 주파수 경매를 통해 특정 주파수 영역에 대한 사용권한을 얻어온다. 주파수 대역이 넓을 수록 원활한 서비스를 제공할 수 있기 때문에, 경쟁이 치열하다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;별도의 협약, 권한없이 사용할 수 있는 주파수 대역도 있는데 대표적으로 ISM(Industrial, Science and Medical) Band가 있다. Wi-Fi, BlueTooth, Zigbee 등의 기술들도 ISM Band를 사용한다.&lt;/p&gt;
 
 &lt;h3 id=&quot;channel&quot;&gt;Channel&lt;/h3&gt;
-
-&lt;p&gt;IEEE 802.11의 기본 채널 폭은 20Mhz이고 총 14개의 채널이 있지만, 대부분 중첩되는 영역이 많기 때문에 여러 무선 네트워크를 중첩되지 않게 사용하려면 1,6,11 혹은 1,5,9,13 채널을 사용하면 된다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;주변에 다른 무선 네트워크가 없다는 가정하에&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;IEEE 802.11의 기본 채널 폭은 20Mhz이고 총 14개의 채널이 있지만, 대부분 중첩되는 영역이 많기 때문에 여러 무선 네트워크를 중첩되지 않게 사용하려면 1,6,11 혹은 1,5,9,13 채널을 사용하면 된다.
+&amp;gt; 주변에 다른 무선 네트워크가 없다는 가정하에&lt;/p&gt;
 
 &lt;h4 id=&quot;carrier-aggregation&quot;&gt;Carrier Aggregation&lt;/h4&gt;
-
-&lt;p&gt;안정성이나 전송속도를 높이기 위해서 2개 이상의 채널을 결합하여 1개의 채널 처럼 사용하거나, 2개 이상의 채널을 통해 데이터를 분산 전송하는 기술. 결합하기 위해서는 채널들의 주파수 영역이 연속적이어야 한다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;채널 결합은 Channel Bonding 으로 불렸던 기술이지만 보다 넓은 의미의 용어인 Aggregation에 흡수되었다.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;안정성이나 전송속도를 높이기 위해서 2개 이상의 채널을 결합하여 1개의 채널 처럼 사용하거나, 2개 이상의 채널을 통해 데이터를 분산 전송하는 기술. 결합하기 위해서는 채널들의 주파수 영역이 연속적이어야 한다.
+&amp;gt; 채널 결합은 Channel Bonding 으로 불렸던 기술이지만 보다 넓은 의미의 용어인 Aggregation에 흡수되었다.&lt;/p&gt;
 
 &lt;h2 id=&quot;data-rates&quot;&gt;Data Rates&lt;/h2&gt;
-
 &lt;p&gt;802.11b의 최대 전송 속도는 11Mbps, 11g는 54Mbps, 11n은 600Mbps이지만 이는 말 그대로 &lt;strong&gt;최대 속도(이론상의)&lt;/strong&gt;이며, 거리와 간섭상황 등 환경에 따라 가변적이다.&lt;/p&gt;
 
-&lt;h3 id=&quot;variable-rates&quot;&gt;Variable  Rates&lt;/h3&gt;
-
+&lt;h3 id=&quot;variable--rates&quot;&gt;Variable  Rates&lt;/h3&gt;
 &lt;p&gt;흔히 전송율을 설명할 때, 고속도로와 트럭에 비유를 많이 하는데, 전송율은 &lt;strong&gt;고속도로에서 일정 시간당 지나갈 수 있는 트럭의 수&lt;/strong&gt;라고 생각할 수 있다. 고속도로에 트럭은 계속 일정량 존재하지만, 각 트럭에 적재된 짐의 양은 다를 수 있다.&lt;/p&gt;
 
-&lt;p&gt;전송율(속도)가 높아질 수록 간섭에 취약해져, 유효 전송 거리가 짧아지는 문제가 생긴다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;주파수가 높아질 수록 데이터 전송률이 높아지지만 그 만큼 파장이 짧아져 회절 현상과 같은 간섭에 취약해진다. &lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;전송율(속도)가 높아질 수록 간섭에 취약해져, 유효 전송 거리가 짧아지는 문제가 생긴다.
+&amp;gt; 주파수가 높아질 수록 데이터 전송률이 높아지지만 그 만큼 파장이 짧아져 회절 현상과 같은 간섭에 취약해진다.&lt;/p&gt;
 
 &lt;h2 id=&quot;archtecture&quot;&gt;Archtecture&lt;/h2&gt;
-
 &lt;p&gt;무선 네트워크를 사용하려는 장치들은 모두 WNICs(Wireless Network Interface Controllers)를 가지고 있어야 하며 각 장비는 무선 AP(Access Point, 일반적으로 Router , 공유기)이거나 무선 Client이다(인터넷을 사용하는 기기, 스마트폰, 노트북 등).&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Infrastructure Mode 
-
-&lt;ul&gt;
-&lt;li&gt;BSS(Basic Service Set) : 각 Client들은 반드시 AP를 통해서만 통신할 수 있기 때문에 Client끼리 직접 통신할 수는 없다.&lt;/li&gt;
-&lt;li&gt;ESS(Extended Service Set) : 복수 개의 BSS를 묶은 형태 이며 각 BSS의 AP에 데이터를 분배해줄 DS가 필요하다&lt;/li&gt;
-&lt;li&gt;DS(Distribution Service) : ESS에서 AP들을 연결하여 서비스 영역을 확장시키는 역할을 한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Ad hoc Mode
-
-&lt;ul&gt;
-&lt;li&gt;AP 없이, 각 장치(Peer)가 서로 통신하는(Peer-to-Peer, P2P) 방식이다. IBSS(Independent BSS)라고도 불린다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;Infrastructure Mode
+    &lt;ul&gt;
+      &lt;li&gt;BSS(Basic Service Set) : 각 Client들은 반드시 AP를 통해서만 통신할 수 있기 때문에 Client끼리 직접 통신할 수는 없다.&lt;/li&gt;
+      &lt;li&gt;ESS(Extended Service Set) : 복수 개의 BSS를 묶은 형태 이며 각 BSS의 AP에 데이터를 분배해줄 DS가 필요하다&lt;/li&gt;
+      &lt;li&gt;DS(Distribution Service) : ESS에서 AP들을 연결하여 서비스 영역을 확장시키는 역할을 한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ad hoc Mode
+    &lt;ul&gt;
+      &lt;li&gt;AP 없이, 각 장치(Peer)가 서로 통신하는(Peer-to-Peer, P2P) 방식이다. IBSS(Independent BSS)라고도 불린다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;DS와 각 AP간의 연결을 무선으로 구축하는 무선 메시 네트워크 (Wireless Mesh Network)라 한다. 간섭과 같은 문제를 해결할 수 있다면 케이블을 설치하지 않아도 되기 때문에 상대적으로 매우 저렴하게 네트워크를 구축할 수 있다.  &lt;/p&gt;
+  &lt;p&gt;DS와 각 AP간의 연결을 무선으로 구축하는 무선 메시 네트워크 (Wireless Mesh Network)라 한다. 간섭과 같은 문제를 해결할 수 있다면 케이블을 설치하지 않아도 되기 때문에 상대적으로 매우 저렴하게 네트워크를 구축할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;WiDi(Wi-Fi Direct) 기술은 표준에 컨셉으로만 있던 Ad Hoc Mode를 구현한 기술이다. Soft AP 방식으로도 불린다.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;WiDi(Wi-Fi Direct) 기술은 표준에 컨셉으로만 있던 Ad Hoc Mode를 구현한 기술이다. Soft AP 방식으로도 불린다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;scanning&quot;&gt;Scanning&lt;/h2&gt;
-
 &lt;p&gt;Client들이 Network(AP)들을 찾고 참여하는 과정이다. Client의 행동에 따라 두가지 방식이 있다&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Passive Scanning
-
-&lt;ul&gt;
-&lt;li&gt;각 AP들은 자신의 정보를 담은 신호(Beacon)를 발산하고, Client들은 Beacon을 수집하여 그 정보로 AP에 연결한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Active Scanning
-
-&lt;ul&gt;
-&lt;li&gt;Client가 AP를 찾는 신호(Probe)를 각 채널에 보내고 AP로 부터 돌아오는 신호(Probe Response)에서 정보를 받아 AP에 연결한다.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;Passive Scanning
+    &lt;ul&gt;
+      &lt;li&gt;각 AP들은 자신의 정보를 담은 신호(Beacon)를 발산하고, Client들은 Beacon을 수집하여 그 정보로 AP에 연결한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Active Scanning
+    &lt;ul&gt;
+      &lt;li&gt;Client가 AP를 찾는 신호(Probe)를 각 채널에 보내고 AP로 부터 돌아오는 신호(Probe Response)에서 정보를 받아 AP에 연결한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;reference&quot;&gt;Reference&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/ISM_band&quot;&gt;Wikipedia(EN). ISM Band&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%84%A0_%EB%A9%94%EC%8B%9C_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC&quot;&gt;Wikipedia(KR). 무선 메시 네트워크&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wireless_LAN&quot;&gt;Wikipedia(EN). Wireless LAN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%A7%81%EA%B5%90_%EC%A3%BC%ED%8C%8C%EC%88%98_%EB%B6%84%ED%95%A0_%EB%8B%A4%EC%A4%91_%EB%B0%A9%EC%8B%9D&quot;&gt;Wikipedia(KR). 직교 주파수 분할 다중 방식&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/ISM_band&quot;&gt;Wikipedia(EN). ISM Band&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%84%A0_%EB%A9%94%EC%8B%9C_%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC&quot;&gt;Wikipedia(KR). 무선 메시 네트워크&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Wireless_LAN&quot;&gt;Wikipedia(EN). Wireless LAN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%A7%81%EA%B5%90_%EC%A3%BC%ED%8C%8C%EC%88%98_%EB%B6%84%ED%95%A0_%EB%8B%A4%EC%A4%91_%EB%B0%A9%EC%8B%9D&quot;&gt;Wikipedia(KR). 직교 주파수 분할 다중 방식&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+  &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-        <pubDate>Sun, 12 Apr 2015 23:07:04 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/04/12/wifi.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/04/12/wifi.html</guid>
-        
-        <category>network wifi wireless IEEE802.11</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>Bridging</title>
-        <description>&lt;h2 id=&quot;bridge&quot;&gt;Bridge&lt;/h2&gt;
 
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/wifi/&quot;&gt;Wi-Fi&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on April 12, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Bridging]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/bridging/" />
+  <id>http://localhost:4000/network/bridging</id>
+  <published>2015-03-10T20:59:38+00:00</published>
+  <updated>2015-03-10T20:59:38+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;bridge&quot;&gt;Bridge&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Data Link Layer&lt;/strong&gt;에서 작동하며 2개 이상의 LAN을 Interconnect하고 해당 LAN들의 패킷을 포워딩한다. 각 LAN에는 영향을 끼치지 않으며 Self-Configuration이 가능하여 별도의 설정 없이 사용가능 하다.&lt;/p&gt;
 
 &lt;h3 id=&quot;routing&quot;&gt;Routing&lt;/h3&gt;
-
 &lt;p&gt;패킷을 보낼 목적지가 2개 이상의 호스트를 거쳐야(Multiple &lt;strong&gt;Hop&lt;/strong&gt;) 할 경우 경로를 설정하는 방법은 다음과 같다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Fixed Routing : 항상 지정된(고정된) 경로를 사용한다..&lt;/li&gt;
-&lt;li&gt;Source Routing : 보내는 측에서 경로를 지정한다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Spanning Tree Routing&lt;/strong&gt; : 현재 네트워크의 구성을 그래프로 표현했을때, Spanning Tree가 되도록 설정한다.&lt;/li&gt;
+  &lt;li&gt;Fixed Routing : 항상 지정된(고정된) 경로를 사용한다..&lt;/li&gt;
+  &lt;li&gt;Source Routing : 보내는 측에서 경로를 지정한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Spanning Tree Routing&lt;/strong&gt; : 현재 네트워크의 구성을 그래프로 표현했을때, Spanning Tree가 되도록 설정한다.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;fowarding&quot;&gt;Fowarding&lt;/h3&gt;
-
-&lt;p&gt;브릿지는 포워딩 시, 목적지 호스트의 위치를 알고 있다면 브릿지의 특정 포트로 패킷을 포워딩하면 되지만, 알지 못한다면 브릿지와 연결된 모든 호스트 및 브릿지에게 패킷을 &lt;strong&gt;Flooding&lt;/strong&gt; 한다. Flooding된 패킷을 받은 호스트는, 목적지가 자신이라면 응답을, 아니라면 무시한다. &lt;/p&gt;
+&lt;p&gt;브릿지는 포워딩 시, 목적지 호스트의 위치를 알고 있다면 브릿지의 특정 포트로 패킷을 포워딩하면 되지만, 알지 못한다면 브릿지와 연결된 모든 호스트 및 브릿지에게 패킷을 &lt;strong&gt;Flooding&lt;/strong&gt; 한다. Flooding된 패킷을 받은 호스트는, 목적지가 자신이라면 응답을, 아니라면 무시한다.&lt;/p&gt;
 
 &lt;p&gt;브릿지는 받는 패킷으로 부터 각 호스트의 주소를 저장한다. 즉, 자신을 통해 패킷을 보내지 않는 호스트의 위치는 알 수 없다.&lt;/p&gt;
 
 &lt;p&gt;Flooding된 패킷을 다른 브릿지가 받고, 그 브릿지 또한 목적지의 위치를 알지 못한다면 다시 Flooding이 일어나게 되고, 이 패킷은 결국 처음의 브릿지로 가게 될 뿐만 아니라, 두 브릿지 사이를 계속 순환하게 되어 지속적인 네트워크 트래픽을 발생시키는데 이를 &lt;strong&gt;Broadcast Storm(브로드캐스트 스톰)&lt;/strong&gt;이라 한다.&lt;/p&gt;
 
-&lt;h3 id=&quot;stp-spanning-tree-protocol&quot;&gt;STP(Spanning Tree Protocol)&lt;/h3&gt;
-
+&lt;h3 id=&quot;stpspanning-tree-protocol&quot;&gt;STP(Spanning Tree Protocol)&lt;/h3&gt;
 &lt;p&gt;브로드캐스트 스톰과 같은 낭비를 막기 위해서는 네트워크 구성을 그래프로 표현했을 때(노드 = 브릿지), 모든 노드가 그래프에 연결되어 있고, 한 노드에서 다른 한 노드로 가는 경로를 단 1개로 제한하는 &lt;strong&gt;Spanning Tree&lt;/strong&gt; 구조를 취함으로서 해결할 수 있다. 또한 경로가 1개로 고정되므로 여러 브릿지로 부터 접근가능한 호스트가 있을 시, 포워딩 테이블에서 Fault(실패)가 발생하는 것을 없앨 수 있다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Spanning Tree와 같은 자료구조는 본 포스트에서 다루지 않습니다. &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;참고 자료 1&lt;/a&gt;, &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%83%9D%EC%84%B1%EB%82%98%EB%AC%B4&quot;&gt;참고 자료 2&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;Spanning Tree와 같은 자료구조는 본 포스트에서 다루지 않습니다. &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;참고 자료 1&lt;/a&gt;, &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%83%9D%EC%84%B1%EB%82%98%EB%AC%B4&quot;&gt;참고 자료 2&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h4 id=&quot;elect-a-root-bridge&quot;&gt;Elect a Root Bridge&lt;/h4&gt;
-
 &lt;p&gt;Spanning Tree에서 기준점(Root Node)를 맡을 브릿지를 선출한다. 이 때 각 브릿지에 있는 &lt;strong&gt;브릿지 ID(브릿지 우선순위와 MAC 주소의 연속)&lt;/strong&gt;에서 브릿지 우선순위가 가장 작은 브릿지가 루트 브릿지가 된다. 우선순위가 같다면 MAC 주소를 기준으로 한다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;우선순위는 기본적으로 32768(0x8000)이며 수정이 가능하다.&lt;/p&gt;
+  &lt;p&gt;우선순위는 기본적으로 32768(0x8000)이며 수정이 가능하다.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h4 id=&quot;compute-a-spanning-tree&quot;&gt;Compute a Spanning Tree&lt;/h4&gt;
-
 &lt;p&gt;각 브릿지는 루트 브릿지로 부터의 최소 경로를 계산하며, 해당 경로에서 사용된 포트를 &lt;strong&gt;Root Port(루트 포트)&lt;/strong&gt;라 한다.&lt;/p&gt;
 
 &lt;p&gt;브릿지가 아닌 호스트들도 루트 브릿지까지의 최소 경로를 갖는 브릿지를 결정한다. 해당 호스트와 연결된 브릿지의 포트를 &lt;strong&gt;Designated Port(지명 포트)&lt;/strong&gt;라 한다.&lt;/p&gt;
@@ -1032,268 +1107,648 @@ Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 
 
 &lt;p&gt;이렇게 모든 계산이 끝난 후에, 루트 포트와 지명 포트가 아닌 모든 포트를 닫는다.&lt;/p&gt;
 
-&lt;h3 id=&quot;bpdus-bridge-protocol-units&quot;&gt;BPDUs(Bridge Protocol Units)&lt;/h3&gt;
-
+&lt;h3 id=&quot;bpdusbridge-protocol-units&quot;&gt;BPDUs(Bridge Protocol Units)&lt;/h3&gt;
 &lt;p&gt;STP를 통해 Spanning Tree를 구성하기 위해서는 전체 네트워크 망에 대한 정보를 가지고 있어야 하기 때문에 각 브릿지들이 충분한 정보를 가질 수 있도록 각 브릿지들은 BPDU라 불리는 데이터를 통해 정보를 교환한다. BPDU에는 다음과 같은 종류가 있다.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Configuratino BPDU(CBPDU) : Spanning Tree 계산 시 사용&lt;/li&gt;
-&lt;li&gt;Topology Change Notification(TCN) BPDU : &lt;strong&gt;망 구성(토폴로지)&lt;/strong&gt; 변경을 알리기 위해 사용&lt;/li&gt;
-&lt;li&gt;Topology Change Notification Acknowledgement(TCA) : TCN BPDU에 대한 응답&lt;/li&gt;
+  &lt;li&gt;Configuratino BPDU(CBPDU) : Spanning Tree 계산 시 사용&lt;/li&gt;
+  &lt;li&gt;Topology Change Notification(TCN) BPDU : &lt;strong&gt;망 구성(토폴로지)&lt;/strong&gt; 변경을 알리기 위해 사용&lt;/li&gt;
+  &lt;li&gt;Topology Change Notification Acknowledgement(TCA) : TCN BPDU에 대한 응답&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;BPDU는 정기적으로 교환되어 토폴로지 변화 감지와 포워딩을 제어한다.&lt;/p&gt;
 
-&lt;h2 id=&quot;참고-자료-reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
+&lt;h2 id=&quot;reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;Wikipedia, Korean. 신장 트리 프로토콜&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Spanning_Tree_Protocol&quot;&gt;Wikipedai, English. Spanning Tree Protocol&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;Wikipedia, Korean. 신장 트리 프로토콜&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Spanning_Tree_Protocol&quot;&gt;Wikipedai, English. Spanning Tree Protocol&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;영문 위키피디아에 STP 과정이 그림과 함께 설명되어 있습니다. 참고하시면 좋을 듯 하네요 :)&lt;/p&gt;
-
-&lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+  &lt;p&gt;영문 위키피디아에 STP 과정이 그림과 함께 설명되어 있습니다. 참고하시면 좋을 듯 하네요 :)&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-        <pubDate>Wed, 11 Mar 2015 05:59:38 +0900</pubDate>
-        <link>http://dal4segno.github.io/network/2015/03/11/bridging.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/network/2015/03/11/bridging.html</guid>
-        
-        <category>network bridge bridging</category>
-        
-        
-        <category>network</category>
-        
-      </item>
-    
-      <item>
-        <title>FICON 2015</title>
-        <description>&lt;p&gt;이번 FICON 2015는 &amp;quot;이야기가 있는 컨퍼런스&amp;quot;를 모토로 진행되었고, 결론부터 말하면 학생 등록 비용 70000원이 아깝지 않은 컨퍼런스였습니다. 그래서, 잊기 전에 후기 겸 해서 간단하게 정리해보았습니다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/bridging/&quot;&gt;Bridging&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[FICON 2015]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/conference/ficon-2015/" />
+  <id>http://localhost:4000/conference/ficon-2015</id>
+  <published>2015-03-10T11:33:29+00:00</published>
+  <updated>2015-03-10T11:33:29+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;이번 FICON 2015는 “이야기가 있는 컨퍼런스”를 모토로 진행되었고, 결론부터 말하면 학생 등록 비용 70000원이 아깝지 않은 컨퍼런스였습니다. 그래서, 잊기 전에 후기 겸 해서 간단하게 정리해보았습니다.&lt;/p&gt;
 
 &lt;p&gt;컨셉은 기존의 신청 페이지인 &lt;a href=&quot;forensicinsight.org&quot;&gt;FICON 2015&lt;/a&gt;에서, 발표 자료는 &lt;a href=&quot;http://www.slideshare.net/plainbit/&quot;&gt;SlideShare, PlainBit&lt;/a&gt;에서 확인하실 수 있습니다.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;다 쓰고나니 글이 꽤나 깁니다. 양해 부탁드립니다 :)&lt;/p&gt;
+  &lt;p&gt;다 쓰고나니 글이 꽤나 깁니다. 양해 부탁드립니다 :)&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;어떻게-대응할-것인가&quot;&gt;어떻게 대응할 것인가?&lt;/h2&gt;
-
-&lt;p&gt;첫 번째 세션은 &lt;strong&gt;넥슨코리아&lt;/strong&gt;에서 IS 감사를 맡고 계신 &lt;strong&gt;여성구&lt;/strong&gt;님께서 발표해주셨습니다.&lt;/p&gt;
+&lt;p&gt;&amp;lt;/br&amp;gt;
+## 어떻게 대응할 것인가? ##
+첫 번째 세션은 &lt;strong&gt;넥슨코리아&lt;/strong&gt;에서 IS 감사를 맡고 계신 &lt;strong&gt;여성구&lt;/strong&gt;님께서 발표해주셨습니다.&lt;/p&gt;
 
 &lt;p&gt;우선 사건 진행의 타임라인을 크게&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;사전 대응&lt;/li&gt;
-&lt;li&gt;사건 대응&lt;/li&gt;
-&lt;li&gt;사후 대응&lt;/li&gt;
+  &lt;li&gt;사전 대응&lt;/li&gt;
+  &lt;li&gt;사건 대응&lt;/li&gt;
+  &lt;li&gt;사후 대응&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;으로 나누어서 설명하셨습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;사건-대응&quot;&gt;사건 대응&lt;/h3&gt;
+&lt;h3 id=&quot;section&quot;&gt;사건 대응&lt;/h3&gt;
+&lt;p&gt;#### 사건 인지 ####
+밑의 다른 발표자분들 께서도 언급해주셨는데, 아무래도 외부 제보로 인한 인지보다는 내부 감사, 모니터링 중에 발견하는 것이 더 빠르고 효율적인 대응이 가능합니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;사건-인지&quot;&gt;사건 인지&lt;/h4&gt;
-
-&lt;p&gt;밑의 다른 발표자분들 께서도 언급해주셨는데, 아무래도 외부 제보로 인한 인지보다는 내부 감사, 모니터링 중에 발견하는 것이 더 빠르고 효율적인 대응이 가능합니다.&lt;/p&gt;
-
-&lt;h4 id=&quot;분석-및-검증&quot;&gt;분석 및 검증&lt;/h4&gt;
-
+&lt;h4 id=&quot;section-1&quot;&gt;분석 및 검증&lt;/h4&gt;
 &lt;p&gt;유출이 확인되었다면, &lt;strong&gt;어떤&lt;/strong&gt; 데이터가 &lt;strong&gt;얼마나&lt;/strong&gt; 유출되었는지, 그 데이터가 &lt;strong&gt;언제의&lt;/strong&gt; 데이터인지 확인하여, 피해 데이터를 &lt;strong&gt;특정하고&lt;/strong&gt; 관련된 정보를 수집하여 &lt;strong&gt;유출 경로를 파악&lt;/strong&gt;해야 합니다.&lt;/p&gt;
 
 &lt;p&gt;해당 유출 경로를 파악하면, 확산 방지를 위해 적절한 조치를 취해야 합니다. 이 후에는 증거 보존 절차를 밟으시면 됩니다.&lt;/p&gt;
 
-&lt;p&gt;경로 파악과 사고 대응(확산 방지 조치) 시 일부 증거가 훼손 될 수 있으나, 사고 대응을 하지 않으면 결국 2차 피해를 유발하므로 최대한 증거를 훼손하지 않는 방향으로 사고 대응을 진행하는 것이 중요합니다. 이 부분은 회사, 조직마다 어떻게 진행할 건지 많은 고려가 필요해 보입니다 :)  &lt;/p&gt;
+&lt;p&gt;경로 파악과 사고 대응(확산 방지 조치) 시 일부 증거가 훼손 될 수 있으나, 사고 대응을 하지 않으면 결국 2차 피해를 유발하므로 최대한 증거를 훼손하지 않는 방향으로 사고 대응을 진행하는 것이 중요합니다. 이 부분은 회사, 조직마다 어떻게 진행할 건지 많은 고려가 필요해 보입니다 :)&lt;/p&gt;
 
-&lt;h4 id=&quot;보고-및-tf-구성&quot;&gt;보고 및 TF 구성&lt;/h4&gt;
-
+&lt;h4 id=&quot;tf-&quot;&gt;보고 및 TF 구성&lt;/h4&gt;
 &lt;p&gt;분석 및 검증 후에는 절차에 따라 보고 과정을 진행한 후에, 내부 TF(TaskForce)를 구성하여 대응한다고 합니다. 아무래도 (정보)자산에 관련된 일이다 보니 법률과 관련된 인력이 많이 필요한 것 같습니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;신고-및-통지&quot;&gt;신고 및 통지&lt;/h4&gt;
-
+&lt;h4 id=&quot;section-2&quot;&gt;신고 및 통지&lt;/h4&gt;
 &lt;p&gt;기업의 데이터를 도난당한 &lt;strong&gt;피해자&lt;/strong&gt;이며 유출시킨 &lt;strong&gt;피의자&lt;/strong&gt;라는 언급이 매우 인상 깊었습니다. 그렇기 때문에 KISA, 경찰/검찰 뿐만 아니라, 정보 주체에게까지 통지해야 합니다.&lt;/p&gt;
 
 &lt;p&gt;정보 주체에게 통지 후에는 실제로 유출 피해자인지 확인하는 절차를 보통 취하는데, 이 때 확인 페이지에서도 적절한 보안 조치가 이루어져야 합니다. 전에 국내에서 확인 페이지에서 평문 전송 등으로 인한 2차 피해가 일어났던 것을 생각해보면 될 것 같습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;사후-대응&quot;&gt;사후 대응&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-3&quot;&gt;사후 대응&lt;/h3&gt;
 &lt;p&gt;보안 의식의 제고 및 전략에 대한 고려가 필요합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;사전-대응&quot;&gt;사전 대응&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-4&quot;&gt;사전 대응&lt;/h3&gt;
 &lt;p&gt;관련 법률이 정보통신망법, 개인정보보호법, 신용정보법 등으로 분리되어 있기 때문에 각 법에 위배되지 않도록 컴플라이언스를 확보하고, 보안 기술과 해당 문제를 해결하기 위한 경영진의 의지도 중요하지만, 정확하게 &lt;strong&gt;어떤 데이터를 보호할 것인지&lt;/strong&gt; 파악하는 것이 가장 중요합니다.&lt;/p&gt;
 
 &lt;p&gt;관련 사고에 대한 보험도 있으니 관계자 분들은 고려해 보시는 것도 좋을 듯 합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/br&amp;gt;
+## 어떻게 조사할 것인가? ##
+두 번째 세션은 이 전 공개세미나에서 &lt;strong&gt;메모리 해킹 케이스&lt;/strong&gt;를 발표해주셨던, &lt;strong&gt;경찰청&lt;/strong&gt; 사이버안전국 &lt;strong&gt;이병길&lt;/strong&gt; 수사관님께서 발표해주셨습니다. 초반에 알 수없는 문제로 슬라이드가 알아서 넘어갈 때는 제가 놀랐었네요 :)&lt;/p&gt;
 
-&lt;h2 id=&quot;어떻게-조사할-것인가&quot;&gt;어떻게 조사할 것인가?&lt;/h2&gt;
-
-&lt;p&gt;두 번째 세션은 이 전 공개세미나에서 &lt;strong&gt;메모리 해킹 케이스&lt;/strong&gt;를 발표해주셨던, &lt;strong&gt;경찰청&lt;/strong&gt; 사이버안전국 &lt;strong&gt;이병길&lt;/strong&gt; 수사관님께서 발표해주셨습니다. 초반에 알 수없는 문제로 슬라이드가 알아서 넘어갈 때는 제가 놀랐었네요 :)&lt;/p&gt;
-
-&lt;h3 id=&quot;사건-사례&quot;&gt;사건 사례&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-5&quot;&gt;사건 사례&lt;/h3&gt;
 &lt;p&gt;요즘은 3.20 사태나 DDoS 공격처럼 시스템 가용성을 해치는 공격보다는 한수원 사태나 이동통신사들의 개인정보 유출 등 정보를 취하는 사례가 많습니다. 이에 대응하는 것도 좋지만 너무 이 쪽에만 포커스가 맞춰지는 것은 좋지 않다고 봅니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;사례별-초동조치&quot;&gt;사례별 초동조치&lt;/h3&gt;
+&lt;h3 id=&quot;section-6&quot;&gt;사례별 초동조치&lt;/h3&gt;
+&lt;p&gt;#### DDoS ####
+DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/strong&gt;이 있어야 처벌이 가능하다고 합니다. 이 부분이 굉장히 애매한 것 같은데 실제로 처벌이 어떻게 되고 있는지 궁금하네요.
+#### 침입 및 악성코드 ####
+&lt;strong&gt;정당한 권한 없이&lt;/strong&gt; 접근 하는 것은 모두 침해입니다. 가끔 여기저기 돌아다니시면서 SQLi등의 공격을 시도하시는 분들이 계신데, 조심하시기 바랍니다 :(
+#### 정보 유출 ####
+위의 침입과 유사한 것 같습니다. &lt;strong&gt;타인의 정보 및 비밀을 침해, 도용, 누설하면 안됩니다&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;ddos&quot;&gt;DDoS&lt;/h4&gt;
-
-&lt;p&gt;DDoS의 경우에는 &lt;strong&gt;안정적 운영을 방해할 목적&lt;/strong&gt;이 있어야 처벌이 가능하다고 합니다. 이 부분이 굉장히 애매한 것 같은데 실제로 처벌이 어떻게 되고 있는지 궁금하네요.&lt;/p&gt;
-
-&lt;h4 id=&quot;침입-및-악성코드&quot;&gt;침입 및 악성코드&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;정당한 권한 없이&lt;/strong&gt; 접근 하는 것은 모두 침해입니다. 가끔 여기저기 돌아다니시면서 SQLi등의 공격을 시도하시는 분들이 계신데, 조심하시기 바랍니다 :(&lt;/p&gt;
-
-&lt;h4 id=&quot;정보-유출&quot;&gt;정보 유출&lt;/h4&gt;
-
-&lt;p&gt;위의 침입과 유사한 것 같습니다. &lt;strong&gt;타인의 정보 및 비밀을 침해, 도용, 누설하면 안됩니다&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;조사-확대&quot;&gt;조사 확대&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-7&quot;&gt;조사 확대&lt;/h3&gt;
 &lt;p&gt;이전 발표에서도 언급되었지만, 피해가 확인 되면, 해당 PC뿐만 아니라 전체 경로로 조사를 확대해야할 필요가 있습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;시나리오-및-요약&quot;&gt;시나리오 및 요약&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-8&quot;&gt;시나리오 및 요약&lt;/h3&gt;
 &lt;p&gt;위의 내용들이 가상 시나리오에서 어떻게 적용되는지 상세한 설명과 함께 보여주셨습니다. :)&lt;/p&gt;
 
-&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/br&amp;gt;
+## 어떻게 들어왔는가? ##
+세 번째 세션은 &lt;strong&gt;Ahnlab A-First&lt;/strong&gt;팀의 &lt;strong&gt;오정훈&lt;/strong&gt; 연구원님이 발표해주셨습니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;어떻게-들어왔는가&quot;&gt;어떻게 들어왔는가?&lt;/h2&gt;
-
-&lt;p&gt;세 번째 세션은 &lt;strong&gt;Ahnlab A-First&lt;/strong&gt;팀의 &lt;strong&gt;오정훈&lt;/strong&gt; 연구원님이 발표해주셨습니다. &lt;/p&gt;
-
-&lt;h3 id=&quot;필요성&quot;&gt;필요성&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-9&quot;&gt;필요성&lt;/h3&gt;
 &lt;p&gt;삭제나 포맷 등의 단순 대응으로는 공격 경로를 차단할 수 없기 때문에 같은 방법으로 재침입을 허용할 수 밖에 없습니다. 다른 발표자 분들도 언급해주셨 듯이, 최초 유입 경로를 파악함으로서 재침입을 방지해야 할 필요가 있습니다.&lt;/p&gt;
 
 &lt;h3 id=&quot;lateral-movement&quot;&gt;Lateral Movement&lt;/h3&gt;
-
 &lt;p&gt;최초 침입 시스템에서 목적지까지 가는 이동 경로를 의미합니다. 보통 도메인 관리자의 권한을 탈취하거나 네트워크 내의 관리자 계정 정보가 동일한 점을 이용하는 &lt;strong&gt;Pass the Hash&lt;/strong&gt; 공격이 자주 이용된다고 합니다. 이 공격은 네트워크 내의 모든 호스트가 감염될 수 있기 때문에 매우 위험합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;최초-유입-경로-분석&quot;&gt;최초 유입 경로 분석&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-10&quot;&gt;최초 유입 경로 분석&lt;/h3&gt;
 &lt;p&gt;최우선 목표는 &lt;strong&gt;네트워크 구성&lt;/strong&gt;을 파악하는 것입니다. 네트워크 구성을 알아야 어떻게 접근해왔는지 정확하게 파악할 수 있겠죠. 이 부분은 피해측에서 제공받는 것이 가장 정확한 것으로 보이는데, 만약 제공받은 구성이 수사 중에 틀리다는 것을 인지하면 어떻게 조사를 하는 지 궁금하네요.&lt;/p&gt;
 
-&lt;h3 id=&quot;분석-유형&quot;&gt;분석 유형&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-11&quot;&gt;분석 유형&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;상세 분석 : 아무 단서가 없는 상황. 추후 분석을 위해 최대한 많은 정보를 수집해야 함. 최초로 공격이 탐지된 시스템이나 게이트웨이 등의 중요 포인트에서 수행합니다.&lt;/li&gt;
-&lt;li&gt;포인트 분석 : 여러 단서를 통해 특정 시간, 특정 아티팩트만을 분석하여 신속하게 정보를 수집&lt;/li&gt;
+  &lt;li&gt;상세 분석 : 아무 단서가 없는 상황. 추후 분석을 위해 최대한 많은 정보를 수집해야 함. 최초로 공격이 탐지된 시스템이나 게이트웨이 등의 중요 포인트에서 수행합니다.&lt;/li&gt;
+  &lt;li&gt;포인트 분석 : 여러 단서를 통해 특정 시간, 특정 아티팩트만을 분석하여 신속하게 정보를 수집&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;모든 시스템이 감염된 상황이어도 Lateral Movement를 잘 추적한다면 적은 분석으로도 최초 유입 경로를 파악할 수 있습니다.&lt;/p&gt;
 
 &lt;p&gt;타임라인 분석을 통해 침입자의 행위를 분석할 수 있지만, 다양한 정보를 통해 시간대를 특정하지 못한다면 매우 힘든 작업이 됩니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;증거가-없을-시&quot;&gt;증거가 없을 시&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-12&quot;&gt;증거가 없을 시&lt;/h3&gt;
 &lt;p&gt;중요 포인트는 &lt;strong&gt;절대 중도 포기하지 않는다&lt;/strong&gt; 라고 하셨는데, 개인적으로 반성하게 되는 부분이었습니다 :-(&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Lateral Movement 추적에 실패했을 경우, &lt;strong&gt;IOC(Indicator of Compromise)&lt;/strong&gt;를 통한 분석을 시도하는 방법 &lt;/li&gt;
-&lt;li&gt;외부와의 연결 지점은 반드시 있기 때문에, 재침입을 유도하여 증거를 만들어내는 방법&lt;/li&gt;
+  &lt;li&gt;Lateral Movement 추적에 실패했을 경우, &lt;strong&gt;IOC(Indicator of Compromise)&lt;/strong&gt;를 통한 분석을 시도하는 방법&lt;/li&gt;
+  &lt;li&gt;외부와의 연결 지점은 반드시 있기 때문에, 재침입을 유도하여 증거를 만들어내는 방법&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;이 있습니다.&lt;/p&gt;
 
 &lt;p&gt;여담이지만 중식에 고기가 많지 않아서 좀 아쉬웠네요 :)&lt;/p&gt;
 
-&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/br&amp;gt;
+## 어떻게 가져갔는가? 그리고.. ##
+네 번째 세션은 &lt;strong&gt;Plainbit&lt;/strong&gt;의 &lt;strong&gt;김진국&lt;/strong&gt; 대표님이 발표해주셨습니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;어떻게-가져갔는가-그리고&quot;&gt;어떻게 가져갔는가? 그리고..&lt;/h2&gt;
-
-&lt;p&gt;네 번째 세션은 &lt;strong&gt;Plainbit&lt;/strong&gt;의 &lt;strong&gt;김진국&lt;/strong&gt; 대표님이 발표해주셨습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;무엇을-조사해야-하는가&quot;&gt;무엇을 조사해야 하는가?&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-13&quot;&gt;무엇을 조사해야 하는가?&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;로그&lt;/strong&gt;는 행동에 대한 증거를 명시적으로 남겨두지만, &lt;strong&gt;아티팩트&lt;/strong&gt;는 정황을 조합하여 추론해내는 것이기 때문에 로그가 오래 보존될 수 있도록 미리 설정해두는 것이 중요합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;내부망-이동&quot;&gt;내부망 이동&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-14&quot;&gt;내부망 이동&lt;/h3&gt;
 &lt;p&gt;결국 데이터 유출은 외부 인터넷 망과 이어진 곳에서 이루어지기 때문에, 내부 클라이언트들에 대한 조사가 이루어져야 합니다.&lt;/p&gt;
 
 &lt;p&gt;이벤트 로그, 선호 경로, 파일명 패턴 등의 정보를 사용할 수 있습니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;침해사고의-문제들&quot;&gt;침해사고의 문제들&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-15&quot;&gt;침해사고의 문제들&lt;/h3&gt;
 &lt;p&gt;현재 보안은 사고 가능성을 낮추기 위한 방어 체계에만 포커스가 맞춰져 있는데, 사고 발생시 피해를 최소화하는 데에도 신경을 써야 합니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;누가-인지하였는가&quot;&gt;누가 인지하였는가?&lt;/h4&gt;
-
+&lt;h4 id=&quot;section-16&quot;&gt;누가 인지하였는가?&lt;/h4&gt;
 &lt;p&gt;첫 발표에서도 언급되었지만, 침해사고를 빨리 인식할 수록 대응 시간이 크게 늘어나게 됩니다만, 현재 국내의 침해사고는 대부분 외부 제보로 인한 인지가 많기 때문에, 상대적으로 대응에 미흡한 모습입니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;어떻게-처리되었는가&quot;&gt;어떻게 처리되었는가?&lt;/h4&gt;
+&lt;h4 id=&quot;section-17&quot;&gt;어떻게 처리되었는가?&lt;/h4&gt;
+&lt;p&gt;세 번째 발표에서도 언급되었듯이, 전용 백신을 돌린다거나 해당 파일을 지우는 것으로는 완벽하게 대응되었다고 할 수 없습니다.&lt;/p&gt;
 
-&lt;p&gt;세 번째 발표에서도 언급되었듯이, 전용 백신을 돌린다거나 해당 파일을 지우는 것으로는 완벽하게 대응되었다고 할 수 없습니다. &lt;/p&gt;
-
-&lt;h4 id=&quot;사고에-대한-인식-문제&quot;&gt;사고에 대한 인식 문제&lt;/h4&gt;
-
+&lt;h4 id=&quot;section-18&quot;&gt;사고에 대한 인식 문제&lt;/h4&gt;
 &lt;p&gt;사고를 &lt;strong&gt;100% 막는 것은 불가능&lt;/strong&gt; 하다는 것을 인지하고, 사고가 발생했을 때, 조기에 식별하고 체계적인 대응을 통해 피해를 최소화 하는 것이 중요합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;침해사고-준비도&quot;&gt;침해사고 준비도&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-19&quot;&gt;침해사고 준비도&lt;/h3&gt;
 &lt;p&gt;다양한 설정 및 정책 등을 강화하면 사고에 효과적으로 대응할 수 있는 시간(골든 타임)이 늘어납니다.&lt;/p&gt;
 
 &lt;p&gt;그리고 시뮬레이션을 통해서 직원들이 가상으로라도 사고를 당해보면서 침해사고의 영향을 알게 하는 것과 보안 인력들의 경험을 쌓는 것이 중요합니다.&lt;/p&gt;
 
-&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;보안담당자가-겪는-실무적-이슈와-법률적-검토&quot;&gt;보안담당자가 겪는 실무적 이슈와 법률적 검토&lt;/h2&gt;
-
-&lt;p&gt;다섯번 째 세션은 &lt;strong&gt;테크앤로&lt;/strong&gt; 법률 사무소의 &lt;strong&gt;구태언&lt;/strong&gt; 대표변호사님 께서 발표해주셨습니다.&lt;/p&gt;
+&lt;p&gt;&amp;lt;/br&amp;gt;
+## 보안담당자가 겪는 실무적 이슈와 법률적 검토 ##
+다섯번 째 세션은 &lt;strong&gt;테크앤로&lt;/strong&gt; 법률 사무소의 &lt;strong&gt;구태언&lt;/strong&gt; 대표변호사님 께서 발표해주셨습니다.&lt;/p&gt;
 
 &lt;p&gt;다양한 디지털 이슈들을 현실의 예시들로 설명해주셔서, 어려운 법 조항들에 비해 쉽게 이해할 수 있었습니다 :)&lt;/p&gt;
 
-&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;/br&amp;gt;
+## 패널 토의 ##
+패널로는 &lt;strong&gt;경찰청&lt;/strong&gt; 사이버안전국 &lt;strong&gt;임희&lt;/strong&gt; 수사관님, &lt;strong&gt;KISA&lt;/strong&gt; 침해사고분석단 &lt;strong&gt;박문범&lt;/strong&gt; 연구원님, &lt;strong&gt;나루 시큐리티&lt;/strong&gt;의 &lt;strong&gt;김혁준&lt;/strong&gt; 대표님이 참여해주셨습니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;패널-토의&quot;&gt;패널 토의&lt;/h2&gt;
-
-&lt;p&gt;패널로는 &lt;strong&gt;경찰청&lt;/strong&gt; 사이버안전국 &lt;strong&gt;임희&lt;/strong&gt; 수사관님, &lt;strong&gt;KISA&lt;/strong&gt; 침해사고분석단 &lt;strong&gt;박문범&lt;/strong&gt; 연구원님, &lt;strong&gt;나루 시큐리티&lt;/strong&gt;의 &lt;strong&gt;김혁준&lt;/strong&gt; 대표님이 참여해주셨습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;북한에-대하여&quot;&gt;북한에 대하여&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-20&quot;&gt;북한에 대하여&lt;/h3&gt;
 &lt;p&gt;아무래도 여러 사고가 북한의 소행이라는 보도에 비해 공개된 자료가 적다보니 많은 의심을 받으실 수 밖에 없는데, 단순히 IP 조회 만으로 판별하는 것은 아니고 여러가지 정보를 조합해서 결론을 도출하고 있다고 하십니다.&lt;/p&gt;
 
 &lt;p&gt;정보 공개의 경우에는 전략 보호를 위해 절제되어야 하며, 또한 수사에서 얻은 정보를 공개하는 것에 대한 법률이 있기 때문에 해당 법률 또한 준수해야해서 정보 공개는 힘들다고 합니다.&lt;/p&gt;
 
-&lt;h4 id=&quot;북한-사칭은&quot;&gt;북한 사칭은?&lt;/h4&gt;
-
+&lt;h4 id=&quot;section-21&quot;&gt;북한 사칭은?&lt;/h4&gt;
 &lt;p&gt;해당 사례가 &lt;strong&gt;있었다&lt;/strong&gt; 라고 언급하신 거 보면, 이 정도는 충분히 식별해 내실 수 있는 것 같습니다 :)&lt;/p&gt;
 
-&lt;h3 id=&quot;선호-인력&quot;&gt;선호 인력?&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-22&quot;&gt;선호 인력?&lt;/h3&gt;
 &lt;p&gt;우선 다들 공통적으로 커뮤니케이션 능력을 선호하시는 것 같고, 그 외에 정보 수집/응용력, 타국인(사이트)와의 소통을 위한 영어 능력도 있으면 좋다고 합니다.&lt;/p&gt;
 
-&lt;h3 id=&quot;현재-보안-시장의-문제점&quot;&gt;현재 보안 시장의 문제점?&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-23&quot;&gt;현재 보안 시장의 문제점?&lt;/h3&gt;
 &lt;p&gt;너무 솔루션 위주로 시장이 발달했고, 기업 본인들이 자신의 상태를 잘 모르기 때문에 무작정 솔루션들만 사들이는 경향이 있다고 합니다. 앞의 발표들, 특히 첫 번째 발표에서 나왔듯이 어떤 것을 보호해야 할지 특정하는 것이 급선무로 보입니다 :)&lt;/p&gt;
 
-&lt;h3 id=&quot;여러-신기술에-대한-대응&quot;&gt;여러 신기술에 대한 대응&lt;/h3&gt;
-
+&lt;h3 id=&quot;section-24&quot;&gt;여러 신기술에 대한 대응&lt;/h3&gt;
 &lt;p&gt;결국 신기술도 기존의 기술의 응용이기 때문에, 기존의 연구자료를 고도화하는 방법을 통해 대응이 가능하다고 합니다.&lt;/p&gt;
 
-&lt;h2 id=&quot;후기&quot;&gt;후기&lt;/h2&gt;
-
+&lt;h2 id=&quot;section-25&quot;&gt;후기&lt;/h2&gt;
 &lt;p&gt;아직 실무를 경험해보지 못한 학생의 입장에서, 전문가 분들의 경험에서 우러나오는 발표들이 매우 흥미로웠습니다. 앞으로 공부하면서 고려해봐야 할 것들에 대해서 많은 생각이 들기도 했고요.&lt;/p&gt;
 
 &lt;p&gt;글을 쓰다보니까 상당히 길어진 느낌이 있습니다. 각 발표 별로 분리하자니 짧은 분량이라 그냥 이어서 썼는데 생각보다 많이 기네요. 발표 자료에 있는 내용은 최대한 다시 언급하지 않는 방향으로 했는데 이 것도 욕심인지 자꾸 하나 둘씩 끼워넣다 보니까 길어진 것 같습니다 :(&lt;/p&gt;
 
 &lt;p&gt;맨 앞에서도 말씀드렸듯이, 정말 만족스러운 컨퍼런스였습니다, 다음엔 더 많은 분들이 오셔서 좋은 지식들을 얻어가실 수 있었으면 좋겠습니다 :)&lt;/p&gt;
-</description>
-        <pubDate>Tue, 10 Mar 2015 20:33:29 +0900</pubDate>
-        <link>http://dal4segno.github.io/conference/2015/03/10/ficon-2015.html</link>
-        <guid isPermaLink="true">http://dal4segno.github.io/conference/2015/03/10/ficon-2015.html</guid>
-        
-        <category>digitalforensics conference ficon 2015</category>
-        
-        
-        <category>conference</category>
-        
-      </item>
-    
-  </channel>
-</rss>
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/conference/ficon-2015/&quot;&gt;FICON 2015&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 10, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[NAT]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/nat/" />
+  <id>http://localhost:4000/network/nat</id>
+  <published>2015-03-09T10:15:53+00:00</published>
+  <updated>2015-03-09T10:15:53+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;private-ip&quot;&gt;Private IP&lt;/h2&gt;
+&lt;p&gt;CIDR을 도입하여 IP 주소의 낭비를 줄여도 32 bit 공간의 한계를 극복할 수는 없었기 때문에, 사설 네트워크를 위한 IP 대역을 따로 규정하여 사용한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Class A : 10.0.0.0/8&lt;/li&gt;
+  &lt;li&gt;Class B : 172.16.0.0/12&lt;/li&gt;
+  &lt;li&gt;Class C : 192.168.0.0/16&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이렇게 사설 IP를 사용하면, 내부 네트워크 내에서는 사설 IP를 통해 통신이 가능하다. 하지만 사설 IP로는 외부 네트워크와 통신할 수 없기 때문에 이를 공인 IP로 변환하는 작업이 필요하다.
+&amp;gt; 사설 IP를 Class C부터 A까지 따라올라가도 결국 사설 네트워크이기 때문에 외부와 통신이 불가능하다.&lt;/p&gt;
+
+&lt;h2 id=&quot;natnetwork-address-translation&quot;&gt;NAT(Network Address Translation)&lt;/h2&gt;
+&lt;p&gt;내부 네트워크에서 나가는 패킷의 출발지에 공인 IP를 부여하고, 외부 네트워크에서 들어오는 패킷의 도착지에 사설 IP를 부여함으로서 적은 공인 IP를 사용하여 통신이 가능하며, 이러한 방법을 &lt;strong&gt;NAT&lt;/strong&gt;라 한다. NAT에는 몇 가지 종류가 있는데, 이는 다음과 같다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Static NAT : 사설 IP와 공인 IP의 1:1 Mapping을 유지한다.&lt;/li&gt;
+  &lt;li&gt;Dynamic NAT : 사용 가능한 공인 IP 중에 하나를 사설 IP에 동적으로 할당한다. 외부에서는 사설 네트워크에 어떤 공인 IP가 할당되어있는 지 알 수 없으므로 접근할 수 없다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PAT(Port Address Translation)&lt;/strong&gt; : 일반적으로 사용되는 방식이며, 여러 사설 IP를 하나의 공인 IP로 변환한다. 이 때, 각 사설 IP들은 Port 번호로 구분된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pat&quot;&gt;PAT&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Port는 전송 계층에서 사용되는 가상의 논리적 통신 연결단으로, 보통 클라이언트가 특정 서버 프로그램을 지정하는 방법으로 사용된다. 길이는 16 bit이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;인터넷이 호스트들은 외부 요청에 대한 응답 시, 요청 시와 동일한 Port 번호로 응답하기 때문에, 외부에서 사설 네트워크로 들어오는 패킷들도 구별이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/pat.png&quot; alt=&quot;PAT&quot; title=&quot;PAT 과정&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;라우터에서 목적지로 패킷을 보낼 때 출발지 IP와 Port 번호가 바뀌는 것을 볼 수 있는데, 이는 NAT 변환 테이블에 의해 변환된 것이다. 만약 테이블에 해당 IP와 Port번호에 대한 정보가 없다면 이 과정에서 추가된다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;사설 IP : Port&lt;/th&gt;
+      &lt;th&gt;공인 IP : Port&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;192.168.0.1:1000&lt;/td&gt;
+      &lt;td&gt;111.222.111.222:4000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/TCP_%EB%B0%8F_UDP_%ED%8F%AC%ED%8A%B8&quot;&gt;Wikipedia, Korean. TCP 및 UDP 포트&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Port_(computer_networking)&quot;&gt;Wikipedia, English. Port(Computer Networking)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.terms.co.kr/port.htm&quot;&gt;텀즈. port&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/nat/&quot;&gt;NAT&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 09, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[IP Configuration]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/ip-configuration/" />
+  <id>http://localhost:4000/network/ip-configuration</id>
+  <published>2015-03-08T10:58:47+00:00</published>
+  <updated>2015-03-08T10:58:47+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;ip-address-allocation&quot;&gt;IP Address Allocation&lt;/h2&gt;
+&lt;p&gt;어느 프로토콜이나, 통신 대상을 특정하기 위해서는 &lt;strong&gt;Address(주소)&lt;/strong&gt;등의 정보를 지정, 할당하는 작업이 필요하다.&lt;/p&gt;
+
+&lt;p&gt;IP에서는 IP 주소와 Default Gateway(기본 게이트웨이), DNS 서버 등을 사용자가 직접 할당하는 방법과, &lt;strong&gt;DHCP(Dynamic Host Configuration Protocol)&lt;/strong&gt;을 이용하여 자동으로 그리고 동적으로 할당 받는 방법이 있다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;기본 게이트웨이는 두 말단이 직접 통신이 불가능 한 경우 우선적으로 패킷을 전송하는 대상이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;dhcp&quot;&gt;DHCP&lt;/h3&gt;
+&lt;p&gt;IP를 사용하는 네트워크에서 사용되며, IP 주소, 기본 게이트웨이, DNS 서버등을 중앙에서 관리하고 설정하기 위한 프로토콜이다. 설정을 요청하는 Client와 해당 요청에 응답하는 DHCP Server가 있는 Client-Server 모델을 이용한다.&lt;/p&gt;
+
+&lt;p&gt;DHCP에서 IP 주소는 &lt;strong&gt;Lease(임대)&lt;/strong&gt;되는 것 이기때문에, 정책에 따라 부여받은 IP 주소가 회수되거나 재할당되는 경우가 있을 수 있다.
+#### DORA Operation ####
+&lt;img src=&quot;http://localhost:4000/image/dhcp_dora.png&quot; alt=&quot;DHCP DORA Operation&quot; title=&quot;DHCP의 과정(DORA)&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;DHCP 작업은 &lt;strong&gt;UDP(User Datagram Protocol)&lt;/strong&gt;을 이용한다. 이는 추후에 상세한 포스팅을 올릴 예정이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Discover&lt;/strong&gt; - 브로드캐스팅을 통해 DHCP 서버를 찾는다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Offer&lt;/strong&gt; -  Discover에 대한 응답으로, DHCP Server 자신의 IP 주소와 Client가 할당 받을 수 있는 IP 주소를 전달한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Request&lt;/strong&gt; - Offer에서 받은, 할당 받을 수 있는 IP 주소에 대해 임대를 요청한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Acknowledge&lt;/strong&gt; - 임대 절차가 완료된 IP의 주소, 기간 등의 정보를 전송한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;cidrclassless-inter-domain-routing&quot;&gt;CIDR(Classless Inter-Domain Routing)&lt;/h2&gt;
+&lt;p&gt;네트워크가 다른 네트워크의 집합으로 구성되어 있을 경우, 내부 네트워크(Subnetwork) 간의 통신을 위해 각 내부 네트워크에도 주소가 할당되어야 할 필요가 있다.&lt;strong&gt;(Subnetting)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Class 기반의 주소 할당으로도 계층 구조를 나타낼 수 있지만, Class를 나타내는 데에 필요한 주소 길이가 고정적인 특성으로 인해 유연한 주소 할당이 불가하며 낭비되는 주소가 많다는 문제점이 있다. 이를 해결하기 위해 도입된 방법이 CIDR이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/subnetting.png&quot; alt=&quot;Subnetwork&quot; title=&quot;Subnetwork 주소 구조&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;상위 네트워크의 Network ID를 사용하여, 하위 네트워크임을 명시하고 뒤에 &lt;strong&gt;Subnet ID&lt;/strong&gt;를 이용하여 내부 네트워크들을 구분한다. Class가 아닌, 주소의 접두(Prefix), Network ID와 Subnet ID의 연속을 통해 계층을 나타내는 것이 가능하다. 해당 접두 부분의 길이를 Masking으로 나타내는 것을 &lt;strong&gt;Subnet Mask&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;p&gt;111.222.333.444/24 의 경우 Subnet Mask의 길이가 24 Bit임을 명시한 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;supernetting&quot;&gt;Supernetting&lt;/h3&gt;
+&lt;p&gt;여러 Subnetwork의 접두 부분의 공통 부분을 취해서 각 Subnetwork들이 같은 Network ID를 갖는 것처럼 표현하여, 라우팅 테이블을 간소화하는 방법이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;gateway&quot;&gt;Gateway&lt;/h2&gt;
+&lt;p&gt;두 말단이 직접 연결되어 있지 않은 경우, 패킷의 직접 전송이 불가능하기 때문에 다른 지점들을 거쳐서 전송해야 하는데, 이 때 게이트웨이로 패킷을 전송하게 된다. 일반적으로 외부와 연결되어 있는 지점이 기본 게이트웨이가 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;dnsdomain-name-service&quot;&gt;DNS(Domain Name Service)&lt;/h2&gt;
+&lt;p&gt;컴퓨터들은 IP 주소를 통해 서로를 구별하고 통신하지만, 이 주소를 사람이 외워서 사용하기는 힘들기 때문에 사람이 기억하고 사용하기 쉬운 문자열로 만든 &lt;strong&gt;도메인 이름(Domain Name)&lt;/strong&gt;을 이용한다.&lt;/p&gt;
+
+&lt;p&gt;도메인도 IP와 같이 계층적인 구조이며, 다수의 서버로 구성되는 분산 구조로 이루어져 있다.&lt;/p&gt;
+
+&lt;p&gt;keeper.cse.pusan.ac.kr 과 같은 도메인 이름에서는&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Root DNS Server -&amp;gt; .kr&lt;/li&gt;
+  &lt;li&gt;.kr -&amp;gt; .ac.kr&lt;/li&gt;
+  &lt;li&gt;.ac.kr -&amp;gt; pusan.ac.kr&lt;/li&gt;
+  &lt;li&gt;pusan.ac.kr -&amp;gt; cse.pusan.ac.kr&lt;/li&gt;
+  &lt;li&gt;cse.pusan.ac.kr -&amp;gt; keeper.cse.pusan.ac.kr&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;의 순서로 해당 도메인의 IP 주소를 찾아간다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;참고자료, Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/169289/ko&quot;&gt;Microsoft Support. DHCP 기본 사항&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.ietf.org/rfc/rfc2131.txt&quot;&gt;IEFT. RFC 2131&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol&quot;&gt;Wikipedia, English. Dynamic Host Configuration Protocol&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.netmanias.com/ko/post/blog/5348/dhcp-ip-allocation/understanding-the-basic-operations-of-dhcp&quot;&gt;Netmanias. DHCP 프로토콜 기본 원리&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.secure.pe.kr/15&quot;&gt;S.M.A.R.T . CIDR(Subnetting, Supernetting, VLSM)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%EB%8D%94_(%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9)&quot;&gt;Wikipedia, Korean. 사이더_(네트워킹)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/ip-configuration/&quot;&gt;IP Configuration&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on March 08, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[Internetworking, 인터네트워킹]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/network/internetworking/" />
+  <id>http://localhost:4000/network/internetworking</id>
+  <published>2015-02-12T00:26:44+00:00</published>
+  <updated>2015-02-12T00:26:44+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;문자 그대로, 네트워크 간의 교류(통신)하는 개념 혹은 기술 전반을 이르는 단어이다. 여기서의 네트워크는 물리적으로 직접 연결되지 않은 네트워크와 심지어 구성이 다른 것들을 모두 포함한다. 마치 우리가 일반적으로 인터넷을 사용할 때 네트워크 구성 및 구조를 고려하지 않는 것처럼 말이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;연결된 각 네트워크는 다른 구성일 수 있으므로 다양한 구성에 대응할 수 있는 &lt;strong&gt;Heterogeneity(이질성)&lt;/strong&gt;와&lt;/li&gt;
+  &lt;li&gt;수 많은 네트워크에 대응할 수 있는 &lt;strong&gt;Scalability(확장성)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;가 매우 중요하다.&lt;/p&gt;
+
+&lt;p&gt;여러 네트워크가 서로 다른 통신 규약(&lt;strong&gt;Protocol, 프로토콜&lt;/strong&gt;)을 사용한다면, 통신이 불가능하기 때문에 표준을 정하여 모두가 같은 프로토콜을 사용함으로서 이질성을 확보하였다. 현재의 표준은 &lt;strong&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/OSI_%EB%AA%A8%ED%98%95&quot;&gt;OSI 참조 모델(OSI Reference Model)&lt;/a&gt;&lt;/strong&gt;이다. 본 포스트는 해당 모델에 대한 지식이 있다는 것을 전제로 작성된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;ip-service-model&quot;&gt;IP Service Model&lt;/h2&gt;
+&lt;p&gt;인터넷을 사용 중이라면, 많이 들어보았을 법 한 이름이다. &lt;strong&gt;IP(Internet Protocol)&lt;/strong&gt;는 OSI 참조 모델에서 3 계층, 네트워크 계층의 역할을 맡는다.&lt;/p&gt;
+
+&lt;p&gt;통신 시, 데이터는 송신자와 수신자 외에도 그 사이에 있는 많은 네트워크를 거치게 되는데, IP는 각종 세부 사항의 처리는 &lt;strong&gt;End Point(말단)&lt;/strong&gt;, 송신자와 수신자&lt;strong&gt;(상위 계층)&lt;/strong&gt;에게 맡기고, 최대한 단순한 구성을 통해 확장성을 높인 프로토콜이다.&lt;/p&gt;
+
+&lt;p&gt;데이터 전송은 의미 단위(파일 등)가 아닌 &lt;strong&gt;용량, 덩어리(Datagram, Packet)&lt;/strong&gt; 단위로 이루어진다.&lt;/p&gt;
+
+&lt;p&gt;또한, IP는 &lt;strong&gt;Best-Effort Delivery&lt;/strong&gt;의 특성을 갖는데, 이는 통신에 대해 보장하지 않는다는(Unreliable) 의미이다. 즉, 손실, 순서 바뀜, 중복, 지연 등의 문제가 발생 가능하며, 이는  IP에서 해결하지 않는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;ip-address&quot;&gt;IP Address&lt;/h3&gt;
+&lt;p&gt;v4 기준으로 32bit의 주소를 사용한다. 네트워크의 크기에 따라 &lt;a href=&quot;http://ko.wikipedia.org/wiki/IPv4&quot;&gt;Class를 나누어 Hierachical한 구조를 형성한다&lt;/a&gt;. 하위 네트워크들은 모두 상위 네트워크 주소가 같기 때문에, 여러 호스트들을 네트워크 단위로 관리할 수 있는 장점이 있다.&lt;/p&gt;
+
+&lt;p&gt;특수 목적용으로 일반적인 호스트에 할당할 수 없는 주소도 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;arp-address-resolution-protocol&quot;&gt;ARP, Address Resolution Protocol&lt;/h3&gt;
+&lt;p&gt;통신 시, IP 주소를 사용한다고 해도 직접적인 통신은 하위 계층인 물리 계층을 통해 이루어지므로, IP 주소를 MAC 주소로 변환하는 과정이 필요하다.&lt;/p&gt;
+
+&lt;p&gt;이 과정은 수신자의 IP에 대한(혹은 상위 네트워크) MAC 주소를 알고 있는 호스트를 &lt;strong&gt;Broadcasting(브로드캐스팅)&lt;/strong&gt; 을 통해서 찾는다.
+&amp;gt; 브로드캐스팅이란, 같은 네트워크에 있는 모든 호스트에게 데이터를 전송하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;ARP를 통해 알아낸 MAC 주소는 별도로 저장하여 사용한다.&lt;/p&gt;
+
+&lt;h4 id=&quot;vulnerability-&quot;&gt;Vulnerability, 취약점&lt;/h4&gt;
+&lt;p&gt;ARP 과정에는 별도의 인증 과정이 없기 때문에, 요청과 응답(Request, Response)이 모두 위조될 수 있다. 이와 관련된 공격 기법은 &lt;strong&gt;ARP Spoofing, Poisoning&lt;/strong&gt;이라 하며, 이 후 별도의 포스트에서 다뤄보도록 한다.&lt;/p&gt;
+
+&lt;p&gt;또한, &lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%AC%B4%EC%83%81%ED%83%9C_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C&quot;&gt;&lt;strong&gt;Stateless(무상태)&lt;/strong&gt;&lt;/a&gt; 프로토콜이기 때문에, Reply가 적절한 Request없이 전송될 수도 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;fowarding--routing&quot;&gt;Fowarding / Routing&lt;/h2&gt;
+&lt;p&gt;위에서도 언급했듯이, 매 송신마다 ARP를 통해 MAC 주소를 알아내는 것이 아니라, 한 번 알아낸 주소는 별도의 Table에 저장하여 사용한다. 이 때,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Table을 만드는 작업을 &lt;strong&gt;Routing(라우팅)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Table을 이용하여 데이터를 적절하게 송신하는 것을 &lt;strong&gt;Fowarding(포워딩)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이라 한다. 
+###Fowarding Algorithm###
+Destination(목적지, 수신측) IP를, 현재 자신이 전송 가능한 대상의 주소들과 Masking 한 후, &lt;strong&gt;앞 부분이 가장 길게 일치하는(Longest Prefix Matched)&lt;/strong&gt; 대상으로 전송한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;fragmentation--reassembly&quot;&gt;Fragmentation / Reassembly&lt;/h2&gt;
+&lt;p&gt;각 네트워크에는 &lt;strong&gt;MTU, Maximum Transmission Unit&lt;/strong&gt;, 최대로 전송 가능한 용량이 정해져 있기 때문에 이 크기보다 큰 데이터를 보내기 위해서는 &lt;strong&gt;MTU 단위로 나누어서(Fragmentation)&lt;/strong&gt; 전송해야 한다. 또한, 재조립을 위해서 Fragmentation 되었다는 사실과, 순서 정보를 포함해야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www1.pldworld.com/@xilinx/html/link/network/inter.htm&quot;&gt;pldworld.com. 인터네트워킹의 개념적 이해&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.terms.co.kr/internetworking.htm&quot;&gt;텀즈. 인터네트워킹&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/network/internetworking/&quot;&gt;Internetworking, 인터네트워킹&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on February 12, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[타임라인, 타임스탬프]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/timeline-analysis/" />
+  <id>http://localhost:4000/digitalforensics/timeline-analysis</id>
+  <published>2015-02-07T22:42:58+00:00</published>
+  <updated>2015-02-07T22:42:58+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Facebook 메인의 그것과 같이, 어떤 것을 시간 순서에 따라 나열한 것을 &lt;strong&gt;타임라인(Timeline)&lt;/strong&gt;이라 한다. Facebook의 경우에는 친구들의 작성 글이 작성 시간 순서에 따라 나타나고, 흔히 볼 수 있는 연대기나, 연표도 일종의 타임라인이다.&lt;/p&gt;
+
+&lt;p&gt;타임라인은 디지털 포렌식 분야에서도 많이 사용되는 단어인데, 그 뜻은 크게 다르지 않다. 특정 환경, 보통 사건이 일어난 환경에 남아 있는 기록들을 시간 순에 따라 정리한 것을 의미한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;timestamp&quot;&gt;타임 스탬프, Timestamp&lt;/h2&gt;
+&lt;p&gt;기록을 시간 순으로 정리하기 위해서는 당연히, 기록 외에도 추가적인 시간 정보가 필요하다. 대부분의 시스템은 다양한 이유로 행동/작업 등에 시간 기록을 추가로 남겨두는데 이를 &lt;strong&gt;타임 스탬프(Timestamp)&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;p&gt;각 운영체제와 파일 시스템마다, 시간 정보를 기록해두는 요소가 다르므로 분석할 환경에서 어떤 시간 정보가 남는지 숙지하고 있으면 좋을 듯하다.&lt;/p&gt;
+
+&lt;h2 id=&quot;super-timeline&quot;&gt;Super Timeline&lt;/h2&gt;
+&lt;p&gt;타임라인 중에서도, 전체 시스템을 대상으로 구축된 타임라인을 &lt;strong&gt;수퍼 타임라인(Super Timeline)&lt;/strong&gt;이라 한다.&lt;/p&gt;
+
+&lt;p&gt;타임 스탬프를 하나하나 조사하여 타임라인을 구축하는 것이 불가능하지는 않겠지만, 각 환경에 따라 조사 대상이 다르고, 매우 많은 양의 정보를 수집 및 분석해야 하기 때문에 오랜 시간이 걸리는 작업이 될 것이다. 그렇기 때문에 수퍼 타임라인을 구축해주는 도구들이 몇 있는데, 그 중 대표적인 것이 &lt;strong&gt;log2timeline&lt;/strong&gt;이란 도구이다.&lt;/p&gt;
+
+&lt;p&gt;해당 도구의 사용법은 
+&lt;strong&gt;&lt;a href=&quot;http://digital-forensics.sans.org/blog/2011/12/07/digital-forensic-sifting-super-timeline-analysis-and-creation#&quot;&gt;SANS Digital Forensics and Incident Response Blog
+ . Digital Forensic SIFTing: SUPER Timeline Creation using log2timeline&lt;/a&gt;&lt;/strong&gt; 에 튜토리얼과 함께 친절하게 설명되어 있으므로, 도구를 사용해보고 싶다면 천천히 따라해보는 것이 좋을 듯하다.
+&amp;gt; 해당 글 사이사이에 많은 참조 링크가 있으니, 막히는 부분에서 참조하도록 한다.
+&amp;gt; 또한, 이미지 파일의 다운로드 링크가 바뀌었으나 해당 사이트에서 쉽게 찾을 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;한계점&lt;/h2&gt;
+&lt;p&gt;log2timeline 등의 도구를 이용하면 타임라인은 쉽게 얻어낼 수 있다. 하지만, 각각의 행동을 조립하여 하나의 사건으로 묶어내는 것은 오롯이 조사자의 역량에 달려있다.
+또한, 타임 스탬프는 조작이 어렵지 않기 때문에, 생성된 타임라인이 온전하지 않을 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference&quot;&gt;참고 자료, Reference&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Timestamp&quot;&gt;Wikipedia, English. TimeStamp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/3779&quot;&gt;Forensic-Proof. 타임라인 분석&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/2323&quot;&gt;Forensic-Proof. 타임라인 통합 분석&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.champlain.edu/Documents/LCDI/archive/SuperTimelineReport.pdf&quot;&gt;The Senator Patrick Leahy Center for Digital Investigation
+Champlain College. Super Timeline&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/timeline-analysis/&quot;&gt;타임라인, 타임스탬프&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on February 07, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[파일 카빙을 통한 데이터 복구]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/data-recovery-via-the-file-carving/" />
+  <id>http://localhost:4000/digitalforensics/data-recovery-via-the-file-carving</id>
+  <published>2015-01-30T22:25:42+00:00</published>
+  <updated>2015-01-30T22:25:42+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;file&quot;&gt;파일(File)&lt;/h2&gt;
+&lt;p&gt;파일은 각종 컴퓨터 프로그램 등에서 사용하기 위한 데이터로서, 저장장치에 기록되어 사용된다. 종이 문서로 이루어진 ‘파일’과 같은 비슷한 역할이다.
+##파일 시스템(File System)##
+파일이 저장장치에 기록되어 있어도, 저장장치의 어느 위치에 저장되어 있는지 모른다면 해당 파일을 사용할 수 없을 것이다. 이런 일을 막기 위하여 각 저장장치에는 저장장치 내의 모든 파일들을 관리하는 &lt;strong&gt;파일 시스템&lt;/strong&gt;이라는 것을 둔다.&lt;/p&gt;
+
+&lt;p&gt;파일 시스템은 각 파일들이 어디에 저장되어 있는지 기록하여, 운영체제나 여러 프로그램들이 저장장치에 기록되어 있는 파일들을 원활하게 사용할 수 있게 한다. 또한, 생성/수정/접근 시간 등의 다양한 정보를 기록한다. 이렇게 파일을 위한 정보들은 &lt;strong&gt;메타 데이터(Meta Data)&lt;/strong&gt;라 한다.
+##할당(Allocation)
+파일 시스템이 각 파일이 어디에 저장되어 있는지 기록한다고 했는데, 이는 정확하게 말하면 파일 시스템이 해당 파일에게 저장 장치의 일정 영역을 &lt;strong&gt;할당&lt;/strong&gt;하는 것이다. 이렇게 파일에게 할당된 영역은, 다른 파일들이 사용할 수 없다.
+##파일 삭제##
+파일을 삭제한다고 하면 파일의 데이터를 모두 제거한다고 생각하지만, 대부분의 파일 시스템에서는 그렇지 않다. 보통 파일에 할당된 영역을 할당 해제하여 다른 파일들이 사용할 수 있는 상태로 만들고, 해당 파일의 메타 데이터를 사용하지 않는 것으로 파일을 삭제한다.&lt;/p&gt;
+
+&lt;p&gt;모든 데이터를 삭제하지 않는 이유는 컴퓨터 내의 여러 장치에서 저장장치가 가장 느리기 때문에, 저장장치의 사용을 최대한 줄여야 컴퓨터의 전반적인 처리 속도를 높일 수 있다.
+##파일 복구(Recover)##
+위에서 설명한 대로 파일이 삭제되어도 데이터와 메타 데이터는 남아있기 때문에, 데이터가 다른 파일로 덮여쓰여지지 않았다면, 메타 데이터에 기록되어 있는 할당 영역을 살펴보면 어렵지 않게 파일을 복구해낼 수 있다.
+##파일 카빙(Carving)##
+하지만 메타 데이터 또한 다른 메타 데이터에 의해 덮여씌어질 수 있고, 모종의 이유로 손상/변조될 수 있다. 이런 경우에는 메타 데이터의 도움을 받지 못하기 때문에 분석가가 직접 저장장치에서 원하는 파일을 찾아내야 한다.
+##파일 구조##
+###시그니처(Signiture)###
+여러 프로그램 등에서, 파일을 쉽게 구분하기 위해서 대부분의 파일은 데이터의 여러 위치에 &lt;strong&gt;시그니처&lt;/strong&gt;를 새겨 놓는다. 일반적으로 데이터의 가장 앞에 있는 시그니처를 &lt;strong&gt;헤더(Header)&lt;/strong&gt;, 마지막에 있는 시그니처를 &lt;strong&gt;푸터(Footer) 혹은 트레일러(Trailer) 시그니처&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;p&gt;파일의 구분 뿐만 아니라, 파일의 처리를 위해서 데이터를 여러 영역으로 구분하여 기록하는 경우도 있는데, 이런 경우에는 영역마다 시그니처가 붙어있는 경우도 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/jpeg_header.png&quot; alt=&quot;JPEG File Header&quot; title=&quot;JPEG 파일의 시그니처&quot; /&gt;
+##비할당 영역(Unallocated Area)##
+특정 파일을 카빙해내기 위해서는 단순히 저장장치의 모든 영역에 대해서 해당 파일의 시그니처를 탐색해내면 된다. 그러면, 그 파일과 같은 형식의 파일을 전부 찾을 수 있고, 찾아낸 파일 중에서 원하는 파일을 찾으면 된다.&lt;/p&gt;
+
+&lt;p&gt;하지만, 저장장치의 전 영역을 살펴보는 것은 용량에 따라 매우 긴 시간이 필요한 작업이 될 수도 있고, 저렇게 찾아낸 파일은 &lt;strong&gt;복구가 필요하지 않은&lt;/strong&gt;, 지워지지 않은 파일일 수도 있다. 따라서, 검색 대상을 &lt;strong&gt;지워진&lt;/strong&gt; 파일로 한정할 필요가 있다.&lt;/p&gt;
+
+&lt;p&gt;위에서, 파일이 파일 시스템으로 부터 공간을 할당받는다고 했는데, 이렇게 파일에게 할당되지 않은 공간을 &lt;strong&gt;비할당 영역&lt;/strong&gt;이라 한다. 이 비할당 영역은 파일에 할당되지 않은 공간과, 파일이 삭제됨에 따라 할당이 해제된 영역을 포함한다. 파일 시스템은 저장장치의 할당 상태를 기록하고 있으므로, 파일 시스템이 손상되지 않았다면 쉽게 비할당 영역을 추려낼 수 있다.&lt;/p&gt;
+
+&lt;p&gt;따라서, 비할당 영역을 대상으로 시그니처 탐색을 수행하면 조금 더 빠르게 원하는 파일을 찾아낼 수 있다.
+##조각화(Fragmentation)##
+데이터가 덮어씌어져 복구가 불가능한 것 외에도, 파일 카빙 작업에 있어 큰 문제점이 있다. 파일이 생성되고 삭제되고 하는 과정을 반복하면 저장장치의 공간을 완벽하게 채워서 사용하지 못하고, 중간 중간에 크고 작은 빈 영역이 생기게 된다. 이러한 빈 영역들을 사용하다 보면, 파일의 데이터를 한 번에 다 기록하지 못하고 여러 영역에 나누어 기록하게 되는 경우가 있는데, 이를 &lt;strong&gt;조각화(Fragmentation)&lt;/strong&gt;라 한다.&lt;/p&gt;
+
+&lt;p&gt;메타 데이터를 이용할 경우에는, 파일이 어느 영역을, 얼마나 할당 받았는지에 대한 기록이 있기 때문에 파일이 조각나도 문제없이 사용할 수 있지만, 메타 데이터의 도움을 받지 않는 파일 카빙 과정에서는 여러 문제점이 발생하는데, 특히&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;파일 헤더부터 푸터까지 복구하는 경우, 중간에 다른 파일의 데이터가 포함되는지 알 수 없다.&lt;/li&gt;
+  &lt;li&gt;파일 헤더를 분석하여 파일 크기만큼 복구하는 경우, 파일의 일부분이 복구되지 않는다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;조각화를 극복하고 파일을 카빙해내려는 다양한 시도가 있으나, 아직은 완벽한 방법이 없는 것으로 보인다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/image/fragmentaion.png&quot; alt=&quot;Fragmented File&quot; title=&quot;조각난 파일&quot; /&gt;
+##도구##
+파일 카빙은 분석가가 직접 하나하나 하기엔 번거로운 작업이므로, 도와주는 도구가 여럿 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.forensicswiki.org/wiki/Tools:Data_Recovery#Carving&quot;&gt;Forensic Wiki, Tools:Data_Recovery#Carving&lt;/a&gt;
+##활용##
+실수로 삭제한 파일을 복구 해낼 때도 사용할 수 있겠지만, 파일 카빙 기법은 침해 사고 대응 및 디지털 포렌식 분야에서 빛을 발한다.&lt;/p&gt;
+
+&lt;p&gt;현실의 범죄자들이 자신의 흔적을 지우려고, 남기지 않으려고 노력하듯이 해커, 악성코드, 바이러스등도 최대한 자신의 흔적을 남기지 않으려고 노력한다. 이 과정에서 자신들이 남긴 흔적(파일이나 각종 기록)들을 지우는 경우가 많은데, 이런 흔적들을 복구해내는 것이 큰 도움이 된다.
+##참고 자료##
+- &lt;a href=&quot;http://en.wikipedia.org/wiki/Computer_file&quot;&gt;Wikipedia, English. Computer file&lt;/a&gt;
+- &lt;a href=&quot;http://www.forensicswiki.org/wiki/File_Carving#File_Carving_challenges_and_test_images&quot;&gt;Forensic Wiki. File Carving&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;발표 자료&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://onedrive.live.com/redir?resid=BF1489D51F814C5C!8265&amp;amp;authkey=!AP1vDhsDXxIg5HE&amp;amp;ithint=file%2cpptx&quot;&gt;20150125 Security One 2nd, 파일 카빙을 통한 데이터 복구&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;발표 자료 대부분이 설명이 없는 그림입니다. 본 포스트와 함께 봐주세요.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/data-recovery-via-the-file-carving/&quot;&gt;파일 카빙을 통한 데이터 복구&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on January 30, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[What is Digital Forensics?]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/digitalforensics/what-is-digital-forensics/" />
+  <id>http://localhost:4000/digitalforensics/what-is-digital-forensics</id>
+  <published>2015-01-17T21:35:27+00:00</published>
+  <updated>2015-01-17T21:35:27+00:00</updated>
+  <author>
+    <name>Dal4Segno</name>
+    <uri>http://localhost:4000</uri>
+    <email>dal4segno@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;기존에는 Digital Device 내의 증거를 토대로 범죄의 사실관계를 규명하는 작업을 일컬었지만, 현재는 범죄 수사 외에도 여러 분야에서 보편적으로 쓰이는 용어가 됨에 따라 Digital Device 내의 자료를 증거로서 이용하여 특정행위의 사실관계를 규명하는 것으로 정의할 수 있을 듯 하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;evidence&quot;&gt;증거, Evidence&lt;/h3&gt;
+
+&lt;p&gt;사실관계를 확실하게 하기 위해 사용되는 자료&lt;/p&gt;
+
+&lt;h2 id=&quot;application&quot;&gt;Application&lt;/h2&gt;
+
+&lt;p&gt;침해 사고 대응시 피해와 공격자 등을 밝혀낼 때 사용될 수 있으며, 기업의 감사 및 회계 시 무결성을 입증하는 데에도 사용될 수 있다. 최근에는 디지털 데이터의 저작권과 관련된 작업 및 전자 증거 개시 제도(E-Discovery)에도 사용되고 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;reference-documents&quot;&gt;Reference Documents&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EC%A6%9D%EA%B1%B0&quot;&gt;Wikipedia, Korean. 증거&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ko.wikipedia.org/wiki/%EB%94%94%EC%8A%A4%EC%BB%A4%EB%B2%84%EB%A6%AC_%28%EB%B2%95%29&quot;&gt;Wikipedia, Korean. 디스커버리 (법)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Digital_forensics&quot;&gt;Wikipedia, English. Digital Forensics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://forensicswiki.org/wiki/Computer_forensics&quot;&gt;Forensics Wiki. Computer Forensics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/4466&quot;&gt;Forensic-Proof. 전자증거개시제도의 준비&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/3357&quot;&gt;Forensic-Proof. 디지털포렌식 용어와 절차&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://forensic-proof.com/archives/6350&quot;&gt;Forensic-Proof. 포렌식이 먼가요?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/digitalforensics/what-is-digital-forensics/&quot;&gt;What is Digital Forensics?&lt;/a&gt; was originally published by Dal4Segno at &lt;a href=&quot;http://localhost:4000&quot;&gt;Dal4Segno's Whatnot&lt;/a&gt; on January 17, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>

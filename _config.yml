@@ -1,27 +1,66 @@
-# Site settings
-title: Dal4Segno's Whatnot. 
-email: dal4segno@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Computer, Digital Forensics, etc...
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://dal4segno.github.io" # the base hostname & protocol for your site
-github_username:  dal4segno
-facebook: dal4segno@gmail.com
+# Site wide configuration
 
-# Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-  
-comments:
-  provider: disqus
-  disqus:
-    short_name: dal4segno
+title:            Dal4Segno's Whatnot
+locale:           ko_KR
+url: http://localhost:4000
+timezone: Asia/Seoul
 
-assests:
-  sources:
-    - _assets/fonts
+# Jekyll configuration
 
 pagination: true
 paginate: 10
 paginate_path: "blog/page:num"
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: pygments
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+categories:
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+
+
+# Site owner
+owner:
+  name: Dal4Segno
+  avatar: ruby-warrior.png
+  bio: "이것저것 마음가는데로"
+  email: "dal4segno@gmail.com"
+  disqus-shortname: dal4segno
+  twitter: #username
+  facebook: "dongseoblee.52"
+  google:
+    plus: #username
+    analytics: "UA-45713206-2"
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: dal4segno
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+
+
+  
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]

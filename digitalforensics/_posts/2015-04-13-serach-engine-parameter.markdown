@@ -4,7 +4,10 @@ title: Search Engine Query Parameter
 date: 2015-04-13 19:57:07
 tag: se seo searchengine google query parameter search
 categories: digitalforensics
+excerpt: Google에서는 여러 검색 엔진에서 사용하는 매개 변수값을 제공한다
 ---
+
+{% include _toc.html %}
 
 검색 엔진을 통해 어떤 것을 검색했는 지는 사용자의 행동을 추측하는데에 꽤 쓸만한 정보가 될 수 있다. 
 Google, Bing 등과 같이, 여러 검색 엔진을 사용할 때, 사용자가 입력한 검색어는 특정 매개 변수(Parameter)를 통해 서버로 전송된다. 하지만 각 검색 엔진들은 서로 다른 매개 변수명을 사용하기 때문에, 검색어를 자동으로 수집하기 위해서는 각 검색엔진에서 사용하는 매개 변수명을 알고 있어야한다.

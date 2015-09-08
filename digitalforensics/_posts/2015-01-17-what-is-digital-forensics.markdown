@@ -4,7 +4,10 @@ title: "What is Digital Forensics?"
 date: 2015-01-17 21:35:27
 tag: digitalforensics evidence 
 categories: digitalforensics
+excerpt: 포렌식이란?
 ---
+
+{% include _toc.html %}
 
 기존에는 Digital Device 내의 증거를 토대로 범죄의 사실관계를 규명하는 작업을 일컬었지만, 현재는 범죄 수사 외에도 여러 분야에서 보편적으로 쓰이는 용어가 됨에 따라 Digital Device 내의 자료를 증거로서 이용하여 특정행위의 사실관계를 규명하는 것으로 정의할 수 있을 듯 하다.
 

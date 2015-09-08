@@ -4,7 +4,10 @@ title: Suricata Rules - 1
 date: 2015-07-21 02:06:06
 tag: suricata Signatures Signature
 categories: Network
+excerpt: IDS/IPS Suricata의 Rule에 대해서 살펴본다
 ---
+
+{% include _toc.html %}
 
 > Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서입니다. 자세한 설명과 그림은 매 단락마다 첨부된 원문 링크를 참조하세요.
 

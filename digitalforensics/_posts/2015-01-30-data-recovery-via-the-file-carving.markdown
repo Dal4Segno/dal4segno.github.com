@@ -4,7 +4,11 @@ title: "파일 카빙을 통한 데이터 복구"
 date: 2015-01-30 22:25:42
 tag: digitalforensics filecarving datarecovery
 categories: digitalforensics
+excerpt: 파일 시스템의 도움을 받을 수 없을 경우 파일 카빙을 통해 데이터를 복구할 수 있다
 ---
+
+{% include _toc.html %}
+
 ##파일(File)##
 파일은 각종 컴퓨터 프로그램 등에서 사용하기 위한 데이터로서, 저장장치에 기록되어 사용된다. 종이 문서로 이루어진 '파일'과 같은 비슷한 역할이다.
 ##파일 시스템(File System)##

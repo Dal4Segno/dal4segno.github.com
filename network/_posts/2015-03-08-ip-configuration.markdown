@@ -4,7 +4,10 @@ title: "IP Configuration"
 date: 2015-03-08 10:58:47
 tag: network ip dhcp subnetting supernetting gateway dns
 categories: "Network" 
+excerpt: IP를 설정하는 방법과 그에 필요한 정보들을 알아본다.
 ---
+
+{% include _toc.html %}
 
 ## IP Address Allocation ##
 어느 프로토콜이나, 통신 대상을 특정하기 위해서는 **Address(주소)**등의 정보를 지정, 할당하는 작업이 필요하다. 

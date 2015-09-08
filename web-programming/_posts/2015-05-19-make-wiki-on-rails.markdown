@@ -4,7 +4,10 @@ title: Make Wiki on Rails
 date: 2015-05-19 22:41:47
 tag: wiki ror rails ruby
 categories: web-programming
+excerpt: Rails를 이용하여 자신만의 WIKI를 만들어보자
 ---
+
+{% include _toc.html %}
 
 # 환경
  - Windows 10 TP x64

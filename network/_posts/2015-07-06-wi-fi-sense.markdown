@@ -4,7 +4,10 @@ title: "Wi-Fi Sense"
 date: 2015-07-06 12:47:38
 tag: microsoft, wifi, wifisense, tethering
 categories: network
+excerpt: Windows 10과 Windows Phone 8.1에서 탑재되는 Wi-Fi 인증 정보 공유기술인 Wi-Fi Sense에 대해
 ---
+
+{% include _toc.html %}
 
 Windows 10에 탑재되는 기술로 유명해진 기술이지만 Windows Phone 8.1 부터 지원하는 기술로, 자신의 Wi-Fi 테터링에 Facebook, Outlook, Skype 친구들이 별도의 인증 절차 없이 접근할 수 있도록 하는 기술이다.
 

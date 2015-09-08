@@ -4,7 +4,10 @@ title: "Wi-Fi"
 date: 2015-04-12 14:07:04
 tag: network wifi wireless IEEE802.11 
 categories: network
+excerpt: Wi-Fi에 대한 표준인 IEEE 802.11에 대해서 알아본다.
 ---
+
+{% include _toc.html %}
 
 ## IEEE 802 ##
 많은 기술들에 표준이 있듯이, 컴퓨터 네트워크 기술에도 [IEEE 802](http://en.wikipedia.org/wiki/IEEE_802)라는 기준(Standard)이 있다. 그중에서 802.11이 흔히 사용되는 무선 네트워크(Wi-Fi 등)에 대한 표준이다.

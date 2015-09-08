@@ -4,7 +4,11 @@ title: "Bridging"
 date: 2015-03-10 20:59:38
 tag: network bridge bridging
 categories: "Network"
+excerpt: Network에서 복수 개의 LAN을 연결하는 Bridging에 대해서 알아본다.
 ---
+
+{% include _toc.html %}
+
 ## Bridge ##
 **Data Link Layer**에서 작동하며 2개 이상의 LAN을 Interconnect하고 해당 LAN들의 패킷을 포워딩한다. 각 LAN에는 영향을 끼치지 않으며 Self-Configuration이 가능하여 별도의 설정 없이 사용가능 하다.
 

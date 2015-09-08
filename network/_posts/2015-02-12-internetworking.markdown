@@ -4,7 +4,11 @@ title: "Internetworking, 인터네트워킹"
 date: 2015-02-12 00:26:44
 tag: network internetworking ip arp fowarding routing
 categories: "Network"
+excerpt: 네트워크 간의 통신에 대해서 알아본다.
 ---
+
+{% include _toc.html %}
+
 문자 그대로, 네트워크 간의 교류(통신)하는 개념 혹은 기술 전반을 이르는 단어이다. 여기서의 네트워크는 물리적으로 직접 연결되지 않은 네트워크와 심지어 구성이 다른 것들을 모두 포함한다. 마치 우리가 일반적으로 인터넷을 사용할 때 네트워크 구성 및 구조를 고려하지 않는 것처럼 말이다.
 
 

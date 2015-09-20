@@ -108,6 +108,8 @@ layout과 title은 반드시 있어야 한다.
 
 > slug란 하이픈 - 과 영어 소문자로만 이루어진 문자열을 의미한다. slug와 포스트 제목과는 다르므로 적당한 문자열을 지정하자
 
+포스트를 완성한 다음에는 Jekyll을 **build**하거나 **serve**한 후에 **Github 저장소**에 **push**하면 된다.
+
 #### Octopress ####
 
 매 포스팅마다 Front-Matter와 이름 형식을 맞추는 것은 매우 귀찮은 일이지만, 다른 Markdown 기반의 블로그 프레임워크인 **Octopress** Gem을 빌려서 이를 해결할 수 있다.

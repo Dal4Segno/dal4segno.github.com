@@ -8,4 +8,7 @@ echo title: >> $filename
 echo date: $date' '$time >> $filename
 echo tag: >> $filename
 echo categories: >> $filename
+echo excerpt: >> $filename
 echo --- >> $filename
+echo >> $filename
+echo {% include _toc.html %} >> $filename

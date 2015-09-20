@@ -52,21 +52,21 @@ Jekyll의 기본적인 구조는 다음과 같다.
 {% highlight text %}
 .
 ├── _config.yml
-├── _drafts --> *완성되지 않은 포스트 초안을 저장*
+├── _drafts --> 완성되지 않은 포스트 초안을 저장
 |   ├── begin-with-the-crazy-ideas.textile
 |   └── on-simplicity-in-technology.markdown
-├── _includes --> *다른 html 파일 등에 삽입되는 파일들을 저장*
+├── _includes --> 다른 html 파일 등에 삽입되는 파일들을 저장
 |   ├── footer.html
 |   └── header.html
-├── _layouts --> *포스트에서 사용될 레이아웃들을 저장*
+├── _layouts --> 포스트에서 사용될 레이아웃들을 저장
 |   ├── default.html
 |   └── post.html
-├── _posts --> *작성한 포스트들을 저장*
+├── _posts --> 작성한 포스트들을 저장
 |   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
 |   └── 2009-04-26-barcamp-boston-4-roundup.textile
-├── _data --> *사용되는 각종 데이터들을 저장*
+├── _data --> 사용되는 각종 데이터들을 저장
 |   └── members.yml
-├── _site --> *Jekyll을 통해 생성되는 정적 사이트가 저장된다*
+├── _site --> Jekyll을 통해 생성되는 정적 사이트가 저장된다
 ├── .jekyll-metadata
 └── index.html
 {% endhighlight %}
@@ -108,6 +108,8 @@ layout과 title은 반드시 있어야 한다.
 
 > slug란 하이픈 - 과 영어 소문자로만 이루어진 문자열을 의미한다. slug와 포스트 제목과는 다르므로 적당한 문자열을 지정하자
 
+포스트를 완성한 다음에는 Jekyll을 **build**하거나 **serve**한 후에 **Github 저장소**에 **push**하면 된다.
+
 #### Octopress ####
 
 매 포스팅마다 Front-Matter와 이름 형식을 맞추는 것은 매우 귀찮은 일이지만, 다른 Markdown 기반의 블로그 프레임워크인 **Octopress** Gem을 빌려서 이를 해결할 수 있다.
@@ -128,3 +130,8 @@ Jekyll 과 Github Page를 이용한 블로깅은 일반적인 블로그 서비�
 는 장점이 있다.
 
 새 블로그를 만들거나, 이주 계획이 있다면 .github.io라는 매력적인 도메인을 제공해주는 Github Page를 고려해보는 것도 좋을 듯 하다.
+
+## Reference ##
+
+ - [Nolboo's Blog. 지킬로 깃허브에 무료 블로그 만들기](https://nolboo.github.io/blog/2013/10/15/free-blog-with-github-jekyll/)
+ - [Minimal Mistake. Theme Setup](https://mmistakes.github.io/minimal-mistakes/theme-setup/)

@@ -20,3 +20,6 @@ markdown: kramdown
 
 # Owner Information
 disqus-shortname: dal4segno
+
+# Outputting
+permalink: :categories/:title

@@ -22,4 +22,4 @@ markdown: kramdown
 disqus-shortname: dal4segno
 
 # Outputting
-permalink: :categories/:title
+permalink: :categories/:title/

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<h2>Posts</h2>
+
+<ul>
+{% for post in site.posts %}
+  <li>
+    <div class="row">
+	  <div class="card hoverable">
+		<div class="card-title"><h4>
+		  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		</h4></div>
+		<div class="card-content">
+			<div>{{ post.excerpt }}</div>
+		  </div>
+		<div class="card-action">  
+		  
+			{% for tag in post.tags %}
+			  <div class="chip">{{ tag }}</div>
+			{% endfor %}
+			<div class="grey-text text-lighten-1">
+				  {{ post.date | date: "%b %-d, %Y" }}
+			</div>
+		</div>
+	</div>
+  </li>
+{% endfor %}
+</ul>
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+

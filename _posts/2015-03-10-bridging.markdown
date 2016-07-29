@@ -1,0 +1,63 @@
+---
+layout: post
+title: "Bridging"
+date: 2015-03-10 20:59:38
+tag:
+ - network
+ - bridge
+ - bridging
+categories: "Network"
+---
+## Bridge ##
+**Data Link Layer**에서 작동하며 2개 이상의 LAN을 Interconnect하고 해당 LAN들의 패킷을 포워딩한다. 각 LAN에는 영향을 끼치지 않으며 Self-Configuration이 가능하여 별도의 설정 없이 사용가능 하다.
+
+### Routing ###
+패킷을 보낼 목적지가 2개 이상의 호스트를 거쳐야(Multiple **Hop**) 할 경우 경로를 설정하는 방법은 다음과 같다.
+
+- Fixed Routing : 항상 지정된(고정된) 경로를 사용한다..
+- Source Routing : 보내는 측에서 경로를 지정한다.
+- **Spanning Tree Routing** : 현재 네트워크의 구성을 그래프로 표현했을때, Spanning Tree가 되도록 설정한다.
+
+### Fowarding ###
+브릿지는 포워딩 시, 목적지 호스트의 위치를 알고 있다면 브릿지의 특정 포트로 패킷을 포워딩하면 되지만, 알지 못한다면 브릿지와 연결된 모든 호스트 및 브릿지에게 패킷을 **Flooding** 한다. Flooding된 패킷을 받은 호스트는, 목적지가 자신이라면 응답을, 아니라면 무시한다. 
+
+브릿지는 받는 패킷으로 부터 각 호스트의 주소를 저장한다. 즉, 자신을 통해 패킷을 보내지 않는 호스트의 위치는 알 수 없다.
+
+Flooding된 패킷을 다른 브릿지가 받고, 그 브릿지 또한 목적지의 위치를 알지 못한다면 다시 Flooding이 일어나게 되고, 이 패킷은 결국 처음의 브릿지로 가게 될 뿐만 아니라, 두 브릿지 사이를 계속 순환하게 되어 지속적인 네트워크 트래픽을 발생시키는데 이를 **Broadcast Storm(브로드캐스트 스톰)**이라 한다.
+
+### STP(Spanning Tree Protocol) ###
+브로드캐스트 스톰과 같은 낭비를 막기 위해서는 네트워크 구성을 그래프로 표현했을 때(노드 = 브릿지), 모든 노드가 그래프에 연결되어 있고, 한 노드에서 다른 한 노드로 가는 경로를 단 1개로 제한하는 **Spanning Tree** 구조를 취함으로서 해결할 수 있다. 또한 경로가 1개로 고정되므로 여러 브릿지로 부터 접근가능한 호스트가 있을 시, 포워딩 테이블에서 Fault(실패)가 발생하는 것을 없앨 수 있다.
+
+> Spanning Tree와 같은 자료구조는 본 포스트에서 다루지 않습니다. [참고 자료 1](http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C), [참고 자료 2](http://ko.wikipedia.org/wiki/%EC%83%9D%EC%84%B1%EB%82%98%EB%AC%B4)
+
+#### Elect a Root Bridge  ####
+Spanning Tree에서 기준점(Root Node)를 맡을 브릿지를 선출한다. 이 때 각 브릿지에 있는 **브릿지 ID(브릿지 우선순위와 MAC 주소의 연속)**에서 브릿지 우선순위가 가장 작은 브릿지가 루트 브릿지가 된다. 우선순위가 같다면 MAC 주소를 기준으로 한다.
+
+> 우선순위는 기본적으로 32768(0x8000)이며 수정이 가능하다.
+
+#### Compute a Spanning Tree ####
+각 브릿지는 루트 브릿지로 부터의 최소 경로를 계산하며, 해당 경로에서 사용된 포트를 **Root Port(루트 포트)**라 한다.
+
+브릿지가 아닌 호스트들도 루트 브릿지까지의 최소 경로를 갖는 브릿지를 결정한다. 해당 호스트와 연결된 브릿지의 포트를 **Designated Port(지명 포트)**라 한다.
+
+최소 경로가 2개 이상 있을 시에는 브릿지 ID가 낮은 브릿지를 선택한다.
+
+이렇게 모든 계산이 끝난 후에, 루트 포트와 지명 포트가 아닌 모든 포트를 닫는다.
+
+### BPDUs(Bridge Protocol Units) ###
+STP를 통해 Spanning Tree를 구성하기 위해서는 전체 네트워크 망에 대한 정보를 가지고 있어야 하기 때문에 각 브릿지들이 충분한 정보를 가질 수 있도록 각 브릿지들은 BPDU라 불리는 데이터를 통해 정보를 교환한다. BPDU에는 다음과 같은 종류가 있다.
+
+- Configuratino BPDU(CBPDU) : Spanning Tree 계산 시 사용
+- Topology Change Notification(TCN) BPDU : **망 구성(토폴로지)** 변경을 알리기 위해 사용
+- Topology Change Notification Acknowledgement(TCA) : TCN BPDU에 대한 응답
+
+BPDU는 정기적으로 교환되어 토폴로지 변화 감지와 포워딩을 제어한다.
+
+## 참고 자료, Reference ##
+
+- [Wikipedia, Korean. 신장 트리 프로토콜](http://ko.wikipedia.org/wiki/%EC%8B%A0%EC%9E%A5_%ED%8A%B8%EB%A6%AC_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
+- [Wikipedai, English. Spanning Tree Protocol](http://en.wikipedia.org/wiki/Spanning_Tree_Protocol)
+
+> 영문 위키피디아에 STP 과정이 그림과 함께 설명되어 있습니다. 참고하시면 좋을 듯 하네요 :)
+
+> 본 문서는 부산대학교 정보컴퓨터공학부 김종덕 교수님의 컴퓨터 네트워크 강의의 내용을 기반으로 작성됩니다.

@@ -1,0 +1,22 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "Dal 4 Segno's This and That"
+email: dal4segno@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  방향성 없이 끄적이는 곳
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "localhost:4000" # the base hostname & protocol for your site
+facebook_username: dongseob.52
+github_username:  dal4segno
+
+# Build settings
+markdown: kramdown
+
+# Owner Information
+disqus-shortname: dal4segno

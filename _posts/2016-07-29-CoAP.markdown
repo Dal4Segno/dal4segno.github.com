@@ -1,0 +1,64 @@
+---
+layout: post
+title: "CoAP"
+date: 2016-07-29 14:46:43
+tag:
+ - CoAP
+ - IoT
+ - Network
+ - Protocol
+categories: Network
+excerpt: IoT에서 사용되는 경량 네크워크 프로토콜인 CoAP에 대해서 간단하게 알아본다.
+---
+
+{% include _toc.html %}
+
+## Feature ##
+
+ - 선택적으로 Reliable한 Uni/Multicast를 지원하는 UDP를 사용
+ - 비동기 메시지 교환
+ - URI 및 Content-Type 지원
+ - RestFul 지원
+
+## Concept ##
+
+Server-Client 구조이며, 중간에 Proxy를 둘 수 있다.
+
+### CoAP Server ###
+
+실제로 CoAP를 통해 입력받아 특정 서비스를 제공하는 디바이스
+
+### Proxy ###
+
+Request를 Fowarding하거나, Response를 Relaying Back 한다.
+
+캐싱(Caching), Namespace/Protocol Translation 을 위해서 사용할 수 있다.
+
+#### Protocol Translation ####
+
+**Cross** **Proxy** 라고도 하며, Server가 HTTP를 통해서도 CoAP Server와 통신할 수 있도록 한다.
+
+Server와는 HTTP를 이용해서, CoAP Server와는 CoAP를 이용해서 통신한다.
+
+## Security ##
+
+ - Parsing과 URI 처리에서 취약점이 발생할 수 있음
+   - 최대한 간단한 Routine으로 처리하거나 Client에게 위임
+ - Private Cache가 재사용될 수 있음
+   - Identified Request을 Public으로 사용 금지
+   - Shared Cache의 재사용 금지
+ - Reply와 Response를 함께 보내는 특성으로 인해 DoS에 악용 가능
+   - 트래픽 제한을 통해 완화할 수 있지만, 자신의 성능저하를 유발할 수 있음
+ - Multicast를 지원하기 때문에 DoS에 악용 가능
+   - Multicast Request를 제한해야 함
+ - UDP 특성상 rogue Endpoint로 인한 Spoofing 가능
+   - 인증 수단/절차를 포함해야 함
+ - Fake Address를 이용한 Cross-Protocol 공격 가능
+   - Stateless한 특성으로 인해 발생
+ - Entropy Source가 부족하기 때문에 Key gen과 같은 행위는 금지
+ - 낮은 연산 능력으로 인해 Timing Attack 가능
+
+## Reference ##
+
+ - [IETF, RFC 7252](http://tools.ietf.org/html/rfc7252)
+ - [KICS. IoT 응용 통신 기술](http://www.kics.or.kr/Home/UserContents/20151215/151215_164040850.pdf)

@@ -8,6 +8,7 @@ tag:
  - rails
  - ruby
 categories: web-programming
+excerpt: Rails를 이용하여 자신만의 위키를 만들어본다
 ---
 
 # 환경

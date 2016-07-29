@@ -7,6 +7,7 @@ tag:
  - Signatures
  - Signature
 categories: Network
+excerpt: Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서입니다. 자세한 설명과 그림은 매 단락마다 첨부된 원문 링크를 참조하세요.
 ---
 
 > Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서입니다. 자세한 설명과 그림은 매 단락마다 첨부된 원문 링크를 참조하세요.

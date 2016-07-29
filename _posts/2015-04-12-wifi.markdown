@@ -8,6 +8,7 @@ tag:
  - wireless
  - IEEE802.11 
 categories: network
+excerpt: Wi-Fi의 구조, 기능 등에 대해서 간단히 알아본다.
 ---
 
 ## IEEE 802 ##

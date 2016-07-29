@@ -11,6 +11,7 @@ tag:
  - parameter
  - search
 categories: digitalforensics
+excerpt: 각 검색엔진이 사용하는 parameter에 대해서 알아본다
 ---
 
 검색 엔진을 통해 어떤 것을 검색했는 지는 사용자의 행동을 추측하는데에 꽤 쓸만한 정보가 될 수 있다. 

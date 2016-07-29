@@ -8,6 +8,7 @@ tag:
  - wifisense
  - tethering
 categories: network
+excerpt: Windows 10에 탑재되는 기술로 유명해진 기술이지만 Windows Phone 8.1 부터 지원하는 기술로, 자신의 Wi-Fi 테터링에 Facebook, Outlook, Skype 친구들이 별도의 인증 절차 없이 접근할 수 있도록 하는 기술이다.
 ---
 
 Windows 10에 탑재되는 기술로 유명해진 기술이지만 Windows Phone 8.1 부터 지원하는 기술로, 자신의 Wi-Fi 테터링에 Facebook, Outlook, Skype 친구들이 별도의 인증 절차 없이 접근할 수 있도록 하는 기술이다.

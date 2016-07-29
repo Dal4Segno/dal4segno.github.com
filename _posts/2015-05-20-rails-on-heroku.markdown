@@ -9,6 +9,7 @@ tag:
  - ror
  - paas
 categories: web-programming
+excerpt: 유명한 PaaS인 Heroku를 통해서 간단하게 Rails 어플리케이션을 배포해보자
 ---
 
 Heroku는 PaaS, Platform as a Service 중 하나로, 플랫폼을 제공함으로서 사용자가 어플리케이션에만 집중할 수 있도록 해주는 서비스이다. Heroku에 어플리케이션을 올리면 알아서 가상 서버에서 설정 같은걸 다 해주고 심지어 도메인까지 하나 제공한다.

@@ -11,7 +11,7 @@ tag:
  - gateway
  - dns
 categories: "Network" 
-excerpt: 
+excerpt: " "
 ---
 
 ## IP Address Allocation ##

@@ -7,7 +7,7 @@ tag:
  - bridge
  - bridging
 categories: "Network"
-excerpt: 
+excerpt: " "
 ---
 ## Bridge ##
 **Data Link Layer**에서 작동하며 2개 이상의 LAN을 Interconnect하고 해당 LAN들의 패킷을 포워딩한다. 각 LAN에는 영향을 끼치지 않으며 Self-Configuration이 가능하여 별도의 설정 없이 사용가능 하다.

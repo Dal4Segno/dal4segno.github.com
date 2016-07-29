@@ -7,6 +7,7 @@ tag:
  - filecarving
  - datarecovery
 categories: digitalforensics
+excerpt: " "
 ---
 
 {% include _toc.html %}

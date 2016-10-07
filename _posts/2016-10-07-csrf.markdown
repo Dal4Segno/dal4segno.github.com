@@ -1,0 +1,111 @@
+---
+layout: post
+title: CSRF (Cross Site Request Forgery)
+date: 2016-10-07 13:36:15
+tag: 
+ - csrf
+ - request
+ - forgery
+categories: web-security
+excerpt: 악의적인 스크립트를 통해 공격자가 원하는 요청을 임의의 권한으로 전송하는 CSRF 공격의 방어 방법에 대하여
+---
+
+검증되지 않은 외부 입력값에 의해 브라우저에서 악의적인
+스크립트가 실행되어 공격자가 원하는 요청(Request)이 다른
+사용자(관리자 등)의 권한으로 서버로 전송되는 보안약점
+
+## 방어 방법 ##
+
+대부분의 프레임워크에는 CSRF 방어 기법이 Built-in 되어있으며, JAVA의 경우 [OWASP CSRF Guard](https://www.owasp.org/index.php/Category:OWASP_CSRFGuard_Project)를 사용할 수 있다
+
+### XSS 방어 ###
+
+CSRF에 반드시 XSS가 선행되어야 하는 것은 아니지만, XSS는 많은 CSRF 방어 방법을 우회할 수 있도록 하기 때문에 CSRF를 막기 위해서는 기본적으로 XSS를 방어해야 한다
+
+## 권고 사항 ##
+
+ 1. **Same-origin Policy** 검증
+ 2. CSRF Token 검증
+
+
+### Same-origin Policy ###
+
+웹페이지가 같은 브라우저 상의 다른 웹페이지의 데이터에 접근할 때에는 반드시 두 웹페이지가 같은 origin이어야 한다는 정책이다. origin은 URI scheme, 호스트명, 포트 번호의 조합으로 정의된다.
+
+대부분의 Request는 Origin Header나 Referer Header 둘 중 하나 이상을 가지고 있으며 이를 통해 Same-origin Policy를 검증할 수 있다.
+
+#### Origin Header ####
+
+Origin Header가 존재할 경우, 이를 통해서 웹사이트의 origin을 검증할 수 있다
+
+####  Referer Header ####
+
+Origin Header가 없을 경우, Referer Header 내의 호스트명과 웹사이트의 Origin을 비교하여 검증할 수 있다
+
+> Origin/Referer Header 검사 시, 강한 규칙을 이용하여 검증해야 한다. 
+> origin 이후에 등장하는 문자들을 놓치지 않도록 유의할 것
+
+#### 두 헤더가 모두 없는 경우 ####
+
+매우 희귀한 경우이지만 불가능하지 않기 때문에, 해당 Request를 승인해도 되고 거부해도 된다. 권고 사항은 거부하는 것이다
+
+### CSRF Token ###
+
+현재 인증된 사용자만 보낼 수 있는 특별한 Token을 Request에 포함시킨다
+
+ - 세션 별로 고유한 값
+ - 큰 임의값
+ - 암호학적으로 안전한 난수
+ 
+등을 CSRF Token으로 사용하며, 이는 Hidden Form을 사용하여 사용자가 조작하지 않지만 사용자의 Request에 포함된다
+
+Request의 CSRF Token과 서버가 생성한 CSRF Token이 일치해야만 Request를 승인한다
+
+> JAVA에서는 [OWASP CSRF Guard](https://www.owasp.org/index.php/CSRF_Guard)를 이용할 수 있다
+
+CSRF Token은 POST Method에만 포함시켜, URL을 통해 노출되는 일이 없도록 할 것
+
+### Double Submit Cookie ###
+
+사용자의 PC에 난수값을 가진 쿠키를 저장한 후 매 Request에 해당 쿠키의 값을 포함하도록 한다. Same-origin Policy로 인해 공격자는 해당 난수값을 확인할 수 없다
+
+### Encrypted Token ###
+
+사용자의 ID, Timestamp, nonce 등을 이용하여 Token을 만든 후 서버에 있는 고유한 Key를 이용하여 암호화한다. 서버는 Token을 수신한 후에 Key를 복호화하여 검증한다
+
+### Custom Request Header ###
+
+Custom Header를 이용하면 Same-origin Policy를 만족시키기 때문에 기본적으로 Cross Origin Request를 통해 Javascript가 실행되지 않는다
+
+### User Interaction ###
+
+위의 방법들은 사용자가 별도의 과정을 거치지 않았지만, 아래의 방법들은 사용자와의 Transaction을 통해 직접 인증하기 때문에 더욱 강력하다. 하지만, UI/UX에 영향을 미치기 때문에 강력한 보안이 필요한 경우에만 선택적으로 사용하도록 한다
+
+ - 재인증 (비밀번호 입력 및 재로그인 등)
+ - 1회용 토큰
+ - CAPTCHA
+
+> [4.3 장](https://seclab.stanford.edu/websec/csrf/csrf.pdf)
+
+## 실제로는 효과가 없는 방어 방법 ##
+
+ - 비밀 쿠키
+ - POST Method만 허용
+ - 다단계 Transaction
+ - URL Rewriting
+ - HTTPS
+
+몇 가지 방법은 CSRF 방어를 위해서 필요한 방법이긴 하지만, 그 자체로 CSRF를 방어할 수는 없으며 몇 가지 방법은 전혀 효과가 없다
+
+## 테스팅 ##
+
+[OWASP. Testing for CSRF](https://www.owasp.org/index.php/Testing_for_CSRF_(OWASP-SM-005))
+
+## 참조 ##
+
+ - [OWASP. Cross-Site Request Forgery (CSRF)](https://www.owasp.org/index.php/CSRF)
+ - [OWASP. CSRF Prevention Cheat Sheet](https://www.owasp.org/index.php/CSRF_Prevention_Cheat_Sheet)
+ - [Wikipedia, KR. 사이트 간 요청 위조](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%9A%94%EC%B2%AD_%EC%9C%84%EC%A1%B0)
+ - [Whiteship|'s Epril. 스프링 시큐리티 3.2.0.RC1 하이라이트: CSRF 방어](http://whiteship.me/?p=13833)
+ - [Wikipedia, EN. Same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)
+ 

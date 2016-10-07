@@ -1,0 +1,92 @@
+---
+layout: post
+title: XSS (Cross-Site Script)
+date: 2016-10-07 13:48:08
+tag:
+ - xss
+ - cross-site
+categories: web-security
+excerpt: 웹 사이트에 악의적인 스크립트를 삽입하는 XSS 공격의 방어 방법에 대하여
+---
+
+웹사이트에 악의적인 스크립트를 삽입하는 공격이다. 사용자가 XSS 공격을 받은 사이트에 접속할 때, 브라우저는 공격자가 삽입한 스크립트를 실행하게 되며, 해당 스크립트가 사이트에 원래 있던 스크립트인지 XSS를 통해서 삽입된 스크립트인지 구분할 수 없다.
+
+공격자는 스크립트를 통해서 쿠키나 세션 등 사용자의 민감한 정보를 얻을 수 있으며, 삽입된 페이지의 HTML 코드까지 수정할 수 있다.
+
+## 방어 기법 ##
+
+Stored/Reflected XSS는 서버 측에서의 Escape, Validate로 방어 가능하며, DOM Based XSS는 별도의 규칙을 적용해야 한다.
+
+기본적으로 신뢰할 수 없는 입력(사용자로부터 받는 입력)을 사용할 때에는 Escape 과정을 거쳐야 한다.
+
+> 신뢰할 수 있는 라이브러리를 사용하는 것이 좋다.
+> JAVA의 경우, OWASP에서 제작한 [OWASP Java Encoder Project](https://www.owasp.org/index.php/OWASP_Java_Encoder_Project)이 있음.
+
+## 예방 규칙 (Rule) ##
+
+### HTML Body ###
+
+    <span>UNTRUSTED DATA</span>
+
+HTTP Entity(\<, \>, \&, \", \', \/) Encoding 사용
+
+### HTML Attribute ###
+
+    <input type="text" name="fname" value="UNTRUSTED DATA">
+
+ - Non-Alphanumeric 문자들을 \&\#xHH 형식으로 Encode한다.
+
+> UnQuoted Attribute는 여러 문자들에 의해 망가질 수 있다.
+
+### GET Parameter ###
+
+    <a href="/site/search?value=UNTRUSTED DATA">clickme</a>
+
+ - Non-Alphanumeric 문자들을 \%HH 형식으로 Encode한다.
+
+### URL in SRC/HREF Attribute ###
+
+    <a href="UNTRUSTED URL">clickme</a>
+    <iframe src="UNTRUSTED URL" />
+
+ - Attribute Encode
+ - White List 사용
+   - [OWASP. Avoid_the_JavaScript_Protocol_to_Open_a_new_Window](https://www.owasp.org/index.php/Avoid_the_JavaScript_Protocol_to_Open_a_new_Window)
+ - URL Validation/Verification
+ - Canonicalize Input
+   - [Wikipedia, EN. Canonical_link_element](https://en.wikipedia.org/wiki/Canonical_link_element)
+
+### CSS Value ###
+
+    <div style="width: UNTRUSTED DATA;">Selection</div>
+
+ - Non-Alphanumeric 문자들을 \\HH 형식으로 Encode한다.
+
+### JavaScript Variable ###
+
+    <script>var currentValue='UNTRUSTED DATA';</script>
+    <script>someFunction('UNTRUSTED DATA');</script> 
+
+ - JavaScript 변수가 Quote 되어 있는지 확인
+ - Hex/Unicode 인코딩
+ - Avoid Backslash Encoding 
+
+### HTML Body ###
+
+    <div>UNTRUSTED HTML</div>
+	
+ - HTML Validation
+ 
+### DOM XSS ###
+    
+	<script>document.write("UNTRUSTED INPUT: " + document.location.hash);<script/>
+
+ - [DOM based XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
+
+ 
+ 
+## 참조 ##
+
+ - [OWASP. Cross-Site Scripting](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))
+ - [OWASP. XSS(Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_\(Cross_Site_Scripting\)_Prevention_Cheat_Sheet)
+ - [KISA, 한국인터넷진흥원. 크로스 사이트 스크립팅 공격 종류 및 대응 방법](http://www.kisa.or.kr/uploadfile/201312/201312161355109566.pdf)

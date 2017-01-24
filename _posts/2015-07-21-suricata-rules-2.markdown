@@ -16,20 +16,20 @@ excerpt: Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서�
 ---
 {% include _toc.html %}
 
-## **[<< Suricata Rules - 1](http://dal4segno.github.io/network/2015/07/21/suricata-rules.html)** ##
+## **[\<\< Suricata Rules - 1](http://dal4segno.github.io/network/2015/07/21/suricata-rules.html)**
 
-## HTTP Keywords ##
+## HTTP Keywords 
 
 [Suricata. HTTP Keywords](https://redmine.openinfosecfoundation.org/projects/suricata/wiki/HTTP-keywords)
 
-### http_method ###
+### http_method 
 
 해당 Keyword를 사용하면 탐색 범위를 method-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
 > HTTP Method는 method-buffer에 별도 저장된다.
 
 
-### http_uri, http_raw_uri ###
+### http_uri, http_raw_uri 
 
 해당 Keyword를 사용하면 탐색 범위를 uri-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
@@ -37,11 +37,11 @@ excerpt: Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서�
 
 > URI 는 uri-buffer에 별도 저장된다.
 
-### uricontent ###
+### uricontent 
 
 *Deprecated*
 
-### http_header, http_raw_header ###
+### http_header, http_raw_header 
 
 해당 Keyword를 사용하면 탐색 범위를 header-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
@@ -49,13 +49,13 @@ excerpt: Suricata 공식 홈페이지의 설명을 요약 및 번역한 문서�
 
 Normalize 되므로 마지막에 붙는 공백이나 Tab은 모두 제거된다. 이를 확인하고 싶으면 raw를 사용해야 한다.
 
-### http_cookie ###
+### http_cookie 
 
 해당 Keyword를 사용하면 탐색 범위를 cookie-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
 > Cookie는 cookie-buffer에 별도 저장된다.
 
-### http_user_agent ###
+### http_user_agent 
 
 HTTP Header의 Content Modifier로, 탐색 영역은 header-buffer에 한정된다.
 
@@ -66,27 +66,27 @@ HTTP Header의 Content Modifier로, 탐색 영역은 header-buffer에 한정된�
 
 
 
-### http_client_body ###
+### http_client_body 
 
 해당 Keyword를 사용하면 탐색 범위를 Request Body에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
-### http_stat_code ###
+### http_stat_code 
 
 해당 Keyword를 사용하면 탐색 범위를 stat-code-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
 > Stat Code는 stat-code-buffer에 별도 저장된다.
 
-### http_stat_msg ###
+### http_stat_msg 
 
 해당 Keyword를 사용하면 탐색 범위를 stat-msg-buffer에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
 > Stat Code는 stat-msg-buffer에 별도 저장된다.
 
-### http_server_body ###
+### http_server_body 
 
 해당 Keyword를 사용하면 탐색 범위를 Response Body에 한정한다. 다른 Content Modifier와 조합하여 사용할 수 있다.
 
-### file_data ###
+### file_data 
 
 해당 Keyword는 **http_server_body** Keyword와 같이 탐색 범위를 HTTP Response body에 한정한다.
 
@@ -95,19 +95,19 @@ HTTP Header의 Content Modifier로, 탐색 영역은 header-buffer에 한정된�
 > gzip Encoding이 되어 있는 경우 압축해제 후에 분석한다.
 
 
-### urilen ###
+### urilen 
 
 uri의 길이를 제한한다.
 
-## DNS Keywords ##
+## DNS Keywords 
 
-### dns_query ###
+### dns_query 
 
 DNS Response에 영향을 미치며, 다른 Content Modifier와 다르게 **pkt_data** 를 만나기 전까지 모든 Content 에 영향을 미친다.
 
-## Flow Keywords ##
+## Flow Keywords 
 
-### Flowbits ###
+### Flowbits 
 
 하나의 Flow에 여러 패킷이 있을 때, Suricata는 이 Flow들을 Memory에 남겨둔다. 
 
@@ -122,11 +122,11 @@ Flowbits는 Action과 Name의 두 부분으로 구성되어 있으며 Action의 
  - isnotset : 해당 Condition이 Set 되어 있지 **않을** 경우 Alert을 생성한다.
  - noalert : 이 Rule에 대하여 Alert을 생성하지 않는다.
 
-### Flow ###
+### Flow 
 
 해당 Keyword는 **Flow의 방향**, **성립 여부**, 혹은 검사를 **Stream/Packet 단위**로 할 지 결정할 때 사용할 수 있다. 각 요소마다 하나씩, 총 3개의 Option을 사용할 수 있다.
 
-#### Direction ####
+#### Direction 
 
  - to_client
  - from_server
@@ -135,30 +135,30 @@ Flowbits는 Action과 Name의 두 부분으로 구성되어 있으며 Action의 
 
 > to_client와 from_server, 그리고 to_server와 from_client는 동의어이지만, 기존의 Snort Rule과의 호환성을 위해 유지되고 있다.
 
-#### Established ####
+#### Established 
 
  - established
  - stateless
 
-#### Match ####
+#### Match 
 
  - only_stream
  - no_stream : 독립된 패킷에 대해서 검사하도록 한다.
 
-### FlowInt ###
+### FlowInt 
 
 [Suricata. FlowInt](https://redmine.openinfosecfoundation.org/projects/suricata/wiki/Flowint)
 
 Stream 내에서 사용하는 변수와 그에 대한 조건 및 연산에 대한 Keyword이다.
 
 
-#### stream_size ####
+#### stream_size 
 
 Stream의 크기를 제한한다.
 
-## IP Reputation Rules ##
+## IP Reputation Rules 
 
-### iprep ###
+### iprep 
 
 해당 IP의 등장 횟수에 따른 조건을 설정할 수 있다.
 

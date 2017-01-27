@@ -10,6 +10,8 @@ permalink: /documents/
 
 해당 문서들은 언젠가는 포스팅될 수도 있습니다 :)
 
+** 해당 문서들을 포함한 본 블로그의 모든 자료의 무단 복제를 금합니다 **
+
 ### CTF & Challenges
 
  - [Codegate_2013_Forensics_300.docx](https://1drv.ms/w/s!AlxMgR_ViRS_gftWwOc5pODcWSeIzA)

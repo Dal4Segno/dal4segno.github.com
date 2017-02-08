@@ -1,25 +1,69 @@
-# Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+###################################
+# Site wide configuration
+####################################
+#
 title: "Dal 4 Segno's This and That"
-email: dal4segno@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  방향성 없이 끄적이는 곳
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://dal4segno.github.io" # the base hostname & protocol for your site
-facebook_username: dongseob.52
-github_username:  dal4segno
+email:
+description: 방향성 없이 끄적이는 곳
+url: "http://dal4segno.github.io"
 
-# Build settings
-markdown: kramdown
 
-# Owner Information
-disqus-shortname: dal4segno
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Asia/Seoul
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         :categories/:title/
 
-# Outputting
-permalink: :categories/:title/
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Dal4Segno
+  avatar: ruby-warrior.png
+  job: "What am I?"
+  bio: "Developers who \nwant to do well both in security and development."
+  email: "dal4segno@gmail.com"
+  disqus-shortname: dal4segno
+  twitter: #username
+  facebook: dongseob.lee.52
+  google: 
+    plus: 
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: dal4segno
+  gitlab: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  skype: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  500px: #username
+  codepen: #username

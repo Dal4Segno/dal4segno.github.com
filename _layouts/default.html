@@ -1,32 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-
-    {% include header.html %}
-  <div class="container">
-    <div class="page-content">
-      <div class="wrapper">
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        {% include sidebar.html %}
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
         {{ content }}
+        {% include footer.html %}
       </div>
     </div>
   </div>
-  
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- ADSENSE -->
-		<ins class="adsbygoogle"
-			style="display:block"
-			data-ad-client="ca-pub-4936156175331530"
-			data-ad-slot="5531883200"
-			data-ad-format="auto"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-  
-    {% include footer.html %}
-
-  </body>
-
+  {% include js.html %}
+</body>
 </html>

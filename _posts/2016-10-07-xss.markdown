@@ -34,7 +34,7 @@ HTTP Entity(\<, \>, \&, \", \', \/) Encoding 사용
 
     <input type="text" name="fname" value="UNTRUSTED DATA">
 
- - Non-Alphanumeric 문자들을 \&\#xHH 형식으로 Encode한다.
+- Non-Alphanumeric 문자들을 \&\#xHH 형식으로 Encode한다.
 
 > UnQuoted Attribute는 여러 문자들에 의해 망가질 수 있다.
 
@@ -42,51 +42,51 @@ HTTP Entity(\<, \>, \&, \", \', \/) Encoding 사용
 
     <a href="/site/search?value=UNTRUSTED DATA">clickme</a>
 
- - Non-Alphanumeric 문자들을 \%HH 형식으로 Encode한다.
+- Non-Alphanumeric 문자들을 \%HH 형식으로 Encode한다.
 
 ### URL in SRC/HREF Attribute ###
 
     <a href="UNTRUSTED URL">clickme</a>
     <iframe src="UNTRUSTED URL" />
 
- - Attribute Encode
- - White List 사용
+- Attribute Encode
+- White List 사용
    - [OWASP. Avoid_the_JavaScript_Protocol_to_Open_a_new_Window](https://www.owasp.org/index.php/Avoid_the_JavaScript_Protocol_to_Open_a_new_Window)
- - URL Validation/Verification
- - Canonicalize Input
+- URL Validation/Verification
+- Canonicalize Input
    - [Wikipedia, EN. Canonical_link_element](https://en.wikipedia.org/wiki/Canonical_link_element)
 
 ### CSS Value ###
 
     <div style="width: UNTRUSTED DATA;">Selection</div>
 
- - Non-Alphanumeric 문자들을 \\HH 형식으로 Encode한다.
+- Non-Alphanumeric 문자들을 \\HH 형식으로 Encode한다.
 
 ### JavaScript Variable ###
 
     <script>var currentValue='UNTRUSTED DATA';</script>
     <script>someFunction('UNTRUSTED DATA');</script> 
 
- - JavaScript 변수가 Quote 되어 있는지 확인
- - Hex/Unicode 인코딩
- - Avoid Backslash Encoding 
+- JavaScript 변수가 Quote 되어 있는지 확인
+- Hex/Unicode 인코딩
+- Avoid Backslash Encoding 
 
 ### HTML Body ###
 
     <div>UNTRUSTED HTML</div>
-	
- - HTML Validation
- 
+
+- HTML Validation
+
 ### DOM XSS ###
-    
+
 	<script>document.write("UNTRUSTED INPUT: " + document.location.hash);<script/>
 
- - [DOM based XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
+- [DOM based XSS Prevention Cheat Sheet](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet)
 
- 
- 
+
+
 ## 참조 ##
 
- - [OWASP. Cross-Site Scripting](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))
- - [OWASP. XSS(Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_\(Cross_Site_Scripting\)_Prevention_Cheat_Sheet)
- - [KISA, 한국인터넷진흥원. 크로스 사이트 스크립팅 공격 종류 및 대응 방법](http://www.kisa.or.kr/uploadfile/201312/201312161355109566.pdf)
+- [OWASP. Cross-Site Scripting](https://www.owasp.org/index.php/Cross-site_Scripting_(XSS))
+- [OWASP. XSS(Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_\(Cross_Site_Scripting\)_Prevention_Cheat_Sheet)
+- [KISA, 한국인터넷진흥원. 크로스 사이트 스크립팅 공격 종류 및 대응 방법](http://www.kisa.or.kr/uploadfile/201312/201312161355109566.pdf)

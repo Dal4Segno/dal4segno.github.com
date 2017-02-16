@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Summary of [SANS Reading Room]Digital Ghost: Turning the Tables
+title: "Summary of [SANS Reading Room]Digital Ghost: Turning the Tables"
 date: 2017-02-16 08:35:30
 tag:
  - whitepapaer
  - sans
  - cyberattack
 categories: summary
-excerpt: 기술의 효율 및 생산성 뿐만 아니라 위험을 감소시킬 수 있는 방향으로 혁신이 이루어져야 한다.
+excerpt: "기술의 효율 및 생산성 뿐만 아니라 위험을 감소시킬 수 있는 방향으로 혁신이 이루어져야 한다."
 
 ---
 

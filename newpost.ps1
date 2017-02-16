@@ -10,3 +10,4 @@ echo tag: >> $filename
 echo categories: >> $filename
 echo excerpt: >> $filename
 echo --- >> $filename
+echo {% include _toc.html %} >> $filename

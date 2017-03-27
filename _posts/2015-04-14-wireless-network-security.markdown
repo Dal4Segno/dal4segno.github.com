@@ -13,6 +13,7 @@ tag:
 categories: network
 excerpt: 무선 네트워크 상에서 사용되는 암호화 방법에 대해서
 ---
+
 ## WEP ##
 유선 동등 프라이버시(**Wired Equivalent Privacy**)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.
 

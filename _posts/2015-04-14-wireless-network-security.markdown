@@ -13,8 +13,6 @@ tag:
 categories: network
 excerpt: 무선 네트워크 상에서 사용되는 암호화 방법에 대해서
 ---
-> 본 포스트에서 언급되는 암호학적 지식(과 취약점)은 별도의 **[포스트](http://dal4segno.github.io/cryptography/2015/04/15/cryptography-in-wireless-network-security.html)**에서 설명하도록 하겠습니다. 가급적, 먼저 읽고 오시는 것을 추천합니다.
-
 ## WEP ##
 유선 동등 프라이버시(**Wired Equivalent Privacy**)는 이름 그대로, WEP가 도입되던 시절(1999)의 유선 보안과 맞먹는 보안성을 갖도록 설계되었다.
 
@@ -42,8 +40,8 @@ IEEE 802.11i에서 제정된 기술로, WPA를 기반으로 만들어졌다.
 
 ## Reference ##
 
- - [Wikipedia(KR). 유선 동등 프라이버시](http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C)
- - [Wikipedia(EN). Wired Equivalent Privacy](http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy)
- - [Wikipedia(EN). IEEE 802.11-2004](http://en.wikipedia.org/wiki/IEEE_802.11i-2004)
- - [Wikipedia(EN). Wi-Fi Protected Access](http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access)
- - [Wikipedia(KR). 와이파이 보호 접속](http://ko.wikipedia.org/wiki/%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4_%EB%B3%B4%ED%98%B8_%EC%A0%91%EC%86%8D)
+- [Wikipedia(KR). 유선 동등 프라이버시](http://ko.wikipedia.org/wiki/%EC%9C%A0%EC%84%A0_%EB%8F%99%EB%93%B1_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C)
+- [Wikipedia(EN). Wired Equivalent Privacy](http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy)
+- [Wikipedia(EN). IEEE 802.11-2004](http://en.wikipedia.org/wiki/IEEE_802.11i-2004)
+- [Wikipedia(EN). Wi-Fi Protected Access](http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access)
+- [Wikipedia(KR). 와이파이 보호 접속](http://ko.wikipedia.org/wiki/%EC%99%80%EC%9D%B4%ED%8C%8C%EC%9D%B4_%EB%B3%B4%ED%98%B8_%EC%A0%91%EC%86%8D)

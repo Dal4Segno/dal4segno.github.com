@@ -93,7 +93,17 @@ int solution(vector<int> &A)
 
 Queue를 사용하여 점프 횟수 순으로 경로가 처리되므로 최솟값을 구하기 위해 별도의 처리를 하지 않아도 되었다.
 
-> 가지치기를 하지 않으면 C++ 기준으로 Time Out이 나온다.
+> 이미 처리했던 Leaf에 대해 가지치기를 하지 않으면 C++ 기준으로 Time Out이 나온다. Python은 그냥 되는 것 같던데.
+
+### Additional Description (+170402)
+
+각 Leaf를 Node로 하는 Tree를 탐색하는 것으로 생각할 수 있다. 
+
+그러면 최소 Depth에서 N의 값을 갖는 Node를 찾는 문제가 되는데,  Queue를 이용한 BFS를 이용하게 되면 점프 횟수의 오름차순으로 각 Node가 처리되기 때문에 모든 경우의 수를 볼 필요 없이 한 노드라도 N에 도달하는 즉시 함수를 종료할 수 있다.
+
+원래는 2개 이상의 Leaf에서 한 Leaf로 이동할 수 있기 때문에 Tree가 아니지만(*한 Node의 부모가 2개 이상*), 먼저 처리된 Leaf만을 취함으로서 Tree 형태로 만들 수 있다.
+
+> 코드의 !already[pos] 부분
 
 ```c++
 #include <queue>

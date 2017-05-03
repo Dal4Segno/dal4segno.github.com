@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JTD Algorithm Study Cpp Class 17040916"
+title: "JTD Algorithm Study Cpp Class 170416"
 date: 2017-04-17 18:55:46
 tag:
  - algorithm
